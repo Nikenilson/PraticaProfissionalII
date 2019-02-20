@@ -1,0 +1,349 @@
+
+
+
+        :root
+        {
+            --aoi: rgb(26, 53, 91); 
+            --midori: rgb(9, 91, 108); 
+            --murasaki: rgb(68, 13, 94); 
+            
+        }
+
+
+       
+
+
+        html, body
+        {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0px;
+        background-size: 100%;
+        background-position: fixed;
+        max-height: 1000px;
+    
+        
+        }
+
+        a
+        {
+            text-decoration: none;
+            color: inherit;
+        }
+    
+
+   
+
+        .navbar{
+            position: absolute;
+            height: 85px;
+            overflow: hidden;
+            top: 0;
+            display: flex;
+            align-items: center;
+            background: var(--aoi);
+            width: 100%;
+           
+          }
+
+          .navbar input[type = "text"]
+          {
+            background: none;
+            outline: none;
+            border: none;
+
+          }
+
+          .logo
+          {
+            background: url('https://cdn.discordapp.com/attachments/358991776385597441/546815918148288542/genkii-logoW.png') no-repeat 50% 50%;
+            background-size: contain;
+            width: 380px;
+            height: 98px;
+            float: left;
+            margin-left: 10px;
+            border-radius: 20%;
+            max-width: 100px;
+          }
+          .menu
+          {
+            font-family: 'Comfortaa', cursive;
+            position: absolute;
+            padding: 15px;
+            right: 0px;
+            
+          }
+          .menu a{
+            color: azure;
+            text-decoration: none;
+            font-weight: 700;
+            margin-left: 20px;
+            transition: color 0.3s;
+            text-transform: uppercase;
+          }
+          .menu a:hover{
+            color: deepskyblue;
+          }
+
+          .menu a i
+          {
+            font-size: 25px;
+          }
+          
+    
+
+          .navbar a img
+          {
+             margin-left: 20px;
+              background-size: 100%;
+              height: 60px;
+              border: 4px solid azure;
+              border-radius: 50px;  
+              object-fit: cover;
+              cursor: pointer;
+
+          }
+
+          .alert
+          {
+              top: 0;
+              position: absolute;
+              background: rgba(0, 0, 0, 0.7);
+              height: 150%;
+              width: 100%;
+              z-index: 100;
+          }
+
+          .sair
+          {
+              position: absolute;
+              top: 20%;
+              left: 35%;
+              height: 200px;
+              width: 700px;
+              background: rgb(39, 51, 68);
+              box-shadow: 0 0 0 0 rgba(0,0,0,0.2),0 0 0 0 rgba(0,0,0,0.17);
+              animation-duration: 0.8s;
+              border: 5px solid azure;
+              border-radius: 50px;
+          }
+
+          .sair h1
+          {
+            font-family: 'Permanent Marker', cursive;
+            font-size: 4vh;
+            color: white;
+            font-weight: 200;
+            /* border-bottom: 3.5px solid rgba(220, 20, 60, 0.774); */
+            max-width: 650px;
+            text-shadow: -2px 1px 10px black;
+            margin-left: 30px;
+            
+          }
+
+          .sair a
+          {
+              text-decoration: none;
+              font-family: 'Permanent Marker', cursive;
+              font-size: 200%;
+              color: white;
+              border: 4px solid rgba(245, 245, 245, 0.767);
+              padding: 10px 30px;
+              border-radius: 50px;
+              margin-left: 150px;
+              transition: 0.5s;
+              cursor: pointer;
+          }
+
+          .sair a:hover
+          {
+              color: rgb(39, 51, 68);
+              background: rgba(245, 245, 245, 0.767);
+              
+
+          }
+
+          #img
+          {
+              margin: 0;
+          }
+
+      
+
+         
+         
+          .btn{
+            display: none;
+            position: absolute;
+            right: 20px;
+          }
+          
+          .btn span{
+            display: block;
+            margin: 6px;
+            width: 40px;
+            height: 3px;
+            background: azure;
+          }
+
+          p{
+            padding: 20px;
+            font-size: 20px;
+            text-align: justify;
+          
+          }
+
+
+        
+          .show
+          {
+              min-height: 300px;
+              padding: 15px;
+              display: block;
+                position: absolute;
+              
+          }
+
+
+
+          .alertMob
+            {
+                top: 0;
+                position: absolute;
+                background: rgba(0, 0, 0, 0.7);
+                height: 200px;
+                width: 200px;
+                z-index: 100;
+            }
+
+            @keyframes menuMobile
+            {
+                
+                from
+                {
+                  top: 0;
+                }
+                to
+                {
+                  top: 80px;  
+                }
+            
+          }
+
+            
+
+            @media (max-width : 1050px) and (min-width : 601px)
+            {
+                .menu
+                {
+                    padding: 0px;
+                    left: 40%;
+                }
+            }
+
+          
+
+        @media only screen and (max-width : 600px) /* 381 X 595 */
+        {
+
+            
+            
+  
+            .sair
+            {
+                position: absolute;
+                top: 20%;
+                left: 35%;
+                height: 200px;
+                width: 700px;
+                background: var(--aoi);
+                box-shadow: 0 0 0 0 rgba(0,0,0,0.2),0 0 0 0 rgba(0,0,0,0.17);
+                animation-duration: 0.8s;
+                border: 5px solid azure;
+                border-radius: 50px;
+            }
+  
+            .sair h1
+            {
+              font-family: 'Permanent Marker', cursive;
+              font-size: 4vh;
+              color: white;
+              font-weight: 200;
+              /* border-bottom: 3.5px solid rgba(220, 20, 60, 0.774); */
+              max-width: 650px;
+              text-shadow: -2px 1px 10px black;
+              margin-left: 30px;
+              
+            }
+  
+            .sair a
+            {
+                text-decoration: none;
+                font-family: 'Permanent Marker', cursive;
+                font-size: 200%;
+                color: white;
+                border: 4px solid rgba(245, 245, 245, 0.767);
+                padding: 10px 30px;
+                border-radius: 50px;
+                margin-left: 150px;
+                transition: 0.5s;
+                cursor: pointer;
+            }
+
+            .navbar
+            {
+                overflow: visible;
+               
+            }
+
+
+         
+
+
+            .menu
+            {
+                width: 100%;
+                height: 0;
+                top: 80px;
+                background: var(--aoi);
+                overflow: hidden;
+                max-height: 0;
+                padding: 0;
+                animation: menuMobile;
+                
+            }
+
+            .show
+            {
+                animation-name: menuMobile;
+                animation-delay: 10s;
+            }
+            
+        
+
+           
+
+            .menu a
+            {
+               
+                display: block;
+                text-align: center;
+                padding: 10px;
+                margin: 0;
+            }
+
+            .btn
+            {
+                display: block;
+                cursor: pointer;
+            }
+
+
+            
+
+    
+        }
+
+
+    
