@@ -4,9 +4,10 @@
         :root
         {
             --aoi: rgb(26, 53, 91); 
-            --midori: rgb(9, 91, 108); 
+            --midori: rgb(36, 80, 31); 
             --murasaki: rgb(68, 13, 94); 
-            
+            --chairo: rgb(181, 135, 99);
+            --momoiro: rgb(245, 226, 195);
         }
 
 
@@ -22,7 +23,7 @@
         background-size: 100%;
         background-position: fixed;
         max-height: 1000px;
-    
+          background: black;
         
         }
 
@@ -42,9 +43,9 @@
             top: 0;
             display: flex;
             align-items: center;
-            background: var(--aoi);
+            background: var(--chairo);
             width: 100%;
-           
+           border-bottom: 10px solid var(--momoiro)
           }
 
           .navbar input[type = "text"]
@@ -68,24 +69,33 @@
           }
           .menu
           {
-            font-family: 'Comfortaa', cursive;
+            font-family: 'Josefin Sans', sans-serif;
             position: absolute;
             padding: 15px;
             right: 0px;
             
           }
+        
           .menu a{
-            color: azure;
             text-decoration: none;
-            font-weight: 700;
+            font-weight: 600;
             margin-left: 20px;
             transition: color 0.3s;
             text-transform: uppercase;
-          }
-          .menu a:hover{
-            color: deepskyblue;
+            color: var(--momoiro);
           }
 
+          /* .black
+          {
+            color: black;
+            
+          }
+          .white
+          {
+            color: rgb(226, 226, 226);
+           
+          } */
+         
           .menu a i
           {
             font-size: 25px;
@@ -231,16 +241,24 @@
             
           }
 
-            
+            @media (min-width : 601px)
+            {
+              .menu a:hover{
+                color: var(--midori);
+                border-bottom: 2px solid var(--midori);
+                margin-bottom: 10px;
+              }
+    
+            }
 
-            @media (max-width : 1050px) and (min-width : 601px)
+            /* @media (max-width : 1050px) and (min-width : 601px)
             {
                 .menu
                 {
                     padding: 0px;
                     left: 40%;
                 }
-            }
+            } */
 
           
 
@@ -306,13 +324,14 @@
                 width: 100%;
                 height: 0;
                 top: 80px;
-                background: var(--aoi);
+                background: var(--chairo);
                 overflow: hidden;
                 max-height: 0;
                 padding: 0;
                 animation: menuMobile;
                 
             }
+            
 
             .show
             {
