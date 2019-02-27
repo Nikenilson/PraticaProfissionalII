@@ -2,16 +2,58 @@
         <head>
         <meta charset="utf-8">
         <link type="text/css" href="/css/xadrez.css">
-        <script src="javascript/xadrez.js"></script>
+        
         <title>
             Xadrez
         </title>
         </head>
 
         <body>
-            <canvas id="meuCanvas" width="1440" height="900"
-            style="border:1px solid #000000;">
-            Seu browser não suporta o elemento CANVAS, atualize-se!!!
-            </canvas>
-        </body>
+                <canvas width="400" height="400"></canvas>
+                
+                <script>
+                
+                    function desenhaQuadrado(x, y, cor) {
+                
+                        var tela = document.querySelector("canvas");
+                        var pincel = tela.getContext('2d');
+                
+                        pincel.fillStyle = cor;
+                        pincel.fillRect(x, y, 50, 50);
+                        pincel.strokeStyle = 'black';
+                        pincel.strokeRect(x, y, 50, 50);
+                
+                    }
+                
+                    var x = 0;
+                    var y = 0;
+                    var cor = 'beige';
+                    contador = 1;
+                
+                    while (x <= 400 && y <= 400) {
+                
+                            desenhaQuadrado(x, y, cor);
+                            x += 50;
+                            contador += 1;
+                            if (x == 400) {
+                                x = 0;
+                                y += 50;
+                                contador -= 1;
+                            }
+                            if (contador % 2 == 0) {
+                                cor = 'black';
+                            }
+                            else {
+                                cor = 'beige';
+                            }
+                    }
+                
+                </script>                
+        <!-- <center>
+            <canvas id="meuCanvas" width="1440" height="900">
+        Seu browser não suporta o elemento CANVAS, atualize-se!!!
+        </canvas>
+        </center>
+        <script src="../javascript/xadrez.js"></script>
+        </body>-->
 </html>
