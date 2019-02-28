@@ -1,17 +1,15 @@
 
+  @import url('https://fonts.googleapis.com/css?family=MedievalSharp|Muli');
 
 
         :root
         {
             --aoi: rgb(26, 53, 91); 
-            --midori: rgb(36, 80, 31); 
+            --midori: rgb(36, 163, 22); 
             --murasaki: rgb(68, 13, 94); 
             --chairo: rgb(181, 135, 99);
             --momoiro: rgb(245, 226, 195);
         }
-
-
-       
 
 
         html, body
@@ -23,7 +21,8 @@
         background-size: 100%;
         background-position: fixed;
         max-height: 1000px;
-          background: black;
+          background: none;
+         
         
         }
 
@@ -34,11 +33,46 @@
         }
     
 
-   
+        /* .conteudo
+        {
+          background: rgba(0, 0, 0, 0.438);
+          width: 100%;
+          height: 100%;
+          position: absolute;
+        } */
+
+        .slogan
+        {
+          display: block;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+           width: 100%;
+           height: 1090px;
+            z-index: 1000;
+
+        }
+
+        .imgSlogan
+        {
+          background: url("https://cdn.discordapp.com/attachments/343176419821617162/550477543279558656/Sem_Titulo-1-Recuperado.jpg") no-repeat;
+          background-size: 100%;
+          background-attachment: fixed;
+          height: 100%;
+         width: 100%;
+         
+        }
+
+        .textSlogan
+        {
+
+        }
+
 
         .navbar{
             position: absolute;
-            height: 85px;
+            height: 12.5vh;
             overflow: hidden;
             top: 0;
             display: flex;
@@ -69,32 +103,31 @@
           }
           .menu
           {
-            font-family: 'Josefin Sans', sans-serif;
+            font-family: 'MedievalSharp', cursive;
             position: absolute;
             padding: 15px;
             right: 0px;
-            
+            cursor: context-menu;
           }
         
           .menu a{
             text-decoration: none;
+            font-size: 16pt;
             font-weight: 600;
             margin-left: 20px;
             transition: color 0.3s;
             text-transform: uppercase;
-            color: var(--momoiro);
+            color: var(--chairo);
+            letter-spacing: 2px;
+            /* PC */
+            background: var(--momoiro);
+            padding: 15px;
+            border-radius: 22.5px;
+            border-bottom: 5px solid rgb(218, 201, 173);
+            padding-bottom: 10px;
+            transition: 0.3s;
           }
 
-          /* .black
-          {
-            color: black;
-            
-          }
-          .white
-          {
-            color: rgb(226, 226, 226);
-           
-          } */
          
           .menu a i
           {
@@ -156,7 +189,7 @@
           {
               text-decoration: none;
               font-family: 'Permanent Marker', cursive;
-              font-size: 200%;
+              font-size: 40pt;
               color: white;
               border: 4px solid rgba(245, 245, 245, 0.767);
               padding: 10px 30px;
@@ -187,6 +220,7 @@
             display: none;
             position: absolute;
             right: 20px;
+            
           }
           
           .btn span{
@@ -195,6 +229,18 @@
             width: 40px;
             height: 3px;
             background: azure;
+          }
+
+          .btnX
+          {
+            font-size: 250%;
+            color: var(--chairo);
+            background: azure;
+            font-weight: 700;
+            padding: 4px 15px;
+            border-radius: 100%;
+            font-family: 'Muli', sans-serif;
+         
           }
 
           p{
@@ -210,8 +256,10 @@
           {
               min-height: 300px;
               padding: 15px;
+              
               display: block;
                 position: absolute;
+               
               
           }
 
@@ -244,9 +292,14 @@
             @media (min-width : 601px)
             {
               .menu a:hover{
-                color: var(--midori);
-                border-bottom: 2px solid var(--midori);
-                margin-bottom: 10px;
+                /* PC */
+                color: rgb(143, 143, 143);
+                /* padding: 15px;
+                border-radius: 20px; */
+                border-bottom: 5px solid rgba(119, 119, 119, 0.507);
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                background-color: #b8c6db;
+                background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%);
               }
     
             }
@@ -312,7 +365,8 @@
             .navbar
             {
                 overflow: visible;
-               
+               border-bottom: none;
+               border-bottom: 10px solid var(--chairo)
             }
 
 
@@ -328,12 +382,13 @@
                 overflow: hidden;
                 max-height: 0;
                 padding: 0;
-                animation: menuMobile;
+                
+                
                 
             }
             
 
-            .show
+            .show:hover
             {
                 animation-name: menuMobile;
                 animation-delay: 10s;
@@ -349,7 +404,17 @@
                 display: block;
                 text-align: center;
                 padding: 10px;
+                background: none;
+
                 margin: 0;
+                font-weight: 600;
+                margin-left: 20px;
+                transition: color 0.3s;
+                text-transform: uppercase;
+                color: var(--momoiro);
+                border-bottom: 0.5px solid rgba(255, 255, 255, 0.377);
+                max-width: 80vw;
+                border-radius: 0;
             }
 
             .btn
