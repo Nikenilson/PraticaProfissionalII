@@ -1,0 +1,133 @@
+@import "mixinsDoNaruto.scss";
+
+
+
+$kuro: #36454F;
+$shiro: #FFFAFA;
+$aoi: rgb(26, 53, 91); 
+$midori: rgb(36, 163, 22); 
+$murasaki: rgb(68, 13, 94); 
+$chairo: rgb(181, 135, 99);
+$momoiro: rgb(245, 226, 195);
+$med1: 'Srisakdi', cursive;
+$med2: 'MedievalSharp', cursive;
+
+%mp
+{
+    margin: 0;
+   padding: 0;
+}
+
+%back-fixo
+{
+    background-attachment: fixed;
+    background-size: 50%;
+    background-repeat: no-repeat;
+}
+
+body
+{
+   @extend %mp;
+   background: black;
+   @extend %back-fixo;
+ 
+
+   
+}
+
+%conteudo-centralizadoR
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+%conteudo-centralizadoC
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin font-medieval($color, $numb) 
+{
+    @if $numb == 1
+    {
+        font-weight: 700;
+        font-family: $med1;
+    }
+    @else
+    {
+        font-family: $med2;
+    }
+    color: $color;
+    text-shadow: 1px 1px 3px darken($color, 85%);
+}
+
+@mixin back-text($colorB, $colorT) 
+{
+    background: $colorB;
+    color: $colorT;
+}
+.fundo
+{
+    overflow: scroll;
+    max-height: 50vh;
+    img
+    {
+        width: 100%;
+        position: absolute;
+        z-index: 0;
+    }
+}
+
+
+.navbar
+{
+    
+    @extend %conteudo-centralizadoR;
+    min-height: 39vh;
+    
+    .navP 
+    {
+        height: 30vh;
+        width: 30vh;
+        border-radius: 100%;
+        background: rgba(0, 0, 0, 0.472);
+        z-index: 10000;
+        span
+        {
+            @extend %conteudo-centralizadoC;
+            font-family: $med1;
+            font-weight: 700;
+            color: white;
+            @include mq('desktop')
+            {
+                font-size: 30pt;
+            }
+            // @include mq('desktop-wide')
+            // {
+            //     font-size: 105pt;
+            // }
+            max-width: 100px;
+           
+           margin-top: 5vh;
+        }
+    }
+}
+
+.menu
+{
+    @extend %mp;
+    @extend %conteudo-centralizadoR;
+    @include back-text($chairo, $momoiro);
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+    max-height: 2vh;
+    a
+    {
+        @include font-medieval($momoiro, 2);
+    }
+}

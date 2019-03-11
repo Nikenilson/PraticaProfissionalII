@@ -1,0 +1,84 @@
+/*@include mq('tablet-wide') {
+    padding-top: 4rem;
+    font-size: 2.4rem;
+}*/
+a {
+  text-decoration: none;
+}
+
+.menu, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-attachment: fixed;
+  background-size: 50%;
+  background-repeat: no-repeat;
+}
+
+body {
+  background: black;
+}
+
+.menu, .navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar .navP span {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.fundo {
+  overflow: scroll;
+  max-height: 50vh;
+}
+.fundo img {
+  width: 100%;
+  position: absolute;
+  z-index: 0;
+}
+
+.navbar {
+  min-height: 39vh;
+}
+.navbar .navP {
+  height: 30vh;
+  width: 30vh;
+  border-radius: 100%;
+  background: rgba(0, 0, 0, 0.472);
+  z-index: 10000;
+}
+.navbar .navP span {
+  font-family: "Srisakdi", cursive;
+  font-weight: 700;
+  color: white;
+  max-width: 100px;
+  margin-top: 5vh;
+}
+@media only screen and (min-width: 1248px) {
+  .navbar .navP span {
+    font-size: 30pt;
+  }
+}
+
+.menu {
+  background: #b58763;
+  color: #f5e2c3;
+  padding-top: 3vh;
+  padding-bottom: 3vh;
+  max-height: 2vh;
+}
+.menu a {
+  font-family: "MedievalSharp", cursive;
+  color: #f5e2c3;
+  text-shadow: 1px 1px 3px #060401;
+}
+
+/*# sourceMappingURL=home.css.map */
