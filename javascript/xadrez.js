@@ -1,25 +1,53 @@
-alert("lixuuu")
-var objCanvas=null; // objeto que representa o canvas
-var objContexto=null; // objeto que representa o contexto do canvas
-
-var imgFundo = new Image();
-imgFundo.src = "../images/fundo.jpg";
-
-objCanvas = document.getElementById("meuCanvas");
-objContexto = objCanvas.getContext("2d");
-objContexto.drawImage(imgFundo,0,0);
-
 window.onload = function()
 {
-	objCanvas = document.getElementById("meuCanvas");
-	objContexto = objCanvas.getContext("2d");
+	desenhaTabuleiro();
 
-	AtualizaTela();
+	//AtualizaTela();
 }
 
-function AtualizaTela()
+/*function AtualizaTela()
 {
-	objContexto.drawImage(imgFundo,0,0);
+
+}*/
+
+function desenhaQuadrado(x, y, cor) 
+{
+	
+			var tela = document.getElementById("canvas");
+			var pincel = tela.getContext('2d');
+	
+			pincel.fillStyle = cor;
+			pincel.fillRect(x, y, 100, 100);
+			/*pincel.strokeStyle = 'black';
+			pincel.strokeRect(x, y, 100, 100);
+			*/
+	
+}
+
+function desenhaTabuleiro()
+{
+	var x = 0;
+	var y = 0;
+	var cor = 'beige';
+	contador = 1;
+
+	while (x <= 800 && y <= 800) {
+
+		desenhaQuadrado(x, y, cor);
+		x += 100;
+		contador += 1;
+		if (x == 800) 
+		{
+			x = 0;
+			y += 100;
+			contador -= 1;
+		}
+		if (contador % 2 == 0) 
+			cor = 'black';
+		else 
+			cor = 'beige';
+		
+	}
 
 }
 

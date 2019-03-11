@@ -1,0 +1,3 @@
+http://www.dbp-consulting.com/tutorials/canvas/index.html
+http://www.dbp-consulting.com/tutorials/canvas/CanvasKeyEvents.html
+http://www.canvaschess.com/index.php

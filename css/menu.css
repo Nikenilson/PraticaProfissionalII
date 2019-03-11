@@ -56,22 +56,43 @@
 
         .imgSlogan
         {
-          background: url("https://cdn.discordapp.com/attachments/343176419821617162/550477543279558656/Sem_Titulo-1-Recuperado.jpg") no-repeat;
-          background-size: 100%;
-          background-attachment: fixed;
-          height: 100%;
-         width: 100%;
+          object-fit: cover;
+          overflow-x: hidden;
+          
+          overflow: auto;
+          
+          max-height: 700px;
+          width: 100%;
          
+        }
+
+        .imgSlogan::-webkit-scrollbar {
+          width: 0px;
+        }
+        
+
+        .imgSlogan img
+        {
+          height: 50%;
+          width: 100%;
         }
 
         .textSlogan
         {
-
+          background: rgba(78, 83, 88, 0.493);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          height: 10vh;
+          width: 20vh;
+          position: absolute;
+          right: 400px;
+          top: 200px;
+          z-index: 1;
         }
 
 
         .navbar{
-            position: absolute;
+          z-index: 1000000000000000000000000000000000000000;
+            position: fixed;
             height: 12.5vh;
             overflow: hidden;
             top: 0;
@@ -79,7 +100,8 @@
             align-items: center;
             background: var(--chairo);
             width: 100%;
-           border-bottom: 10px solid var(--momoiro)
+           border-bottom: 10px solid var(--momoiro);
+           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
           }
 
           .navbar input[type = "text"]
