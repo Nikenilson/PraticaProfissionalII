@@ -38,7 +38,7 @@ body {
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555555;
+  background: deepskyblue
 }
 
 .menu, .navbar {
@@ -66,7 +66,7 @@ body {
 
 .navbar {
   min-height: 20vh;
-  background: #1a355b;
+  background: #356ab4;
   color: #FFFAFA;
 }
 .navbar span {
@@ -83,18 +83,16 @@ body {
 }
 
 .menu {
-  background: #1a355b;
+  background: #356ab4;
   color: #f7deb7;
-  border-top: 2px solid #172e4f;
   padding-top: 3vh;
   padding-bottom: 3vh;
-  max-height: 3vh;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  max-height: 3vh;  
 }
 .menu a {
   color: #b58763;
   letter-spacing: 2px;
-  /* PC */
+  /* PC */  
   font-family: "Raleway", sans-serif;
   font-weight: 600;
   color: whitesmoke;
@@ -102,10 +100,17 @@ body {
   text-shadow: 1px 1px 3px #1c1c1c;
   margin-right: 2vw;
   padding: 12.5px;
+  transition: 0.5s;
+  
 }
+
+
+
 .menu a:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 50px;
+  animation-name: teste;
+  animation-delay: 5s;
 }
 .menu i {
   font-size: 30pt;
