@@ -8,9 +8,9 @@ $aoi: rgb(26, 53, 91);
 $midori: rgb(36, 163, 22); 
 $murasaki: rgb(68, 13, 94); 
 $chairo: rgb(181, 135, 99);
-$momoiro: rgb(245, 226, 195);
+$momoiro: rgb(247, 222, 183);
 $med1: 'Srisakdi', cursive;
-$med2: 'MedievalSharp', cursive;
+$med2: 'Raleway', sans-serif;
 
 %mp
 {
@@ -35,6 +35,26 @@ body
    
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(85, 85, 85); 
+}
+
 %conteudo-centralizadoR
 {
     display: flex;
@@ -51,7 +71,7 @@ body
     align-items: center;
 }
 
-@mixin font-medieval($color, $numb) 
+@mixin font-medieval($color, $numb, $size) 
 {
     @if $numb == 1
     {
@@ -61,8 +81,10 @@ body
     @else
     {
         font-family: $med2;
+        font-weight: 600;
     }
     color: $color;
+    font-size: $size;
     text-shadow: 1px 1px 3px darken($color, 85%);
 }
 
@@ -73,13 +95,20 @@ body
 }
 .fundo
 {
-    overflow: scroll;
-    max-height: 50vh;
+    overflow: auto;
+    min-height: 50vh;
+    background: url('https://images.pexels.com/photos/301469/pexels-photo-301469.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+    background-attachment: fixed;
+    position: relative;
+    height: 100vh;
+    width: 100%;
     img
     {
         width: 100%;
         position: absolute;
         z-index: 0;
+        overflow: hidden;
+        
     }
 }
 
@@ -88,33 +117,17 @@ body
 {
     
     @extend %conteudo-centralizadoR;
-    min-height: 39vh;
-    
-    .navP 
+    min-height: 20vh;
+    @include back-text($aoi, $shiro);
+    span
     {
-        height: 30vh;
-        width: 30vh;
-        border-radius: 100%;
-        background: rgba(0, 0, 0, 0.472);
-        z-index: 10000;
-        span
-        {
-            @extend %conteudo-centralizadoC;
-            font-family: $med1;
-            font-weight: 700;
-            color: white;
-            @include mq('desktop')
-            {
-                font-size: 30pt;
-            }
-            // @include mq('desktop-wide')
-            // {
-            //     font-size: 105pt;
-            // }
-            max-width: 100px;
-           
-           margin-top: 5vh;
-        }
+        @include font-medieval(whitesmoke, 1, 50pt);
+        padding-bottom: 2.5vh;
+        border-bottom: 4px solid deepskyblue;
+    }
+    i
+    {
+       font-size: 60pt;
     }
 }
 
@@ -122,12 +135,40 @@ body
 {
     @extend %mp;
     @extend %conteudo-centralizadoR;
-    @include back-text($chairo, $momoiro);
+    @include back-text($aoi, $momoiro);
+    border-top: 2px solid darken($aoi, 3%);
     padding-top: 3vh;
     padding-bottom: 3vh;
-    max-height: 2vh;
+    max-height: 3vh;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     a
     {
-        @include font-medieval($momoiro, 2);
+       
+        // text-transform: uppercase;
+        color: $chairo;
+        letter-spacing: 2px;
+        /* PC */
+        @include font-medieval(whitesmoke, 2, 20pt);
+        margin-right: 2vw;  
+        padding: 12.5px;
+
+        &:hover
+        {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            border-radius: 50px;
+        }
+        
+    }
+    i
+    {
+        font-size: 30pt;
+        // background: rgb(85, 50, 30);
+        border: 2px solid $momoiro;
+        padding: 10px;
+        border-radius: 50px;
+        float: left;
+        margin: 20px;
     }
 }
+
+

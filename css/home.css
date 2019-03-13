@@ -21,6 +21,26 @@ body {
   background: black;
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555555;
+}
+
 .menu, .navbar {
   display: flex;
   flex-direction: row;
@@ -28,57 +48,72 @@ body {
   align-items: center;
 }
 
-.navbar .navP span {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
 .fundo {
-  overflow: scroll;
-  max-height: 50vh;
+  overflow: auto;
+  min-height: 50vh;
+  background: url("https://images.pexels.com/photos/301469/pexels-photo-301469.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  background-attachment: fixed;
+  position: relative;
+  height: 100vh;
+  width: 100%;
 }
 .fundo img {
   width: 100%;
   position: absolute;
   z-index: 0;
+  overflow: hidden;
 }
 
 .navbar {
-  min-height: 39vh;
+  min-height: 20vh;
+  background: #1a355b;
+  color: #FFFAFA;
 }
-.navbar .navP {
-  height: 30vh;
-  width: 30vh;
-  border-radius: 100%;
-  background: rgba(0, 0, 0, 0.472);
-  z-index: 10000;
-}
-.navbar .navP span {
-  font-family: "Srisakdi", cursive;
+.navbar span {
   font-weight: 700;
-  color: white;
-  max-width: 100px;
-  margin-top: 5vh;
+  font-family: "Srisakdi", cursive;
+  color: whitesmoke;
+  font-size: 50pt;
+  text-shadow: 1px 1px 3px #1c1c1c;
+  padding-bottom: 2.5vh;
+  border-bottom: 4px solid deepskyblue;
 }
-@media only screen and (min-width: 1248px) {
-  .navbar .navP span {
-    font-size: 30pt;
-  }
+.navbar i {
+  font-size: 60pt;
 }
 
 .menu {
-  background: #b58763;
-  color: #f5e2c3;
+  background: #1a355b;
+  color: #f7deb7;
+  border-top: 2px solid #172e4f;
   padding-top: 3vh;
   padding-bottom: 3vh;
-  max-height: 2vh;
+  max-height: 3vh;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .menu a {
-  font-family: "MedievalSharp", cursive;
-  color: #f5e2c3;
-  text-shadow: 1px 1px 3px #060401;
+  color: #b58763;
+  letter-spacing: 2px;
+  /* PC */
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  color: whitesmoke;
+  font-size: 20pt;
+  text-shadow: 1px 1px 3px #1c1c1c;
+  margin-right: 2vw;
+  padding: 12.5px;
+}
+.menu a:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 50px;
+}
+.menu i {
+  font-size: 30pt;
+  border: 2px solid #f7deb7;
+  padding: 10px;
+  border-radius: 50px;
+  float: left;
+  margin: 20px;
 }
 
 /*# sourceMappingURL=home.css.map */
