@@ -15,6 +15,11 @@ body {
   background-attachment: fixed;
   background-size: 50%;
   background-repeat: no-repeat;
+  background: white;
+}
+
+p{
+  background: white;
 }
 
 body {
@@ -23,17 +28,22 @@ body {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 20px;
+  height: 4px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #356ab4;
+  
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888;
+  background: whitesmoke;
+  max-height: 4px;
+  border-radius: 100px;
+  
 }
 
 /* Handle on hover */
@@ -56,6 +66,7 @@ body {
   position: relative;
   height: 100vh;
   width: 100%;
+  z-index: -1;
 }
 .fundo img {
   width: 100%;
@@ -87,7 +98,11 @@ body {
   color: #f7deb7;
   padding-top: 3vh;
   padding-bottom: 3vh;
+  height: 5vh;
   max-height: 3vh;  
+  position: sticky;
+  top: 0%;
+  min-height: 3vh;
 }
 .menu a {
   color: #b58763;
@@ -124,7 +139,9 @@ body {
 .scrolling
 {
   position: fixed;
-  top: 200px;
+  top: 0;
+  width: 100%;
+  z-index: 10000000000000000000000000000000000000000000000000000000000000;
 }
 
 /*# sourceMappingURL=home.css.map */
