@@ -6,6 +6,61 @@ a {
   text-decoration: none;
 }
 
+@keyframes btnMenured {
+  0% {
+    background: red;
+  }
+  50% {
+    background: black;
+  }
+  100% {
+    background: red;
+  }
+}
+@keyframes btnMenublue {
+  0% {
+    background: blue;
+  }
+  50% {
+    background: black;
+  }
+  100% {
+    background: blue;
+  }
+}
+@keyframes btnMenuyellow {
+  0% {
+    background: yellow;
+  }
+  50% {
+    background: black;
+  }
+  100% {
+    background: yellow;
+  }
+}
+@keyframes btnMenugreen {
+  0% {
+    background: green;
+  }
+  50% {
+    background: black;
+  }
+  100% {
+    background: green;
+  }
+}
+@keyframes btnMenu {
+  0% {
+    background: #356ab4;
+  }
+  50% {
+    background: black;
+  }
+  100% {
+    background: #356ab4;
+  }
+}
 .menu, body {
   margin: 0;
   padding: 0;
@@ -15,27 +70,20 @@ body {
   background-attachment: fixed;
   background-size: 50%;
   background-repeat: no-repeat;
-  background: white;
-}
-
-p{
-  background: white;
 }
 
 body {
-  background: black;
+  background: #356ab4;
 }
 
 /* width */
 ::-webkit-scrollbar {
   width: 20px;
-  height: 4px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
   background: #356ab4;
-  
 }
 
 /* Handle */
@@ -43,12 +91,11 @@ body {
   background: whitesmoke;
   max-height: 4px;
   border-radius: 100px;
-  
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: deepskyblue;
+  background: #78a0d7;
 }
 
 .menu, .navbar {
@@ -63,10 +110,8 @@ body {
   min-height: 50vh;
   background: url("https://images.pexels.com/photos/301469/pexels-photo-301469.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
   background-attachment: fixed;
-  position: relative;
   height: 100vh;
   width: 100%;
-  z-index: -1;
 }
 .fundo img {
   width: 100%;
@@ -87,27 +132,25 @@ body {
   font-size: 50pt;
   text-shadow: 1px 1px 3px #1c1c1c;
   padding-bottom: 2.5vh;
-  border-bottom: 4px solid deepskyblue;
+  border-bottom: 4px solid #78a0d7;
 }
 .navbar i {
   font-size: 60pt;
 }
 
 .menu {
-  background: #356ab4;
-  color: #f7deb7;
+  background: none;
+  max-height: 3vh;
   padding-top: 3vh;
   padding-bottom: 3vh;
-  height: 5vh;
-  max-height: 3vh;  
   position: sticky;
-  top: 0%;
+  top: 0;
   min-height: 3vh;
 }
 .menu a {
   color: #b58763;
   letter-spacing: 2px;
-  /* PC */  
+  /* PC */
   font-family: "Raleway", sans-serif;
   font-weight: 600;
   color: whitesmoke;
@@ -116,16 +159,10 @@ body {
   margin-right: 2vw;
   padding: 12.5px;
   transition: 0.5s;
-  
 }
-
-
-
 .menu a:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 50px;
-  animation-name: teste;
-  animation-delay: 5s;
 }
 .menu i {
   font-size: 30pt;
@@ -134,14 +171,6 @@ body {
   border-radius: 50px;
   float: left;
   margin: 20px;
-}
-
-.scrolling
-{
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 10000000000000000000000000000000000000000000000000000000000000;
 }
 
 /*# sourceMappingURL=home.css.map */

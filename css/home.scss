@@ -1,17 +1,33 @@
 @import "mixinsDoNaruto.scss";
 
 
+$array: red, blue, yellow, green, orange;
+
+@for $i from 1 through 4
+{
+    @keyframes btnMenu#{nth($array, $i)}
+    { 0% { background: nth($array, $i); }
+    50% { background: darken(nth($array, $i), 60%); }
+    100% { background: nth($array, $i); } }
+}
+
+    
+
 
 $kuro: #36454F;
 $shiro: #FFFAFA;
-$aoi: rgb(26, 53, 91); 
-$midori: rgb(36, 163, 22); 
+$masterColor: #356ab4; 
+$midori: rgb(22, 163, 116); 
 $murasaki: rgb(68, 13, 94); 
 $chairo: rgb(181, 135, 99);
 $momoiro: rgb(247, 222, 183);
 $med1: 'Srisakdi', cursive;
 $med2: 'Raleway', sans-serif;
-
+        
+@keyframes btnMenu
+{ 0% { background: $masterColor; }
+50% { background: darken($masterColor, 60%); }
+100% { background: $masterColor; } }
 %mp
 {
     margin: 0;
@@ -28,7 +44,7 @@ $med2: 'Raleway', sans-serif;
 body
 {
    @extend %mp;
-   background: black;
+   background: $masterColor;
    @extend %back-fixo;
  
 
@@ -37,22 +53,24 @@ body
 
 /* width */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 20px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1; 
+  background: $masterColor; 
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888; 
+    background: whitesmoke;
+    max-height: 4px;
+    border-radius: 100px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: rgb(85, 85, 85); 
+  background: lighten($masterColor, 20%); 
 }
 
 %conteudo-centralizadoR
@@ -93,13 +111,17 @@ body
     background: $colorB;
     color: $colorT;
 }
+
+
+
+
+
 .fundo
 {
     overflow: auto;
     min-height: 50vh;
     background: url('https://images.pexels.com/photos/301469/pexels-photo-301469.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
     background-attachment: fixed;
-    position: relative;
     height: 100vh;
     width: 100%;
     img
@@ -118,12 +140,12 @@ body
     
     @extend %conteudo-centralizadoR;
     min-height: 20vh;
-    @include back-text($aoi, $shiro);
+    @include back-text($masterColor, $shiro);
     span
     {
         @include font-medieval(whitesmoke, 1, 50pt);
         padding-bottom: 2.5vh;
-        border-bottom: 4px solid deepskyblue;
+        border-bottom: 4px solid lighten($masterColor, 20%);
     }
     i
     {
@@ -131,16 +153,22 @@ body
     }
 }
 
+
+
+
 .menu
 {
     @extend %mp;
     @extend %conteudo-centralizadoR;
-    @include back-text($aoi, $momoiro);
-    border-top: 2px solid darken($aoi, 3%);
+   background: none;
+    
+    max-height: 3vh;  
     padding-top: 3vh;
     padding-bottom: 3vh;
-    max-height: 3vh;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    position: sticky;
+    top: 0;
+    min-height: 3vh;
+   
     a
     {
        
@@ -151,11 +179,15 @@ body
         @include font-medieval(whitesmoke, 2, 20pt);
         margin-right: 2vw;  
         padding: 12.5px;
+        transition: 0.5s;
+        
 
         &:hover
         {
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
             border-radius: 50px;
+            
+          
         }
         
     }
@@ -170,5 +202,4 @@ body
         margin: 20px;
     }
 }
-
 
