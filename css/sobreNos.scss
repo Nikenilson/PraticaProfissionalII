@@ -1,0 +1,14 @@
+
+
+@import "mixinsDoNaruto.scss";
+@import "home.scss";
+
+html
+{
+    @include alterPageColor($sobreNos);
+}
+
+body
+{
+    
+}

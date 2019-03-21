@@ -6,6 +6,14 @@ a {
   text-decoration: none;
 }
 
+/*@include mq('tablet-wide') {
+    padding-top: 4rem;
+    font-size: 2.4rem;
+}*/
+a {
+  text-decoration: none;
+}
+
 @keyframes btnMenu {
   0% {
     background: #356ab4;
@@ -131,4 +139,24 @@ body {
   margin: 20px;
 }
 
-/*# sourceMappingURL=home.css.map */
+html body {
+  background: #5b2b85;
+}
+html .navbar, html .menu:hover, html body {
+  background: #5b2b85;
+}
+html .navbar span, html .menu:hover span, html body span {
+  border-bottom: 4px solid #8f50c6;
+}
+html .navbar {
+  background: #5b2b85;
+  color: #FFFAFA;
+}
+html ::-webkit-scrollbar-track {
+  background: #5b2b85;
+}
+html ::-webkit-scrollbar-thumb:hover {
+  background: #8f50c6;
+}
+
+/*# sourceMappingURL=sobreNos.css.map */

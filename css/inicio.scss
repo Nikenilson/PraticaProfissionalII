@@ -1,0 +1,64 @@
+@import "mixinsDoNaruto.scss";
+
+
+body
+{
+    margin: 0;
+    padding:  0;
+    background: url("https://images7.alphacoders.com/589/589602.jpg");
+    background-size: 100%;
+    background-attachment: fixed;
+}
+
+
+
+.central
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    .login
+    {
+        background: rgba(0, 0, 0, 0.726);
+        padding: 50pt;
+        margin-top: 10%;
+        border-radius: 40pt;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        p
+        {
+            @include font-edictor(whitesmoke, 3, 20pt, 00);
+            margin-top: -3vh;
+        }
+        h1
+        {
+            @include font-edictor(whitesmoke, 1, 50pt, 700);
+            padding-bottom: 2.5vh;
+           
+            i
+            {
+                font-size: 60pt;
+            }
+        }
+        span
+        {
+            @include font-edictor(whitesmoke, 2, 25pt, 600);
+            input
+            {
+                @include font-edictor(whitesmoke, 2, 20pt, 600);
+                background: none;
+                border: none;
+                outline: none;
+                margin-left: 1vw;
+                border-bottom: 2pt solid $chat;
+            }
+        }
+        
+    }
+}

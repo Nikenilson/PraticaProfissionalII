@@ -3,24 +3,54 @@
 
 $array: red, blue, yellow, green, orange;
 
-@for $i from 1 through 4
+// @for $i from 1 through 4
+// {
+//     @keyframes btnMenu#{$i}
+//     { 0% { background: nth($array, $i); }
+//     50% { background: darken(nth($array, $i), 60%); }
+//     100% { background: nth($array, $i); } }
+// }
+
+
+
+
+// $masterColor: #356ab4; 
+$masterColor: $home;
+
+@mixin alterPageColor($color)
 {
-    @keyframes btnMenu#{nth($array, $i)}
-    { 0% { background: nth($array, $i); }
-    50% { background: darken(nth($array, $i), 60%); }
-    100% { background: nth($array, $i); } }
+    body
+    {
+        background: $color;
+    }
+    .navbar, .menu:hover, body
+    {
+        background: $color;
+        span
+        {
+            border-bottom: 4px solid lighten($color, 20%);
+        }
+    }
+
+    .navbar
+    {
+        @include back-text($color, $shiro);
+       
+    }
+
+    ::-webkit-scrollbar-track {
+        background: $color; 
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: lighten($color, 20%); 
+      }
+      
 }
 
-    
+$abas: home, regras, chat, historia, sobreNos;
 
 
-$kuro: #36454F;
-$shiro: #FFFAFA;
-$masterColor: #356ab4; 
-$midori: rgb(22, 163, 116); 
-$murasaki: rgb(68, 13, 94); 
-$chairo: rgb(181, 135, 99);
-$momoiro: rgb(247, 222, 183);
 $med1: 'Srisakdi', cursive;
 $med2: 'Raleway', sans-serif;
         
@@ -28,6 +58,7 @@ $med2: 'Raleway', sans-serif;
 { 0% { background: $masterColor; }
 50% { background: darken($masterColor, 60%); }
 100% { background: $masterColor; } }
+
 %mp
 {
     margin: 0;
@@ -73,46 +104,6 @@ body
   background: lighten($masterColor, 20%); 
 }
 
-%conteudo-centralizadoR
-{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-%conteudo-centralizadoC
-{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-@mixin font-medieval($color, $numb, $size) 
-{
-    @if $numb == 1
-    {
-        font-weight: 700;
-        font-family: $med1;
-    }
-    @else
-    {
-        font-family: $med2;
-        font-weight: 600;
-    }
-    color: $color;
-    font-size: $size;
-    text-shadow: 1px 1px 3px darken($color, 85%);
-}
-
-@mixin back-text($colorB, $colorT) 
-{
-    background: $colorB;
-    color: $colorT;
-}
-
-
 
 
 
@@ -143,7 +134,7 @@ body
     @include back-text($masterColor, $shiro);
     span
     {
-        @include font-medieval(whitesmoke, 1, 50pt);
+        @include font-edictor(whitesmoke, 1, 50pt);
         padding-bottom: 2.5vh;
         border-bottom: 4px solid lighten($masterColor, 20%);
     }
@@ -168,15 +159,16 @@ body
     position: sticky;
     top: 0;
     min-height: 3vh;
-   
+    transition: 0.5s;
+   &:hover
+   {
+       background: $masterColor;
+   }
     a
     {
-       
-        // text-transform: uppercase;
-        color: $chairo;
         letter-spacing: 2px;
         /* PC */
-        @include font-medieval(whitesmoke, 2, 20pt);
+        @include font-edictor(whitesmoke, 2, 20pt);
         margin-right: 2vw;  
         padding: 12.5px;
         transition: 0.5s;
@@ -195,11 +187,11 @@ body
     {
         font-size: 30pt;
         // background: rgb(85, 50, 30);
-        border: 2px solid $momoiro;
         padding: 10px;
         border-radius: 50px;
         float: left;
         margin: 20px;
     }
+   
 }
 

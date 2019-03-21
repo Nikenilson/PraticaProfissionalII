@@ -75,3 +75,50 @@ a
 {
     text-decoration: none;
 }
+
+@import url('https://fonts.googleapis.com/css?family=Germania+One');
+
+$kuro: #36454F;
+$shiro: #FFFAFA;
+$home: #356ab4;
+$chat: rgb(28, 190, 136); 
+$regras: rgb(181, 34, 42);
+$historia: rgb(230, 69, 1);
+$sobreNos: rgb(91, 43, 133);
+
+$med1: 'Srisakdi', cursive;
+$med2: 'Raleway', sans-serif;
+
+%conteudo-centralizadoR
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+%conteudo-centralizadoC
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+$fonts:'Srisakdi', 'Raleway', 'Germania One';
+
+@mixin font-edictor($color, $numb, $size, $weight) 
+{
+    font-weight: $weight;
+    font-family: nth($fonts, $numb);
+    color: $color;
+    font-size: $size;
+    text-shadow: 1px 1px 3px darken($color, 85%);
+}
+
+@mixin back-text($colorB, $colorT) 
+{
+    background: $colorB;
+    color: $colorT;
+}
+
