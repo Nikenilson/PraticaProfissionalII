@@ -13,14 +13,14 @@ window.onload = function()
 function desenhaQuadrado(x, y, cor) 
 {
 	
-			var tela = document.getElementById("canvas");
-			var pincel = tela.getContext('2d');
+	var tela = document.getElementById("canvas");
+	var pincel = tela.getContext('2d');
 	
-			pincel.fillStyle = cor;
-			pincel.fillRect(x, y, 100, 100);
-			/*pincel.strokeStyle = 'black';
-			pincel.strokeRect(x, y, 100, 100);
-			*/
+	pincel.fillStyle = cor;
+	pincel.fillRect(x, y, 100, 100);
+	/*pincel.strokeStyle = 'black';
+	pincel.strokeRect(x, y, 100, 100);
+	*/
 	
 }
 
