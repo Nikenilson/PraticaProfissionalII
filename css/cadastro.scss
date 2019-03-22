@@ -18,7 +18,7 @@ body
     
     @include mq(tablet)
     {
-        background: url("https://images7.alphacoders.com/589/589602.jpg") no-repeat center center fixed;
+        background: url("https://images.pexels.com/photos/1334441/pexels-photo-1334441.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260") no-repeat center center fixed;
         background-size: 100%;
         background-attachment: fixed;
     }
@@ -52,9 +52,6 @@ body
     justify-content: center;
     align-items: center;
     text-align: center;
-
-
-
     
     .login
     {
@@ -112,6 +109,7 @@ body
                 margin-left: 1vw;
                 border-bottom: 2pt solid $chat;
             }
+            margin: 4pt;
         }
         a
         {
