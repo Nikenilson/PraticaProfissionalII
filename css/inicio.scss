@@ -5,11 +5,43 @@ body
 {
     margin: 0;
     padding:  0;
-    background: url("https://images7.alphacoders.com/589/589602.jpg");
-    background-size: 100%;
+    
+   
+     
+    @include mq(phone)
+    {
+       background: url("https://i.pinimg.com/564x/1a/cc/b7/1accb78b3e9cafcfcdc4c3d9c6995765.jpg") no-repeat center center fixed;
+       background-size: 100%;
     background-attachment: fixed;
+    }
+
+    
+    @include mq(tablet)
+    {
+        background: url("https://images7.alphacoders.com/589/589602.jpg") no-repeat center center fixed;
+        background-size: 100%;
+        background-attachment: fixed;
+    }
+    
 }
 
+
+@keyframes btnAnimation
+{
+    0%
+    {
+        background: $chat;
+    }
+    50%
+    {
+        background: mediumspringgreen;
+        border: 2px solid mediumspringgreen;
+    }
+    100%
+    {
+        background: $chat;
+    }
+}
 
 
 .central
@@ -24,17 +56,27 @@ body
     {
         background: rgba(0, 0, 0, 0.726);
         padding: 50pt;
-        margin-top: 10%;
+        @include mq(phone)
+        {
+            border-radius: 0;
+            margin-top: 0;
+        }
+        @include mq(tablet)
+        {
+            margin-top: 10%;
         border-radius: 40pt;
+        }
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         text-align: center;
+        
         p
         {
             @include font-edictor(whitesmoke, 3, 20pt, 00);
             margin-top: -3vh;
+            
         }
         h1
         {
@@ -44,6 +86,14 @@ body
             i
             {
                 font-size: 60pt;
+                @include mq(phone)
+                {
+                    font-size: 40pt;
+                }
+            }
+            @include mq(phone)
+            {
+                    @include font-edictor(whitesmoke, 1, 35pt, 00);
             }
         }
         span
@@ -57,6 +107,27 @@ body
                 outline: none;
                 margin-left: 1vw;
                 border-bottom: 2pt solid $chat;
+            }
+        }
+        a
+        {
+            @include font-edictor(whitesmoke, 2, 20pt, 550);
+            padding: 6pt;
+            border-radius: 50pt;
+            border: 2px solid $chat;
+            margin: 10pt;
+            cursor: pointer;
+            transition: 0.5s;
+            &:hover
+            {
+                @include mq(desktop)
+                {
+                    background: $chat;
+                    animation-name: btnAnimation;
+                    animation-duration: 1.2s;
+                    animation-iteration-count: infinite;
+                }
+                
             }
         }
         

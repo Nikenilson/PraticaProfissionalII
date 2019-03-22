@@ -22,15 +22,29 @@ $masterColor: $home;
     body
     {
         background: $color;
+        // .menu
+        // {
+        //     a
+        //     {
+        //         border-bottom: 2pt solid darken($color, 10);
+        //     }
+        // }
     }
+
+    
+    
     .navbar, .menu:hover, body
     {
         background: $color;
         span
         {
             border-bottom: 4px solid lighten($color, 20%);
+            
         }
     }
+
+
+    
 
     .navbar
     {
@@ -134,7 +148,7 @@ body
     @include back-text($masterColor, $shiro);
     span
     {
-        @include font-edictor(whitesmoke, 1, 50pt);
+        @include font-edictor(whitesmoke, 1, 50pt, 600);
         padding-bottom: 2.5vh;
         border-bottom: 4px solid lighten($masterColor, 20%);
     }
@@ -168,19 +182,26 @@ body
     {
         letter-spacing: 2px;
         /* PC */
-        @include font-edictor(whitesmoke, 2, 20pt);
+        @include font-edictor(whitesmoke, 2, 20pt, 600);
         margin-right: 2vw;  
         padding: 12.5px;
         transition: 0.5s;
+
+        border-bottom: 2pt solid rgba(0, 0, 0, 0.198);
+   
         
+    
 
         &:hover
         {
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
             border-radius: 50px;
-            
-          
         }
+
+        // &:active
+        // {
+        //     border-bottom: none;
+        // }
         
     }
     i
