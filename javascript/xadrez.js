@@ -24,6 +24,55 @@ function desenhaQuadrado(x, y, cor)
 	
 }
 
+function drawPiece(cor,x,y, piece) //Tá em ingles porque em portugues fica feio demais(desenhaPeca)
+{
+	var tela = document.getElementById("canvas");
+	var pincel = tela.getContext('2d');
+	var img = new Image();
+
+	if(cor == "White" ||cor == "W" ||cor == "Brancas" ||cor == "B")
+	{
+		switch(piece)
+		{
+			case "pA":
+			img.src = 'peaoBranco.jpg';
+			pincel.drawImage(img, x, y);
+			break;
+			case "pB":
+			img.src = 'peaoBranco.jpg';
+			pincel.drawImage(img, x, y);
+			break;
+			case "pC":
+			img.src = 'peaoBranco.jpg';
+			pincel.drawImage(img, x, y);
+			break;
+			case "pD":
+			img.src = 'peaoBranco.jpg';
+			pincel.drawImage(img, x, y);
+			break;
+			case "pE":
+			img.src = 'peaoBranco.jpg';
+			pincel.drawImage(img, x, y);
+			break;
+			case "pF":
+			img.src = 'peaoBranco.jpg';
+			pincel.drawImage(img, x, y);
+			break;
+			case "pG":
+			img.src = 'peaoBranco.jpg';
+			pincel.drawImage(img, x, y);
+			break;
+			case "pH":
+			img.src = 'peaoBranco.jpg';
+			pincel.drawImage(img, x, y);
+			break;
+
+			case "":
+			break;
+		}
+	}
+}
+
 function desenhaTabuleiro()
 {
 	var x = 0;

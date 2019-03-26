@@ -3,3 +3,5 @@ http://www.dbp-consulting.com/tutorials/canvas/CanvasKeyEvents.html
 http://www.canvaschess.com/index.php
 https://lavrton.com/hit-region-detection-for-html5-canvas-and-how-to-listen-to-click-events-on-canvas-shapes-815034d7e9f8/
 https://konvajs.org/docs/
+
+https://github.com/freeeve/pgn //My boi, that's right
