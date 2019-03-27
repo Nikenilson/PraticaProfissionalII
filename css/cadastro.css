@@ -44,6 +44,8 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
+  background: rgba(0, 0, 0, 0.308);
+  min-height: 125vh;
 }
 .central .login {
   background: rgba(0, 0, 0, 0.726);
@@ -138,6 +140,86 @@ body {
     animation-name: btnAnimation;
     animation-duration: 1.2s;
     animation-iteration-count: infinite;
+  }
+}
+
+img {
+  height: 70px;
+  width: 60px;
+  margin-top: -10em;
+}
+@media only screen and (min-width: 320px) {
+  img {
+    display: none;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  img {
+    display: block;
+  }
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300vh;
+  background: #eeeeee;
+}
+
+.loader {
+  max-width: 15rem;
+  width: 100%;
+  height: auto;
+  stroke-linecap: round;
+}
+
+@media only screen and (min-width: 320px) {
+  circle {
+    display: none;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  circle {
+    display: block;
+    fill: none;
+    stroke-width: 10;
+    animation-name: preloader;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    transform-origin: 170px 170px;
+    will-change: transform;
+  }
+  circle:nth-of-type(1) {
+    stroke-dasharray: 550px;
+  }
+  circle:nth-of-type(2) {
+    stroke-dasharray: 500px;
+  }
+  circle:nth-of-type(3) {
+    stroke-dasharray: 450px;
+  }
+  circle:nth-of-type(4) {
+    stroke-dasharray: 300px;
+  }
+  circle:nth-of-type(1) {
+    animation-delay: -0.15s;
+  }
+  circle:nth-of-type(2) {
+    animation-delay: -0.3s;
+  }
+  circle:nth-of-type(3) {
+    animation-delay: -0.45s;
+  }
+  circle:nth-of-type(4) {
+    animation-delay: -0.6s;
+  }
+}
+
+@keyframes preloader {
+  50% {
+    transform: rotate(450deg);
   }
 }
 

@@ -52,7 +52,8 @@ body
     justify-content: center;
     align-items: center;
     text-align: center;
-    
+    background: rgba(0, 0, 0, 0.308);
+    min-height: 125vh;
     .login
     {
         background: rgba(0, 0, 0, 0.726);
@@ -134,4 +135,88 @@ body
         }
         
     }
+}
+
+
+img 
+{
+    height: 70px;
+    width: 60px;
+    margin-top: -10em;
+    @include mq('phone') {
+        display: none;
+    }
+    @include mq('tablet-wide') {
+        display: block;
+    }
+}
+
+// copied
+
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 300vh;
+	background: #eeeeee;
+}
+
+.loader {
+	max-width: 15rem;
+	width: 100%;
+	height: auto;
+    stroke-linecap: round;
+    
+}
+
+circle {
+
+     
+    @include mq('phone') {
+        display: none;
+    }
+    
+    @include mq('tablet-wide') {
+        display: block;
+        fill: none;
+        stroke-width: 10;
+        animation-name: preloader;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+        transform-origin: 170px 170px;
+        will-change: transform;
+    
+        &:nth-of-type(1) {
+            stroke-dasharray: 550px;
+        }
+    
+        &:nth-of-type(2) {
+            stroke-dasharray: 500px;
+        }
+    
+        &:nth-of-type(3) {
+            stroke-dasharray: 450px;
+        }
+    
+        &:nth-of-type(4) {
+            stroke-dasharray: 300px;
+        }
+    
+        @for $i from 1 through 4 {
+            &:nth-of-type(#{$i}) {
+                animation-delay: -#{$i * 0.15}s;
+            }
+        }
+    }
+   
+	
+    
+  
+}
+
+@keyframes preloader {
+	50% {
+		transform: rotate(450deg);
+	}
 }

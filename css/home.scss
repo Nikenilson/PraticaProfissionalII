@@ -43,7 +43,37 @@ $masterColor: $home;
         }
     }
 
+    .conteudo
+    {
+        ::-webkit-scrollbar {
+            width: 0;
+          }
+        .back
+        {
+            overflow: auto;
+            h1
+            {
+                @include font-edictor(lighten($color, 20%), 1, 82pt, 800);
+            }
+            p
+            {
+                @include font-edictor(lighten($color, 20%), 2, 20pt, 800);
+                max-width: 95%;
+                word-wrap: break-word;
+            }
+        }
+      
+    }
 
+    .edit
+    {
+        border-left: 5pt solid lighten($color, 20%);
+        background: lighten($color, 10%);
+        span
+        {
+            border-bottom: none;
+        }
+    }
     
 
     .navbar

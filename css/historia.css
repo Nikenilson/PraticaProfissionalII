@@ -4,6 +4,8 @@
 }*/
 @import url("https://fonts.googleapis.com/css?family=Germania+One");
 @import url("https://fonts.googleapis.com/css?family=Germania+One");
+@import url("https://fonts.googleapis.com/css?family=Germania+One");
+@import url("https://fonts.googleapis.com/css?family=Germania+One");
 a {
   text-decoration: none;
 }
@@ -13,6 +15,14 @@ a {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+
+.conteudo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 /*@include mq('tablet-wide') {
@@ -28,6 +38,14 @@ a {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+
+.conteudo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 @keyframes btnMenu {
@@ -149,6 +167,118 @@ body {
   margin: 20px;
 }
 
+/*@include mq('tablet-wide') {
+    padding-top: 4rem;
+    font-size: 2.4rem;
+}*/
+a {
+  text-decoration: none;
+}
+
+.navbar, .menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.conteudo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.menu i {
+  cursor: pointer;
+  transition: 0.5s;
+  position: absolute;
+  top: -1vh;
+  right: 0;
+  top: -15vh;
+}
+.menu i:hover {
+  color: white;
+}
+
+.editando {
+  max-width: 70%;
+}
+
+@keyframes plus {
+  50% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.edit {
+  z-index: 11111111121119090000;
+  position: fixed;
+  right: 0%;
+  top: 0;
+  width: 30%;
+  background: blue;
+  height: 100vh;
+}
+.edit span {
+  margin: 10px;
+  font-weight: 800;
+  font-family: "Raleway";
+  color: #FFFAFA;
+  font-size: 20pt;
+  text-shadow: 1px 1px 3px #480000;
+  padding: 10pt;
+}
+.edit span input, .edit span textarea {
+  font-weight: 200;
+  font-family: "Raleway";
+  color: black;
+  font-size: 20pt;
+  text-shadow: 1px 1px 3px black;
+  border-radius: 20pt;
+  padding: 5pt;
+  border: none;
+  outline: none;
+}
+.edit span i {
+  margin-right: 1vw;
+  font-size: 30pt;
+}
+.edit span i:hover {
+  animation-name: plus;
+  animation-duration: 1.2s;
+  animation-iteration-count: 1;
+  cursor: pointer;
+}
+.edit .hh {
+  margin: 10px;
+  font-weight: 800;
+  font-family: "Srisakdi";
+  color: #FFFAFA;
+  font-size: 42pt;
+  text-shadow: 1px 1px 3px #480000;
+}
+
+.menu {
+  z-index: 4;
+}
+
+.conteudo .back {
+  z-index: 0;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.6);
+  height: 100%;
+  width: 100%;
+  top: 29%;
+}
+
+.navbar {
+  z-index: 9.999999999999998e+40;
+}
+
 html body {
   background: #e64501;
 }
@@ -157,6 +287,35 @@ html .navbar, html .menu:hover, html body {
 }
 html .navbar span, html .menu:hover span, html body span {
   border-bottom: 4px solid #fe834f;
+}
+html .conteudo ::-webkit-scrollbar {
+  width: 0;
+}
+html .conteudo .back {
+  overflow: auto;
+}
+html .conteudo .back h1 {
+  font-weight: 800;
+  font-family: "Srisakdi";
+  color: #fe834f;
+  font-size: 82pt;
+  text-shadow: 1px 1px 3px black;
+}
+html .conteudo .back p {
+  font-weight: 800;
+  font-family: "Raleway";
+  color: #fe834f;
+  font-size: 20pt;
+  text-shadow: 1px 1px 3px black;
+  max-width: 95%;
+  word-wrap: break-word;
+}
+html .edit {
+  border-left: 5pt solid #fe834f;
+  background: #fe5f1c;
+}
+html .edit span {
+  border-bottom: none;
 }
 html .navbar {
   background: #e64501;
@@ -171,6 +330,45 @@ html ::-webkit-scrollbar-thumb:hover {
 
 body .fundo {
   background: url("https://imgnooz.com/sites/default/files/wallpaper/travel/66405/hohenzollern-castle-wallpapers-66405-6505983.jpg");
+}
+
+#f1 {
+  font-family: "Srisakdi";
+  cursor: pointer;
+}
+#f1:target {
+  color: black;
+}
+
+html .conteudo .back .w1 {
+  font-weight: 10;
+  cursor: pointer;
+}
+
+#f2 {
+  font-family: "Raleway";
+  cursor: pointer;
+}
+#f2:target {
+  color: black;
+}
+
+html .conteudo .back .w2 {
+  font-weight: 500;
+  cursor: pointer;
+}
+
+#f3 {
+  font-family: "Germania One";
+  cursor: pointer;
+}
+#f3:target {
+  color: black;
+}
+
+html .conteudo .back .w3 {
+  font-weight: 900;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=historia.css.map */
