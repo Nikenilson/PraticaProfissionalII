@@ -114,7 +114,15 @@ $fonts:'Srisakdi', 'Raleway', 'Germania One';
     font-family: nth($fonts, $numb);
     color: $color;
     font-size: $size;
-    text-shadow: 1px 1px 3px darken($color, 85%);
+    text-shadow: 1px 1px 1px darken($color, 85%);
+}
+
+@mixin font-edictorS($color, $numb, $size, $weight) 
+{
+    font-weight: $weight;
+    font-family: nth($fonts, $numb);
+    color: $color;
+    font-size: $size;
 }
 
 @mixin back-text($colorB, $colorT) 
