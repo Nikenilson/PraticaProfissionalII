@@ -128,6 +128,10 @@ body {
 .navbar i {
   font-size: 60pt;
 }
+.navbar img {
+  height: 70px;
+  width: 60px;
+}
 
 .menu {
   background: none;
@@ -165,6 +169,31 @@ body {
   border-radius: 50px;
   float: left;
   margin: 20px;
+}
+
+.menu .btnChat:hover {
+  background: #1cbe88;
+  border-bottom: 2pt solid #159268;
+}
+
+.menu .btnRegras:hover {
+  background: #b5222a;
+  border-bottom: 2pt solid #8a1a20;
+}
+
+.menu .btnGame:hover {
+  background: #36454F;
+  border-bottom: 2pt solid #212b31;
+}
+
+.menu .btnHistoria:hover {
+  background: #e64501;
+  border-bottom: 2pt solid #b33601;
+}
+
+.menu .btnSobreNos:hover {
+  background: #5b2b85;
+  border-bottom: 2pt solid #411f5e;
 }
 
 /*@include mq('tablet-wide') {
@@ -369,6 +398,10 @@ html .conteudo .back .w2 {
 html .conteudo .back .w3 {
   font-weight: 900;
   cursor: pointer;
+}
+
+html .conteudo .back p {
+  color: white;
 }
 
 /*# sourceMappingURL=historia.css.map */

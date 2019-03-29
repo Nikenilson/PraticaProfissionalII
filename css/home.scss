@@ -186,6 +186,12 @@ body
     {
        font-size: 60pt;
     }
+    img 
+    {
+        height: 70px;
+        width: 60px;
+        
+    }
 }
 
 
@@ -243,6 +249,22 @@ body
         float: left;
         margin: 20px;
     }
+
+
    
+}
+
+$bestColorsNames: "Chat", "Regras", "Game", "Historia", "SobreNos";
+
+@for $i from 1 through 5
+{
+    .menu .btn#{nth($bestColorsNames, $i)}
+    {
+        &:hover
+        {
+            background: nth($bestColors, $i);
+            border-bottom: 2pt solid darken(nth($bestColors, $i), 10%);
+        }
+    }
 }
 

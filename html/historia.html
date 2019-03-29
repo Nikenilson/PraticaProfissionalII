@@ -18,6 +18,7 @@
 	<script src='https://code.jquery.com/jquery-3.3.1.min.js' integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=' crossorigin='anonymous'></script>
 	<meta charset="utf-8">
 	<script>
+		var editando = false;
 // 		$(window).on("scroll",function() {
 //         navHeight = $('.menu').outerHeight(),
 //         windowTop = $(this).scrollTop();
@@ -76,10 +77,17 @@ var weight;
 	{
 		$("body").toggleClass("editando");
 		$("#editar").toggleClass("edit");
-		if($(".edit").html(''))
-			$(".edit").html('<span class="hh">Vamos editar a página!</span><br><br><br><br><span id="f1" onclick="fontEdit(1)">Fonte 1</span><span id="f2" onclick="fontEdit(2)">Fonte 2</span><span id="f3" onclick="fontEdit(3)">Fonte 3</span><br><br><span id="w1" onclick="weightEdit(1)">Negrito 1</span><span id="w2" onclick="weightEdit(2)">Negrito 2</span><span id="w3" onclick="weightEdit(3)">Negrito 3</span><br><br><span><i class="fas fa-plus-circle" onclick="addTit()"></i><input type="text" name="" id="tit" placeholder="Título"></span><br><br><span><i class="fas fa-plus-circle" onclick="addImg()"></i><input type="text" name="" id="image" placeholder="Endereço de imagem ou nome"></span><br><br><span><i class="fas fa-plus-circle" onclick="addP()"></i><textarea name="" id="pp" cols="30" rows="10" placeholder="Parágrafo"></textarea><br><br><span><i class="fas fa-plus-circle" onclick="addBr()"></i>Pular Linha</span>');
+		if(editando == false)
+		{
+			$("#editar").html('<span class="hh">Vamos editar a página!</span><br><br><br><br><span id="f1" onclick="fontEdit(1)">Fonte 1</span><span id="f2" onclick="fontEdit(2)">Fonte 2</span><span id="f3" onclick="fontEdit(3)">Fonte 3</span><br><br><span id="w1" onclick="weightEdit(1)">Negrito 1</span><span id="w2" onclick="weightEdit(2)">Negrito 2</span><span id="w3" onclick="weightEdit(3)">Negrito 3</span><br><br><span><i class="fas fa-plus-circle" onclick="addTit()"></i><input type="text" name="" id="tit" placeholder="Título"></span><br><br><span><i class="fas fa-plus-circle" onclick="addImg()"></i><input type="text" name="" id="image" placeholder="Endereço de imagem ou nome"></span><br><br><span><i class="fas fa-plus-circle" onclick="addP()"></i><textarea name="" id="pp" cols="30" rows="10" placeholder="Parágrafo"></textarea><br><br><span><i class="fas fa-plus-circle" onclick="addBr()"></i>Pular Linha</span>');
+			editando = true;
+		}
 		else
-			$(".edit").html('');
+		{
+			$("#editar").html("");
+			editando = false;
+		}
+			
 	}
 
 	</script>
@@ -89,18 +97,18 @@ var weight;
 	<div class="navbar">
 			<a href="home.html">
 		<span>
-			<i class="fas fa-chess"></i> Arce Chess 
+				<img src="../images/logoOrange.png"> Arce Chess 
 		</span>
 	</a>
 	</div>
 	
 	<div class="menu">
 			
-		<a href="/play" id="play"  class="white">Jogar</a>
-		<a href="regras.html" id="rules" class="black">Regras</a>
-		<a href="historia.html" id="history" class="white">História</a>
-		<a href="chat.html" id="chat" class="black">Chat</a>
-		<a href="sobreNos.html" id="criadores" class="white">Sobre Nós</a>
+		<a href="/play" id="play"  class="btnGame">Jogar</a>
+		<a href="regras.html" id="rules" class="btnRegras">Regras</a>
+		<a href="historia.html" id="history" class="btnHistoria">História</a>
+		<a href="chat.html" id="chat" class="btnChat">Chat</a>
+		<a href="sobreNos.html" id="criadores" class="btnSobreNos">Sobre Nós</a>
 		<i class="fas fa-edit" id="edit" onclick="Editar()"></i>
 	</div>
 

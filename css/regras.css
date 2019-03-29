@@ -110,6 +110,10 @@ body {
 .navbar i {
   font-size: 60pt;
 }
+.navbar img {
+  height: 70px;
+  width: 60px;
+}
 
 .menu {
   background: none;
@@ -149,6 +153,31 @@ body {
   margin: 20px;
 }
 
+.menu .btnChat:hover {
+  background: #1cbe88;
+  border-bottom: 2pt solid #159268;
+}
+
+.menu .btnRegras:hover {
+  background: #b5222a;
+  border-bottom: 2pt solid #8a1a20;
+}
+
+.menu .btnGame:hover {
+  background: #36454F;
+  border-bottom: 2pt solid #212b31;
+}
+
+.menu .btnHistoria:hover {
+  background: #e64501;
+  border-bottom: 2pt solid #b33601;
+}
+
+.menu .btnSobreNos:hover {
+  background: #5b2b85;
+  border-bottom: 2pt solid #411f5e;
+}
+
 html body {
   background: #b5222a;
 }
@@ -157,6 +186,35 @@ html .navbar, html .menu:hover, html body {
 }
 html .navbar span, html .menu:hover span, html body span {
   border-bottom: 4px solid #e05d64;
+}
+html .conteudo ::-webkit-scrollbar {
+  width: 0;
+}
+html .conteudo .back {
+  overflow: auto;
+}
+html .conteudo .back h1 {
+  font-weight: 800;
+  font-family: "Srisakdi";
+  color: #e05d64;
+  font-size: 82pt;
+  text-shadow: 1px 1px 3px black;
+}
+html .conteudo .back p {
+  font-weight: 800;
+  font-family: "Raleway";
+  color: #e05d64;
+  font-size: 20pt;
+  text-shadow: 1px 1px 3px black;
+  max-width: 95%;
+  word-wrap: break-word;
+}
+html .edit {
+  border-left: 5pt solid #e05d64;
+  background: #d8323b;
+}
+html .edit span {
+  border-bottom: none;
 }
 html .navbar {
   background: #b5222a;
