@@ -78,14 +78,15 @@ a
 
 @import url('https://fonts.googleapis.com/css?family=Germania+One');
 
-$kuro: #36454F;
+$game: #36454F;
 $shiro: #FFFAFA;
 $home: #356ab4;
+
 $chat: rgb(28, 190, 136); 
 $regras: rgb(181, 34, 42);
 $historia: rgb(230, 69, 1);
 $sobreNos: rgb(91, 43, 133);
-
+$bestColors: $chat, $regras, $game, $historia, $sobreNos;
 $med1: 'Srisakdi', cursive;
 $med2: 'Raleway', sans-serif;
 

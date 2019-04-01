@@ -184,6 +184,7 @@ body
 
         a{margin-top: 2em;}
     }
+
    @include mq(tablet-wide)
    {
         min-height: 20vh;
@@ -199,7 +200,13 @@ body
             font-size: 60pt;
         }
    }
-}
+
+ /*  img 
+   {
+       height: 70px;
+       width: 60px;
+       
+   }*/
 
 
 
@@ -397,9 +404,24 @@ input{opacity: 0;}
     .fundo{min-width: 600px;}
 }
 
+}
 
 }
 
 
 
+
+$bestColorsNames: "Chat", "Regras", "Game", "Historia", "SobreNos";
+
+@for $i from 1 through 5
+{
+    .menu .btn#{nth($bestColorsNames, $i)}
+    {
+        &:hover
+        {
+            background: nth($bestColors, $i);
+            border-bottom: 2pt solid darken(nth($bestColors, $i), 10%);
+        }
+    }
+}
 
