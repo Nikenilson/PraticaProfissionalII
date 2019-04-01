@@ -19,9 +19,9 @@ $masterColor: $home;
 
 @mixin alterPageColor($color)
 {
-    body
+    body, #menuToggle
     {
-        background: $color;
+       
         // .menu
         // {
         //     a
@@ -29,6 +29,21 @@ $masterColor: $home;
         //         border-bottom: 2pt solid darken($color, 10);
         //     }
         // }
+        .menu
+        {
+            @include mq(phone)
+            {
+                background: $color;
+            }
+            @include mq(tablet-wide)
+            {
+                background: transparent;
+            }
+        }
+        @include mq(phone)
+        {
+            background: $color;
+        }
     }
 
     
@@ -200,6 +215,7 @@ body
             font-size: 60pt;
         }
    }
+}
 
  /*  img 
    {
@@ -216,13 +232,7 @@ body
     
     @extend %mp;
     @extend %conteudo-centralizadoR;
-    @include mq(phone)
-    {
-        
-    }
-
-    @include mq(tablet-wide)
-    {
+   
        
        background: none;
         
@@ -237,25 +247,29 @@ body
        {
            background: $masterColor;
        }
-        a
+       
+           a
         {
             letter-spacing: 2px;
             /* PC */
-            @include font-edictor(whitesmoke, 2, 20pt, 600);
+            @include font-edictorS(whitesmoke, 2, 20pt, 600);
             margin-right: 2vw;  
             padding: 12.5px;
             transition: 0.5s;
     
             border-bottom: 2pt solid rgba(0, 0, 0, 0.198);
        
-            
+            @include mq(tablet-wide)
+            {
+                &:hover
+                {
+                    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                    border-radius: 50px;
+                }
+            }
         
     
-            &:hover
-            {
-                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-                border-radius: 50px;
-            }
+           
     
             // &:active
             // {
@@ -263,6 +277,8 @@ body
             // }
             
         }
+       
+
         i
         {
             font-size: 30pt;
@@ -272,7 +288,7 @@ body
             float: left;
             margin: 20px;
         }
-    }
+    
    
 }
 
@@ -364,36 +380,48 @@ input{opacity: 0;}
 {
     padding: 0;
     list-style-type: none;
-    a
-    {
-        text-decoration: none;
-        opacity:1;
-        @include font-edictorS(rgb(36, 36, 36), 2, 20pt, 500);
-        transition: 200ms;
-        // border-bottom: 1pt solid rgb(36, 36, 36);
-        // padding-bottom: 2pt;
-    }
     position: absolute;
-    width: 180px;
-    height: 600px;
+    min-width: 90vw;
+    min-height: 80vh;
     box-shadow: 0 0 10px #85888C;
     margin: -50px 0 0 -50px;
     padding: 50px;
     padding-top: 125px;
-    background-color: rgb(232, 232, 233);
+    background-color: $home;
     -webkit-font-smoothing: antialiased;
     transform-origin: 0% 0%;
     transform: translate(-100%, 0);
     transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
     display: flex;
     flex-direction: column;
+    
+    
+    a
+    {
+        text-decoration: none;
+        opacity:1;
+        @include font-edictorS(rgb(36, 36, 36), 2, 20pt, 600);
+        transition: 200ms;
+        // border-bottom: 1pt solid rgb(36, 36, 36);
+        // padding-bottom: 2pt;
+        &:hover
+        {
+            
+                background: none;
+                border-bottom: none;
+            
+        }
+        padding: 10px 0;
+        transition-delay: 2s;
+        margin-top: -1px;
+        position: relative;
+        top: 0em;
+       
+    }
+
     li
     {
-      padding: 10px 0;
-      transition-delay: 2s;
-      margin-top: -1px;
-      position: relative;
-      top: -10em;   
+         
     }
 
     .mContent
@@ -406,7 +434,7 @@ input{opacity: 0;}
 
 }
 
-}
+
 
 
 
@@ -416,12 +444,21 @@ $bestColorsNames: "Chat", "Regras", "Game", "Historia", "SobreNos";
 @for $i from 1 through 5
 {
     .menu .btn#{nth($bestColorsNames, $i)}
-    {
-        &:hover
+    { 
+        @include mq(phone)
         {
-            background: nth($bestColors, $i);
-            border-bottom: 2pt solid darken(nth($bestColors, $i), 10%);
+            box-shadow: none;
+            border-radius: none;
         }
+        @include mq(tablet-wide)
+        {
+            &:hover
+            {
+                background: nth($bestColors, $i);
+                border-bottom: 2pt solid darken(nth($bestColors, $i), 10%);
+            }
+        }
+        
     }
 }
 
