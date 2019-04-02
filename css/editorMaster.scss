@@ -37,6 +37,14 @@
     
 }
 
+.logo
+{
+    max-height: 70pt;
+    max-width: 60pt;
+    min-height: 70pt;
+    min-width: 60pt;
+}
+
 .edit
 {
     z-index: 11111111121119090909;
@@ -54,7 +62,7 @@
         @include font-edictor($shiro, 2, 20pt, 800);
         input, textarea
         {
-            @include font-edictor(black, 2, 20pt, 200);
+            @include font-edictorS(black, 2, 20pt, 200);
             border-radius: 20pt;
             padding: 5pt;
             border: none;
@@ -107,4 +115,6 @@
 {
     z-index: 100000000000000000000000000099999999999999;
 }
+
+
 

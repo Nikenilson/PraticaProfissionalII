@@ -7,7 +7,7 @@
 a {
   text-decoration: none; }
 
-.navbar, .navbar .menu {
+.navbar, .menu {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -20,7 +20,7 @@ a {
 a {
   text-decoration: none; }
 
-.navbar, .navbar .menu {
+.navbar, .menu {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -33,7 +33,7 @@ a {
     background: black; }
   100% {
     background: #356ab4; } }
-body, .navbar .menu {
+body, .menu {
   margin: 0;
   padding: 0; }
 
@@ -67,189 +67,235 @@ body {
 .fundo {
   overflow: auto;
   min-height: 50vh;
-  background: url("https://images.pexels.com/photos/301469/pexels-photo-301469.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
   background-attachment: fixed;
   height: 100vh;
   width: 100%; }
-  .fundo img {
-    width: 100%;
-    position: absolute;
-    z-index: 0;
-    overflow: hidden; }
-
-.navbar {
-  /*  img 
-    {
-        height: 70px;
-        width: 60px;
-        
-    }*/ }
   @media only screen and (min-width: 320px) {
+    .fundo {
+      background: url("https://lh5.googleusercontent.com/VuIeKqEjo3G7jE5U1bKyEZcY6fsz6IS9RyBHiy8ODKRZGQeR08PAH-2OApXc1lZ8BhZnEhX8TASAb9UjMv_4=w1960-h3438-rw");
+      background-size: 130%; } }
+  @media only screen and (min-width: 768px) {
+    .fundo {
+      background: url("https://images.pexels.com/photos/301469/pexels-photo-301469.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"); } }
+
+@media only screen and (min-width: 320px) {
+  .navbar span {
+    font-weight: 600;
+    font-family: "Srisakdi";
+    color: whitesmoke;
+    font-size: 30pt;
+    text-shadow: 1px 1px 1px #1c1c1c; }
+  .navbar a {
+    margin-top: 2em; } }
+@media only screen and (min-width: 1024px) {
+  .navbar {
+    min-height: 20vh;
+    background: #356ab4;
+    color: #FFFAFA; }
     .navbar span {
       font-weight: 600;
       font-family: "Srisakdi";
       color: whitesmoke;
-      font-size: 30pt;
-      text-shadow: 1px 1px 1px #1c1c1c; }
-    .navbar a {
-      margin-top: 2em; } }
-  @media only screen and (min-width: 1024px) {
-    .navbar {
-      min-height: 20vh;
-      background: #356ab4;
-      color: #FFFAFA; }
-      .navbar span {
-        font-weight: 600;
-        font-family: "Srisakdi";
-        color: whitesmoke;
-        font-size: 50pt;
-        text-shadow: 1px 1px 1px #1c1c1c;
-        padding-bottom: 2.5vh;
-        border-bottom: 4px solid #78a0d7; }
-      .navbar i {
-        font-size: 60pt; } }
-  @media only screen and (min-width: 1024px) {
-    .navbar .menu {
-      background: none;
-      max-height: 3vh;
-      padding-top: 3vh;
-      padding-bottom: 3vh;
-      position: sticky;
-      top: 0;
-      min-height: 3vh;
-      transition: 0.5s; }
-      .navbar .menu:hover {
-        background: #356ab4; }
-      .navbar .menu a {
-        letter-spacing: 2px;
-        /* PC */
-        font-weight: 600;
-        font-family: "Raleway";
-        color: whitesmoke;
-        font-size: 20pt;
-        text-shadow: 1px 1px 1px #1c1c1c;
-        margin-right: 2vw;
-        padding: 12.5px;
-        transition: 0.5s;
-        border-bottom: 2pt solid rgba(0, 0, 0, 0.198); }
-        .navbar .menu a:hover {
-          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-          border-radius: 50px; }
-      .navbar .menu i {
-        font-size: 30pt;
-        padding: 10px;
-        border-radius: 50px;
-        float: left;
-        margin: 20px; } }
-  .navbar ul {
-    padding: 0;
-    list-style-type: none; }
-  .navbar input {
-    opacity: 0; }
-  @media only screen and (max-width: 500px) {
-    .navbar #menuToggle {
+      font-size: 50pt;
+      text-shadow: 1px 1px 1px #1c1c1c;
+      padding-bottom: 2.5vh;
+      border-bottom: 4px solid #78a0d7; }
+    .navbar i {
+      font-size: 60pt; } }
+
+/*  img 
+  {
+      height: 70px;
+      width: 60px;
+      
+  }*/
+.menu {
+  background: none;
+  max-height: 3vh;
+  padding-top: 3vh;
+  padding-bottom: 3vh;
+  position: static;
+  top: 0;
+  min-height: 3vh;
+  transition: 0.5s; }
+  .menu:hover {
+    background: #356ab4; }
+  .menu a {
+    letter-spacing: 2px;
+    /* PC */
+    font-weight: 600;
+    font-family: "Raleway";
+    color: whitesmoke;
+    font-size: 20pt;
+    margin-right: 2vw;
+    padding: 12.5px;
+    transition: 0.5s;
+    border-bottom: 2pt solid rgba(0, 0, 0, 0.198); }
+    @media only screen and (min-width: 1024px) {
+      .menu a:hover {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        border-radius: 50px; } }
+  .menu i {
+    font-size: 30pt;
+    padding: 10px;
+    border-radius: 50px;
+    float: left;
+    margin: 20px; }
+
+ul {
+  padding: 0;
+  list-style-type: none; }
+
+input {
+  opacity: 0; }
+
+#menuToggle {
+  position: sticky; }
+
+@media only screen and (max-width: 500px) {
+  #menuToggle {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: -5.5vh;
+    left: 25px;
+    z-index: 1;
+    -webkit-user-select: none;
+    user-select: none; }
+    #menuToggle input {
       display: flex;
-      flex-direction: column;
-      position: relative;
-      top: -5.5vh;
-      left: 25px;
-      z-index: 1;
-      -webkit-user-select: none;
-      user-select: none; }
-      .navbar #menuToggle input {
-        display: flex;
-        width: 40px;
-        height: 32px;
-        position: absolute;
-        cursor: pointer;
-        opacity: 0;
-        z-index: 2; }
-        .navbar #menuToggle input:checked ~ span {
-          opacity: 1;
-          transform: rotate(45deg) translate(-3px, -1px);
-          background: #36383F; }
-        .navbar #menuToggle input:checked ~ span:nth-last-child(3) {
-          opacity: 0;
-          transform: rotate(0deg) scale(0.2, 0.2); }
-        .navbar #menuToggle input:checked ~ span:nth-last-child(2) {
-          transform: rotate(-45deg) translate(0, -1px); }
-        .navbar #menuToggle input:checked ~ .menu {
-          transform: none; }
-      .navbar #menuToggle span {
-        display: flex;
-        width: 29px;
-        height: 2px;
-        margin-bottom: 5px;
-        position: relative;
-        background: #ffffff;
-        border-radius: 3px;
-        z-index: 1;
-        transform-origin: 5px 0px;
-        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease; }
-        .navbar #menuToggle span:first-child {
-          transform-origin: 0% 0%; }
-        .navbar #menuToggle span:nth-last-child(2) {
-          transform-origin: 0% 100%; }
-    .navbar .navbar {
-      min-height: 10vh; }
-    .navbar .menu {
-      padding: 0;
-      list-style-type: none;
+      width: 40px;
+      height: 32px;
       position: absolute;
-      width: 180px;
-      height: 600px;
-      box-shadow: 0 0 10px #85888C;
-      margin: -50px 0 0 -50px;
-      padding: 50px;
-      padding-top: 125px;
-      background-color: #e8e8e9;
-      -webkit-font-smoothing: antialiased;
-      transform-origin: 0% 0%;
-      transform: translate(-100%, 0);
-      transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
-      display: flex;
-      flex-direction: column; }
-      .navbar .menu a {
-        text-decoration: none;
+      cursor: pointer;
+      opacity: 0;
+      z-index: 2; }
+      #menuToggle input:checked ~ span {
         opacity: 1;
-        font-weight: 500;
-        font-family: "Raleway";
-        color: #242424;
-        font-size: 20pt;
-        transition: 200ms; }
-      .navbar .menu li {
-        padding: 10px 0;
-        transition-delay: 2s;
-        margin-top: -1px;
-        position: relative;
-        top: -10em; }
-      .navbar .menu .mContent {
-        margin-top: -20em; }
-      .navbar .menu .fundo {
-        min-width: 600px; } }
+        transform: rotate(45deg) translate(-3px, -1px);
+        background: #36383F; }
+      #menuToggle input:checked ~ span:nth-last-child(3) {
+        opacity: 0;
+        transform: rotate(0deg) scale(0.2, 0.2); }
+      #menuToggle input:checked ~ span:nth-last-child(2) {
+        transform: rotate(-45deg) translate(0, -1px); }
+      #menuToggle input:checked ~ .menu {
+        transform: none; }
+    #menuToggle span {
+      display: flex;
+      width: 29px;
+      height: 2px;
+      margin-bottom: 5px;
+      position: relative;
+      background: #ffffff;
+      border-radius: 3px;
+      z-index: 1;
+      transform-origin: 5px 0px;
+      transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease; }
+      #menuToggle span:first-child {
+        transform-origin: 0% 0%; }
+      #menuToggle span:nth-last-child(2) {
+        transform-origin: 0% 100%; }
 
-.menu .btnChat:hover {
-  background: #1cbe88;
-  border-bottom: 2pt solid #159268; }
+  .navbar {
+    min-height: 10vh; }
 
-.menu .btnRegras:hover {
-  background: #b5222a;
-  border-bottom: 2pt solid #8a1a20; }
+  .menu {
+    padding: 0;
+    list-style-type: none;
+    position: absolute;
+    min-width: 90vw;
+    min-height: 80vh;
+    box-shadow: 0 0 10px black;
+    margin: -50px 0 0 -50px;
+    padding: 50px;
+    padding-top: 125px;
+    background-color: #356ab4;
+    -webkit-font-smoothing: antialiased;
+    transform-origin: 0% 0%;
+    transform: translate(-100%, 0);
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+    display: flex;
+    flex-direction: column; }
+    .menu a {
+      text-decoration: none;
+      opacity: 1;
+      font-weight: 600;
+      font-family: "Raleway";
+      color: #f1f1f1;
+      font-size: 20pt;
+      transition: 200ms;
+      padding: 10px 0;
+      transition-delay: 2s;
+      margin-top: -1px;
+      position: relative;
+      top: 0em; }
+      .menu a:hover {
+        background: none;
+        outline: none; }
+    .menu .mContent {
+      margin-top: -20em; }
+    .menu .fundo {
+      min-width: 120%; } }
+.elMenu {
+  position: sticky;
+  top: -10px;
+  z-index: 9889889899898898998988989328989858943849984598398989898983953889; }
 
-.menu .btnGame:hover {
-  background: #36454F;
-  border-bottom: 2pt solid #212b31; }
+@media only screen and (min-width: 320px) {
+  .menu .btnChat {
+    box-shadow: none;
+    border-radius: none; } }
+@media only screen and (min-width: 1024px) {
+  .menu .btnChat:hover {
+    background: #1cbe88;
+    border-bottom: 2pt solid #159268; } }
 
-.menu .btnHistoria:hover {
-  background: #e64501;
-  border-bottom: 2pt solid #b33601; }
+@media only screen and (min-width: 320px) {
+  .menu .btnRegras {
+    box-shadow: none;
+    border-radius: none; } }
+@media only screen and (min-width: 1024px) {
+  .menu .btnRegras:hover {
+    background: #b5222a;
+    border-bottom: 2pt solid #8a1a20; } }
 
-.menu .btnSobreNos:hover {
-  background: #5b2b85;
-  border-bottom: 2pt solid #411f5e; }
+@media only screen and (min-width: 320px) {
+  .menu .btnGame {
+    box-shadow: none;
+    border-radius: none; } }
+@media only screen and (min-width: 1024px) {
+  .menu .btnGame:hover {
+    background: #36454F;
+    border-bottom: 2pt solid #212b31; } }
 
-html body {
-  background: #5b2b85; }
+@media only screen and (min-width: 320px) {
+  .menu .btnHistoria {
+    box-shadow: none;
+    border-radius: none; } }
+@media only screen and (min-width: 1024px) {
+  .menu .btnHistoria:hover {
+    background: #e64501;
+    border-bottom: 2pt solid #b33601; } }
+
+@media only screen and (min-width: 320px) {
+  .menu .btnSobreNos {
+    box-shadow: none;
+    border-radius: none; } }
+@media only screen and (min-width: 1024px) {
+  .menu .btnSobreNos:hover {
+    background: #5b2b85;
+    border-bottom: 2pt solid #411f5e; } }
+
+@media only screen and (min-width: 320px) {
+  html body .menu, html #menuToggle .menu {
+    background: #5b2b85; } }
+@media only screen and (min-width: 1024px) {
+  html body .menu, html #menuToggle .menu {
+    background: transparent; } }
+@media only screen and (min-width: 320px) {
+  html body, html #menuToggle {
+    background: #5b2b85; } }
 html .navbar, html .menu:hover, html body {
   background: #5b2b85; }
   html .navbar span, html .menu:hover span, html body span {

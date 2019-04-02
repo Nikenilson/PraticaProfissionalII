@@ -53,15 +53,16 @@ body {
 .fundo {
   overflow: auto;
   min-height: 50vh;
-  background: url("https://images.pexels.com/photos/301469/pexels-photo-301469.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
   background-attachment: fixed;
   height: 100vh;
   width: 100%; }
-  .fundo img {
-    width: 100%;
-    position: absolute;
-    z-index: 0;
-    overflow: hidden; }
+  @media only screen and (min-width: 320px) {
+    .fundo {
+      background: url("https://lh5.googleusercontent.com/VuIeKqEjo3G7jE5U1bKyEZcY6fsz6IS9RyBHiy8ODKRZGQeR08PAH-2OApXc1lZ8BhZnEhX8TASAb9UjMv_4=w1960-h3438-rw");
+      background-size: 130%; } }
+  @media only screen and (min-width: 768px) {
+    .fundo {
+      background: url("https://images.pexels.com/photos/301469/pexels-photo-301469.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"); } }
 
 @media only screen and (min-width: 320px) {
   .navbar span {
@@ -99,7 +100,7 @@ body {
   max-height: 3vh;
   padding-top: 3vh;
   padding-bottom: 3vh;
-  position: sticky;
+  position: static;
   top: 0;
   min-height: 3vh;
   transition: 0.5s; }
@@ -131,8 +132,11 @@ ul {
   padding: 0;
   list-style-type: none; }
 
-input {
+input[type=checkbox] {
   opacity: 0; }
+
+#menuToggle {
+  position: sticky; }
 
 @media only screen and (max-width: 500px) {
   #menuToggle {
@@ -188,7 +192,7 @@ input {
     position: absolute;
     min-width: 90vw;
     min-height: 80vh;
-    box-shadow: 0 0 10px #85888C;
+    box-shadow: 0 0 10px black;
     margin: -50px 0 0 -50px;
     padding: 50px;
     padding-top: 125px;
@@ -204,7 +208,7 @@ input {
       opacity: 1;
       font-weight: 600;
       font-family: "Raleway";
-      color: #242424;
+      color: #f1f1f1;
       font-size: 20pt;
       transition: 200ms;
       padding: 10px 0;
@@ -214,11 +218,16 @@ input {
       top: 0em; }
       .menu a:hover {
         background: none;
-        border-bottom: none; }
+        outline: none; }
     .menu .mContent {
       margin-top: -20em; }
     .menu .fundo {
-      min-width: 600px; } }
+      min-width: 120%; } }
+.elMenu {
+  position: sticky;
+  top: -10px;
+  z-index: 9889889899898898998988989328989858943849984598398989898983953889; }
+
 @media only screen and (min-width: 320px) {
   .menu .btnChat {
     box-shadow: none;

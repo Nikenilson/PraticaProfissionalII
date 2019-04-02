@@ -60,6 +60,12 @@ $masterColor: $home;
 
     .conteudo
     {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
         ::-webkit-scrollbar {
             width: 0;
           }
@@ -73,7 +79,7 @@ $masterColor: $home;
             p
             {
                 @include font-edictor(lighten($color, 20%), 2, 20pt, 800);
-                max-width: 95%;
+                // max-width: 90%;
                 word-wrap: break-word;
             }
         }
@@ -170,18 +176,21 @@ body
 {
     overflow: auto;
     min-height: 50vh;
-    background: url('https://images.pexels.com/photos/301469/pexels-photo-301469.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+    @include mq(phone)
+    {
+       
+         background: url('https://lh5.googleusercontent.com/VuIeKqEjo3G7jE5U1bKyEZcY6fsz6IS9RyBHiy8ODKRZGQeR08PAH-2OApXc1lZ8BhZnEhX8TASAb9UjMv_4=w1960-h3438-rw');
+         background-size: 130%;
+    }
+    @include mq(tablet){background-size: cover; background: url('https://images.pexels.com/photos/301469/pexels-photo-301469.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');}
     background-attachment: fixed;
+    background-position: center center;
+    
     height: 100vh;
     width: 100%;
-    img
-    {
-        width: 100%;
-        position: absolute;
-        z-index: 0;
-        overflow: hidden;
-        
-    }
+ 
+      
+    
 }
 
 
@@ -239,7 +248,7 @@ body
         max-height: 3vh;  
         padding-top: 3vh;
         padding-bottom: 3vh;
-        position: sticky;
+        position: static;
         top: 0;
         min-height: 3vh;
         transition: 0.5s;
@@ -296,8 +305,8 @@ ul {
     padding: 0;
     list-style-type: none;
   }
-input{opacity: 0;}
-
+input[type = checkbox]{opacity: 0;}
+#menuToggle {position: sticky;}
 @media only screen and (max-width : 500px)
 {
     
@@ -320,6 +329,7 @@ input{opacity: 0;}
       cursor: pointer;
       opacity: 0;
       z-index: 2;
+      
       
     &:checked ~ span
     {
@@ -383,7 +393,7 @@ input{opacity: 0;}
     position: absolute;
     min-width: 90vw;
     min-height: 80vh;
-    box-shadow: 0 0 10px #85888C;
+    box-shadow: 0 0 10px rgb(0, 0, 0);
     margin: -50px 0 0 -50px;
     padding: 50px;
     padding-top: 125px;
@@ -400,7 +410,7 @@ input{opacity: 0;}
     {
         text-decoration: none;
         opacity:1;
-        @include font-edictorS(rgb(36, 36, 36), 2, 20pt, 600);
+        @include font-edictorS(rgb(241, 241, 241), 2, 20pt, 600);
         transition: 200ms;
         // border-bottom: 1pt solid rgb(36, 36, 36);
         // padding-bottom: 2pt;
@@ -408,7 +418,7 @@ input{opacity: 0;}
         {
             
                 background: none;
-                border-bottom: none;
+                outline: none;
             
         }
         padding: 10px 0;
@@ -429,7 +439,7 @@ input{opacity: 0;}
         margin-top: -20em;
     }
 
-    .fundo{min-width: 600px;}
+    .fundo{min-width: 120%;}
 }
 
 }
@@ -437,7 +447,12 @@ input{opacity: 0;}
 
 
 
-
+.elMenu
+{
+    position: sticky;
+    top: -10px;
+    z-index: 9889889899898898998988989328989858943849984598398989898983953889;
+}
 
 $bestColorsNames: "Chat", "Regras", "Game", "Historia", "SobreNos";
 
