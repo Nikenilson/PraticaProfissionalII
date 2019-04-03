@@ -136,8 +136,6 @@ body {
   top: 0;
   min-height: 3vh;
   transition: 0.5s; }
-  .menu:hover {
-    background: #356ab4; }
   .menu a {
     letter-spacing: 2px;
     /* PC */
@@ -168,7 +166,11 @@ input[type=checkbox] {
   opacity: 0; }
 
 #menuToggle {
-  position: sticky; }
+  position: sticky;
+  background: transparent;
+  transition: 0.5s; }
+  #menuToggle:hover {
+    background: #356ab4; }
 
 @media only screen and (max-width: 500px) {
   #menuToggle {
@@ -413,6 +415,12 @@ a {
 @media only screen and (min-width: 320px) {
   html body, html #menuToggle {
     background: #e64501; } }
+@media only screen and (min-width: 1024px) {
+  html #menuToggle {
+    background: transparent;
+    transition: 0.5s; }
+    html #menuToggle:hover {
+      background: #e64501; } }
 html .navbar, html .menu:hover, html body {
   background: #e64501; }
   html .navbar span, html .menu:hover span, html body span {
@@ -452,6 +460,8 @@ html ::-webkit-scrollbar-track {
   background: #e64501; }
 html ::-webkit-scrollbar-thumb:hover {
   background: #fe834f; }
+html #menuToggle {
+  background: #e64501; }
 
 body .fundo {
   background: url("https://imgnooz.com/sites/default/files/wallpaper/travel/66405/hohenzollern-castle-wallpapers-66405-6505983.jpg"); }

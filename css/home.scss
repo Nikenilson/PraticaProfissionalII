@@ -46,6 +46,20 @@ $masterColor: $home;
         }
     }
 
+    #menuToggle
+    {
+        @include mq(tablet-wide)
+        {
+            background: transparent;
+            transition: 0.5s;   
+            &:hover
+            {
+                background: $color;
+            }
+        }
+    }
+
+
     
     
     .navbar, .menu:hover, body
@@ -254,7 +268,7 @@ body
         transition: 0.5s;
        &:hover
        {
-           background: $masterColor;
+        //    background: $masterColor;
        }
        
            a
@@ -306,7 +320,16 @@ ul {
     list-style-type: none;
   }
 input[type = checkbox]{opacity: 0;}
-#menuToggle {position: sticky;}
+#menuToggle 
+{
+    position: sticky;  
+    background: transparent;
+    transition: 0.5s;
+    &:hover
+    {
+        background: $home;
+    }
+}
 @media only screen and (max-width : 500px)
 {
     
@@ -320,6 +343,7 @@ input[type = checkbox]{opacity: 0;}
     z-index: 1;
     -webkit-user-select: none;
     user-select: none;
+    
     input
     {
       display: flex;
@@ -378,6 +402,8 @@ input[type = checkbox]{opacity: 0;}
                   transform-origin: 0% 100%;
                 }
     }
+
+   
     
 }
 

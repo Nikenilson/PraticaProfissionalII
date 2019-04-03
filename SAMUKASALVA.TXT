@@ -1,0 +1,6 @@
+SASS --WATCH nome.SCSS:nome.CSS
+
+HITORIA
+HOME
+REGRAS
+sobreNos

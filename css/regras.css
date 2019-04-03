@@ -68,6 +68,7 @@ body {
   overflow: auto;
   min-height: 50vh;
   background-attachment: fixed;
+  background-position: center center;
   height: 100vh;
   width: 100%; }
   @media only screen and (min-width: 320px) {
@@ -76,6 +77,7 @@ body {
       background-size: 130%; } }
   @media only screen and (min-width: 768px) {
     .fundo {
+      background-size: cover;
       background: url("https://images.pexels.com/photos/301469/pexels-photo-301469.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"); } }
 
 @media only screen and (min-width: 320px) {
@@ -118,8 +120,6 @@ body {
   top: 0;
   min-height: 3vh;
   transition: 0.5s; }
-  .menu:hover {
-    background: #356ab4; }
   .menu a {
     letter-spacing: 2px;
     /* PC */
@@ -146,11 +146,15 @@ ul {
   padding: 0;
   list-style-type: none; }
 
-input {
+input[type=checkbox] {
   opacity: 0; }
 
 #menuToggle {
-  position: sticky; }
+  position: sticky;
+  background: transparent;
+  transition: 0.5s; }
+  #menuToggle:hover {
+    background: #356ab4; }
 
 @media only screen and (max-width: 500px) {
   #menuToggle {
@@ -296,28 +300,39 @@ input {
 @media only screen and (min-width: 320px) {
   html body, html #menuToggle {
     background: #b5222a; } }
+@media only screen and (min-width: 1024px) {
+  html #menuToggle {
+    background: transparent;
+    transition: 0.5s; }
+    html #menuToggle:hover {
+      background: #b5222a; } }
 html .navbar, html .menu:hover, html body {
   background: #b5222a; }
   html .navbar span, html .menu:hover span, html body span {
     border-bottom: 4px solid #e05d64; }
-html .conteudo ::-webkit-scrollbar {
-  width: 0; }
-html .conteudo .back {
-  overflow: auto; }
-  html .conteudo .back h1 {
-    font-weight: 800;
-    font-family: "Srisakdi";
-    color: #e05d64;
-    font-size: 82pt;
-    text-shadow: 1px 1px 1px black; }
-  html .conteudo .back p {
-    font-weight: 800;
-    font-family: "Raleway";
-    color: #e05d64;
-    font-size: 20pt;
-    text-shadow: 1px 1px 1px black;
-    max-width: 95%;
-    word-wrap: break-word; }
+html .conteudo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center; }
+  html .conteudo ::-webkit-scrollbar {
+    width: 0; }
+  html .conteudo .back {
+    overflow: auto; }
+    html .conteudo .back h1 {
+      font-weight: 800;
+      font-family: "Srisakdi";
+      color: #e05d64;
+      font-size: 82pt;
+      text-shadow: 1px 1px 1px black; }
+    html .conteudo .back p {
+      font-weight: 800;
+      font-family: "Raleway";
+      color: #e05d64;
+      font-size: 20pt;
+      text-shadow: 1px 1px 1px black;
+      word-wrap: break-word; }
 html .edit {
   border-left: 5pt solid #e05d64;
   background: #d8323b; }
