@@ -4,3 +4,9 @@ HITORIA
 HOME
 REGRAS
 sobreNos
+
+
+@echo off
+sass --watch nome.scss:nome.css
+sleep 10
+exit
