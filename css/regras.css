@@ -345,6 +345,8 @@ html ::-webkit-scrollbar-track {
   background: #b5222a; }
 html ::-webkit-scrollbar-thumb:hover {
   background: #e05d64; }
+html .menu a {
+  border-bottom: 2pt solid #e05d64; }
 
 body .fundo {
   background: url("http://3.bp.blogspot.com/-CGaOHoUQJTs/VBpzb8r7gKI/AAAAAAAABa8/-ra1CgMSHcE/s1600/Westminster_CO_Historic_Place.jpg");

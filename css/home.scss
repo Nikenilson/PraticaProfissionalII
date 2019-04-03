@@ -39,6 +39,7 @@ $masterColor: $home;
             {
                 background: transparent;
             }
+           
         }
         @include mq(phone)
         {
@@ -123,6 +124,11 @@ $masterColor: $home;
 
       ::-webkit-scrollbar-thumb:hover {
         background: lighten($color, 20%); 
+      }
+
+      .menu  a 
+      {
+          border-bottom: 2pt solid lighten($color, 20%);
       }
       
 }

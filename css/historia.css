@@ -460,6 +460,8 @@ html ::-webkit-scrollbar-track {
   background: #e64501; }
 html ::-webkit-scrollbar-thumb:hover {
   background: #fe834f; }
+html .menu a {
+  border-bottom: 2pt solid #fe834f; }
 html #menuToggle {
   background: #e64501; }
 
