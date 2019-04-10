@@ -102,8 +102,11 @@ body {
   min-height: 50vh;
   background-attachment: fixed;
   background-position: center center;
+  position: fixed;
+  z-index: -1;
   height: 100vh;
   width: 100%;
+  top: 0;
 }
 @media only screen and (min-width: 320px) {
   .fundo {
@@ -121,7 +124,7 @@ body {
 @media only screen and (min-width: 320px) {
   .navbar span {
     font-weight: 600;
-    font-family: "Srisakdi";
+    font-family: "Allura";
     color: whitesmoke;
     font-size: 30pt;
     text-shadow: 1px 1px 1px #1c1c1c;
@@ -138,15 +141,15 @@ body {
   }
   .navbar span {
     font-weight: 600;
-    font-family: "Srisakdi";
+    font-family: "Allura";
     color: whitesmoke;
-    font-size: 50pt;
+    font-size: 70pt;
     text-shadow: 1px 1px 1px #1c1c1c;
-    padding-bottom: 2.5vh;
+    padding-bottom: 1.5vh;
     border-bottom: 4px solid #78a0d7;
   }
   .navbar i {
-    font-size: 60pt;
+    font-size: 70pt;
   }
 }
 
@@ -159,8 +162,8 @@ body {
 .menu {
   background: none;
   max-height: 3vh;
-  padding-top: 3vh;
-  padding-bottom: 3vh;
+  padding-top: 2vh;
+  padding-bottom: 4vh;
   position: static;
   top: 0;
   min-height: 3vh;
@@ -169,14 +172,14 @@ body {
 .menu a {
   letter-spacing: 2px;
   /* PC */
-  font-weight: 600;
-  font-family: "Raleway";
+  font-weight: 100;
+  font-family: "Germania One";
   color: whitesmoke;
   font-size: 20pt;
   margin-right: 2vw;
   padding: 12.5px;
   transition: 0.5s;
-  border-bottom: 2pt solid rgba(0, 0, 0, 0.198);
+  border-bottom: 3pt solid rgba(0, 0, 0, 0.198);
 }
 @media only screen and (min-width: 1024px) {
   .menu a:hover {
@@ -203,7 +206,7 @@ input[type=checkbox] {
 
 #menuToggle {
   position: sticky;
-  background: transparent;
+  background: #356ab4;
   transition: 0.5s;
 }
 #menuToggle:hover {
@@ -326,7 +329,7 @@ input[type=checkbox] {
 @media only screen and (min-width: 1024px) {
   .menu .btnChat:hover {
     background: #1cbe88;
-    border-bottom: 2pt solid #159268;
+    border-bottom: 3.2pt solid #159268;
   }
 }
 
@@ -339,7 +342,7 @@ input[type=checkbox] {
 @media only screen and (min-width: 1024px) {
   .menu .btnRegras:hover {
     background: #b5222a;
-    border-bottom: 2pt solid #8a1a20;
+    border-bottom: 3.2pt solid #8a1a20;
   }
 }
 
@@ -352,7 +355,7 @@ input[type=checkbox] {
 @media only screen and (min-width: 1024px) {
   .menu .btnGame:hover {
     background: #36454F;
-    border-bottom: 2pt solid #212b31;
+    border-bottom: 3.2pt solid #212b31;
   }
 }
 
@@ -365,7 +368,7 @@ input[type=checkbox] {
 @media only screen and (min-width: 1024px) {
   .menu .btnHistoria:hover {
     background: #e64501;
-    border-bottom: 2pt solid #b33601;
+    border-bottom: 3.2pt solid #b33601;
   }
 }
 
@@ -378,8 +381,15 @@ input[type=checkbox] {
 @media only screen and (min-width: 1024px) {
   .menu .btnSobreNos:hover {
     background: #5b2b85;
-    border-bottom: 2pt solid #411f5e;
+    border-bottom: 3.2pt solid #411f5e;
   }
+}
+
+.logo {
+  max-height: 70pt;
+  max-width: 60pt;
+  min-height: 70pt;
+  min-width: 60pt;
 }
 
 /*@include mq('tablet-wide') {
@@ -429,13 +439,6 @@ a {
     transform: rotate(360deg);
   }
 }
-.logo {
-  max-height: 70pt;
-  max-width: 60pt;
-  min-height: 70pt;
-  min-width: 60pt;
-}
-
 .edit {
   z-index: -1;
   position: fixed;
@@ -477,27 +480,31 @@ a {
 .edit .hh {
   margin: 10px;
   font-weight: 800;
-  font-family: "Srisakdi";
+  font-family: "Allura";
   color: #FFFAFA;
   font-size: 42pt;
   text-shadow: 1px 1px 1px #480000;
 }
 
 .menu {
-  z-index: 4;
+  z-index: 4000;
 }
 
 .conteudo .back {
-  z-index: 0;
-  position: absolute;
+  z-index: -1;
+  position: relative;
   background: rgba(0, 0, 0, 0.6);
   height: 100%;
   width: 100%;
-  top: 29%;
+  top: 0%;
 }
 
 .navbar {
   z-index: 9.999999999999998e+40;
+}
+
+p {
+  color: white;
 }
 
 @media only screen and (min-width: 320px) {
@@ -507,7 +514,7 @@ a {
 }
 @media only screen and (min-width: 1024px) {
   html body .menu {
-    background: transparent;
+    background: #e64501;
   }
 }
 @media only screen and (min-width: 320px) {
@@ -517,7 +524,7 @@ a {
 }
 @media only screen and (min-width: 1024px) {
   html #menuToggle {
-    background: transparent;
+    background: #e64501;
     transition: 0.5s;
   }
   html #menuToggle:hover {
@@ -548,7 +555,7 @@ html .conteudo .back {
 }
 html .conteudo .back h1 {
   font-weight: 800;
-  font-family: "Srisakdi";
+  font-family: "Allura";
   color: #fe834f;
   font-size: 82pt;
   text-shadow: 1px 1px 1px black;
@@ -581,13 +588,21 @@ html ::-webkit-scrollbar-thumb:hover {
 html .menu a {
   border-bottom: 2pt solid #fe834f;
 }
+@media only screen and (min-width: 1024px) {
+  html .menu a {
+    border-bottom: 3pt solid #fe834f;
+  }
+}
+html .elMenu {
+  background: #e64501;
+}
 
 body .fundo {
   background: url("https://imgnooz.com/sites/default/files/wallpaper/travel/66405/hohenzollern-castle-wallpapers-66405-6505983.jpg");
 }
 
 #f1 {
-  font-family: "Srisakdi";
+  font-family: "Allura";
   cursor: pointer;
 }
 #f1:target {
@@ -627,10 +642,6 @@ html .conteudo .back .w3 {
 
 html .conteudo .back p {
   color: white;
-}
-
-input {
-  opacity: 10;
 }
 
 /*# sourceMappingURL=historia.css.map */

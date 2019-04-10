@@ -68,8 +68,11 @@ body {
   min-height: 50vh;
   background-attachment: fixed;
   background-position: center center;
+  position: fixed;
+  z-index: -1;
   height: 100vh;
   width: 100%;
+  top: 0;
 }
 @media only screen and (min-width: 320px) {
   .fundo {
@@ -87,7 +90,7 @@ body {
 @media only screen and (min-width: 320px) {
   .navbar span {
     font-weight: 600;
-    font-family: "Srisakdi";
+    font-family: "Allura";
     color: whitesmoke;
     font-size: 30pt;
     text-shadow: 1px 1px 1px #1c1c1c;
@@ -104,15 +107,15 @@ body {
   }
   .navbar span {
     font-weight: 600;
-    font-family: "Srisakdi";
+    font-family: "Allura";
     color: whitesmoke;
-    font-size: 50pt;
+    font-size: 70pt;
     text-shadow: 1px 1px 1px #1c1c1c;
-    padding-bottom: 2.5vh;
+    padding-bottom: 1.5vh;
     border-bottom: 4px solid #78a0d7;
   }
   .navbar i {
-    font-size: 60pt;
+    font-size: 70pt;
   }
 }
 
@@ -125,8 +128,8 @@ body {
 .menu {
   background: none;
   max-height: 3vh;
-  padding-top: 3vh;
-  padding-bottom: 3vh;
+  padding-top: 2vh;
+  padding-bottom: 4vh;
   position: static;
   top: 0;
   min-height: 3vh;
@@ -135,14 +138,14 @@ body {
 .menu a {
   letter-spacing: 2px;
   /* PC */
-  font-weight: 600;
-  font-family: "Raleway";
+  font-weight: 100;
+  font-family: "Germania One";
   color: whitesmoke;
   font-size: 20pt;
   margin-right: 2vw;
   padding: 12.5px;
   transition: 0.5s;
-  border-bottom: 2pt solid rgba(0, 0, 0, 0.198);
+  border-bottom: 3pt solid rgba(0, 0, 0, 0.198);
 }
 @media only screen and (min-width: 1024px) {
   .menu a:hover {
@@ -169,7 +172,7 @@ input[type=checkbox] {
 
 #menuToggle {
   position: sticky;
-  background: transparent;
+  background: #356ab4;
   transition: 0.5s;
 }
 #menuToggle:hover {
@@ -292,7 +295,7 @@ input[type=checkbox] {
 @media only screen and (min-width: 1024px) {
   .menu .btnChat:hover {
     background: #1cbe88;
-    border-bottom: 2pt solid #159268;
+    border-bottom: 3.2pt solid #159268;
   }
 }
 
@@ -305,7 +308,7 @@ input[type=checkbox] {
 @media only screen and (min-width: 1024px) {
   .menu .btnRegras:hover {
     background: #b5222a;
-    border-bottom: 2pt solid #8a1a20;
+    border-bottom: 3.2pt solid #8a1a20;
   }
 }
 
@@ -318,7 +321,7 @@ input[type=checkbox] {
 @media only screen and (min-width: 1024px) {
   .menu .btnGame:hover {
     background: #36454F;
-    border-bottom: 2pt solid #212b31;
+    border-bottom: 3.2pt solid #212b31;
   }
 }
 
@@ -331,7 +334,7 @@ input[type=checkbox] {
 @media only screen and (min-width: 1024px) {
   .menu .btnHistoria:hover {
     background: #e64501;
-    border-bottom: 2pt solid #b33601;
+    border-bottom: 3.2pt solid #b33601;
   }
 }
 
@@ -344,8 +347,15 @@ input[type=checkbox] {
 @media only screen and (min-width: 1024px) {
   .menu .btnSobreNos:hover {
     background: #5b2b85;
-    border-bottom: 2pt solid #411f5e;
+    border-bottom: 3.2pt solid #411f5e;
   }
+}
+
+.logo {
+  max-height: 70pt;
+  max-width: 60pt;
+  min-height: 70pt;
+  min-width: 60pt;
 }
 
 /*# sourceMappingURL=home.css.map */

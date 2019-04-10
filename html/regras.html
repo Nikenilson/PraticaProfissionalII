@@ -12,11 +12,13 @@
 	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+	<link href="https://fonts.googleapis.com/css?family=Allura" rel="stylesheet">	
 	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
 	<meta name="viewport" content="width=device-width">
 	<script src='https://code.jquery.com/jquery-3.3.1.min.js' integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=' crossorigin='anonymous'></script>
 	<meta charset="utf-8">
+	<script type="text/javascript" src="../javascript/editt.js"></script>
 	<script>
 // 		$(window).on("scroll",function() {
 //         navHeight = $('.menu').outerHeight(),
@@ -36,32 +38,41 @@
 	<div class="navbar">
 		<a href="home.html">
 	<span>
-		 <i class="fas fa-chess"></i> Arce Chess 
+		Arce Chess <i class="fas fa-chess"></i>
 	</span>
 </a>
 </div>
 
-
 <div id="menuToggle" class="elMenu">
-<input type="checkbox" />
-	<span></span>
-	<span></span>
-	<span></span>
-<ul class="menu">
-		
-	<a href="/play" id="play"  class="btnGame">Jogar</a>
-		<a href="regras.html" id="rules" class="btnRegras">Regras</a>
-		<a href="historia.html" id="history" class="btnHistoria">História</a>
-		<a href="chat.html" id="chat" class="btnChat">Chat</a>
-		<a href="sobreNos.html" id="criadores" class="btnSobreNos">Sobre Nós</a>
-</ul>
+	<input type="checkbox" />
+		<span></span>
+		<span></span>
+		<span></span>
+	<ul class="menu">
+			
+		<a href="/play" id="play"  class="btnGame">Jogar</a>
+			<a href="regras.html" id="rules" class="btnRegras">Regras</a>
+			<a href="historia.html" id="history" class="btnHistoria">História</a>
+			<a href="chat.html" id="chat" class="btnChat">Chat</a>
+			<a href="sobreNos.html" id="criadores" class="btnSobreNos">Sobre Nós</a>
+			<i class="far fa-edit" onclick="Editar()"></i>
+	</ul>
 
+	</div>
+
+<div class="fundo">
+		<!-- <img src="https://images.pexels.com/photos/301469/pexels-photo-301469.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" class="imgTop"> -->
+	</div>
+
+<div class="conteudo">
+	<div class="back">
+			<h1>Regras</h1>
+				</div>
 </div>
 
-	<div class="fundo">
-			<!-- <img src="https://images.pexels.com/photos/301469/pexels-photo-301469.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" class="imgTop"> -->
-		</div>
-		
-	
 </body>
+
+<div id="editar">
+
+</div>
 </html>

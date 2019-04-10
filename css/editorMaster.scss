@@ -37,13 +37,7 @@
     
 }
 
-.logo
-{
-    max-height: 70pt;
-    max-width: 60pt;
-    min-height: 70pt;
-    min-width: 60pt;
-}
+
 
 .edit
 {
@@ -93,7 +87,7 @@
 
 .menu
 {
-    z-index: 4;
+    z-index: 4000;
 }
 .conteudo
 {
@@ -101,12 +95,12 @@
     @extend %conteudo-centralizadoC;
     .back
     {
-        z-index: 0;
-        position: absolute;
+        z-index: -1;
+        position: relative;
         background: rgba($color: #000000, $alpha: 0.6);
         height: 100%;
         width: 100%;
-        top: 29%;
+        top: 0%;
       
     }
 }
@@ -117,4 +111,8 @@
 }
 
 
+p
+{
+    color: white;
+}
 

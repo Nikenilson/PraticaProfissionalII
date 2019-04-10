@@ -37,7 +37,7 @@ $masterColor: $home;
             }
             @include mq(tablet-wide)
             {
-                background: transparent;
+                background: $color;
             }
            
         }
@@ -51,7 +51,7 @@ $masterColor: $home;
     {
         @include mq(tablet-wide)
         {
-            background: transparent;
+            background: $color;
             transition: 0.5s;   
             &:hover
             {
@@ -133,6 +133,15 @@ $masterColor: $home;
       .menu  a 
       {
           border-bottom: 2pt solid lighten($color, 20%);
+          @include mq(tablet-wide)
+          {
+            border-bottom: 3pt solid lighten($color, 20%);
+          }
+      }
+
+      .elMenu
+      {
+          background: $color;
       }
       
 }
@@ -209,9 +218,11 @@ body
     @include mq(tablet){background-size: cover; background: url('https://images.pexels.com/photos/301469/pexels-photo-301469.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');}
     background-attachment: fixed;
     background-position: center center;
-    
+    position: fixed;
+    z-index: -1;
     height: 100vh;
     width: 100%;
+    top: 0;
  
       
     
@@ -239,13 +250,13 @@ body
         @include back-text($masterColor, $shiro);
         span
         {
-            @include font-edictor(whitesmoke, 1, 50pt, 600);
-            padding-bottom: 2.5vh;
+            @include font-edictor(whitesmoke, 1, 70pt, 600);
+            padding-bottom: 1.5vh;
             border-bottom: 4px solid lighten($masterColor, 20%);
         }
         i
         {
-            font-size: 60pt;
+            font-size: 70pt;
         }
    }
 }
@@ -270,8 +281,8 @@ body
        background: none;
         
         max-height: 3vh;  
-        padding-top: 3vh;
-        padding-bottom: 3vh;
+        padding-top: 2vh;
+        padding-bottom: 4vh;
         position: static;
         top: 0;
         min-height: 3vh;
@@ -285,12 +296,12 @@ body
         {
             letter-spacing: 2px;
             /* PC */
-            @include font-edictorS(whitesmoke, 2, 20pt, 600);
+            @include font-edictorS(whitesmoke, 3, 20pt, 100);
             margin-right: 2vw;  
             padding: 12.5px;
             transition: 0.5s;
     
-            border-bottom: 2pt solid rgba(0, 0, 0, 0.198);
+            border-bottom: 3pt solid rgba(0, 0, 0, 0.198);
        
             @include mq(tablet-wide)
             {
@@ -333,7 +344,7 @@ input[type = checkbox]{opacity: 0;}
 #menuToggle 
 {
     position: sticky;  
-    background: transparent;
+    background: $home;
     transition: 0.5s;
     &:hover
     {
@@ -506,10 +517,17 @@ $bestColorsNames: "Chat", "Regras", "Game", "Historia", "SobreNos";
             &:hover
             {
                 background: nth($bestColors, $i);
-                border-bottom: 2pt solid darken(nth($bestColors, $i), 10%);
+                border-bottom: 3.2pt solid darken(nth($bestColors, $i), 10%);
             }
         }
         
     }
 }
 
+.logo
+{
+    max-height: 70pt;
+    max-width: 60pt;
+    min-height: 70pt;
+    min-width: 60pt;
+}

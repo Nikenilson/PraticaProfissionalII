@@ -89,7 +89,7 @@ body {
 }
 .central .login h1 {
   font-weight: 700;
-  font-family: "Srisakdi";
+  font-family: "Allura";
   color: whitesmoke;
   font-size: 50pt;
   text-shadow: 1px 1px 1px #1c1c1c;
@@ -106,9 +106,9 @@ body {
 @media only screen and (min-width: 320px) {
   .central .login h1 {
     font-weight: 0;
-    font-family: "Srisakdi";
+    font-family: "Allura";
     color: whitesmoke;
-    font-size: 35pt;
+    font-size: 42.5pt;
     text-shadow: 1px 1px 1px #1c1c1c;
   }
 }

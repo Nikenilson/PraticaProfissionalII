@@ -2,6 +2,7 @@
 
 @import "mixinsDoNaruto.scss";
 @import "home.scss";
+@import "editorMaster.scss";
 
 html
 {
@@ -14,4 +15,49 @@ body
     {
         background: url("http://www.wallpapermaiden.com/wallpaper/27942/download/2000x1257/himeji-castle-japanese-architecture-white-building-cherry-blossom-sakura.jpeg");
     }
+}
+
+
+$weight: 10, 500, 900;
+
+@for $i from 1 through 3
+{
+    #f#{$i}
+    {
+        font-family: nth($fonts, $i);
+        cursor: pointer;
+        &:target
+        {
+            color: black;
+        }
+    }
+
+    html .conteudo .back .w#{$i}
+    {
+        font-weight: nth($weight, $i);
+        // font-family: nth($list: $fonts, $n: 3);
+        cursor: pointer;
+    }
+}
+
+html .conteudo .back p
+{
+    color: white;
+}
+
+
+
+input[type=checkbox] {
+    .altCol
+    {
+        opacity: 1;
+        z-index: 10;
+    
+    }
+}
+
+
+.altCol:checked ~ p, h1
+{
+    color: white;
 }

@@ -112,7 +112,7 @@ body
             }
             @include mq(phone)
             {
-                    @include font-edictor(whitesmoke, 1, 35pt, 00);
+                    @include font-edictor(whitesmoke, 1, 42.5pt, 00);
             }
         }
         span
