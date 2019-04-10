@@ -14,13 +14,13 @@ body {
 @media only screen and (min-width: 320px) {
   body {
     background: url("https://i.pinimg.com/564x/1a/cc/b7/1accb78b3e9cafcfcdc4c3d9c6995765.jpg") no-repeat center center fixed;
-    background-size: 100%;
+    background-size: 120%;
     background-attachment: fixed;
   }
 }
 @media only screen and (min-width: 768px) {
   body {
-    background: url("https://images.pexels.com/photos/1334441/pexels-photo-1334441.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260") no-repeat center center fixed;
+    background: url("https://images7.alphacoders.com/589/589602.jpg") no-repeat center center fixed;
     background-size: 100%;
     background-attachment: fixed;
   }
@@ -44,8 +44,19 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: rgba(0, 0, 0, 0.308);
-  min-height: 125vh;
+}
+@media only screen and (min-width: 320px) {
+  .central {
+    margin-top: -18em;
+    min-height: 100vh;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .central {
+    background: rgba(0, 0, 0, 0.308);
+    min-height: 125vh;
+    margin-top: 0;
+  }
 }
 .central .login {
   background: rgba(0, 0, 0, 0.726);
@@ -73,7 +84,7 @@ body {
   font-family: "Germania One";
   color: whitesmoke;
   font-size: 20pt;
-  text-shadow: 1px 1px 3px #1c1c1c;
+  text-shadow: 1px 1px 1px #1c1c1c;
   margin-top: -3vh;
 }
 .central .login h1 {
@@ -81,7 +92,7 @@ body {
   font-family: "Srisakdi";
   color: whitesmoke;
   font-size: 50pt;
-  text-shadow: 1px 1px 3px #1c1c1c;
+  text-shadow: 1px 1px 1px #1c1c1c;
   padding-bottom: 2.5vh;
 }
 .central .login h1 i {
@@ -98,7 +109,7 @@ body {
     font-family: "Srisakdi";
     color: whitesmoke;
     font-size: 35pt;
-    text-shadow: 1px 1px 3px #1c1c1c;
+    text-shadow: 1px 1px 1px #1c1c1c;
   }
 }
 .central .login span {
@@ -106,28 +117,26 @@ body {
   font-family: "Raleway";
   color: whitesmoke;
   font-size: 25pt;
-  text-shadow: 1px 1px 3px #1c1c1c;
-  margin: 4pt;
+  text-shadow: 1px 1px 1px #1c1c1c;
 }
 .central .login span input {
   font-weight: 600;
   font-family: "Raleway";
   color: whitesmoke;
   font-size: 20pt;
-  text-shadow: 1px 1px 3px #1c1c1c;
+  text-shadow: 1px 1px 1px #1c1c1c;
   background: none;
   border: none;
   outline: none;
   margin-left: 1vw;
   border-bottom: 2pt solid #1cbe88;
-  margin-top: 1em;
 }
 .central .login a {
   font-weight: 550;
   font-family: "Raleway";
   color: whitesmoke;
   font-size: 20pt;
-  text-shadow: 1px 1px 3px #1c1c1c;
+  text-shadow: 1px 1px 1px #1c1c1c;
   padding: 6pt;
   border-radius: 50pt;
   border: 2px solid #1cbe88;

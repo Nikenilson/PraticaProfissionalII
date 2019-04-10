@@ -11,7 +11,7 @@ body
     @include mq(phone)
     {
        background: url("https://i.pinimg.com/564x/1a/cc/b7/1accb78b3e9cafcfcdc4c3d9c6995765.jpg") no-repeat center center fixed;
-       background-size: 100%;
+       background-size: 120%;
     background-attachment: fixed;
     }
 
@@ -54,7 +54,8 @@ body
     text-align: center;
     @include mq(phone)
     {
-        margin-top: -10em;
+        margin-top: -18em;
+        min-height: 100vh;
     }
     
     @include mq(tablet-wide)

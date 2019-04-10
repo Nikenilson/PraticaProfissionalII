@@ -19,7 +19,7 @@ $masterColor: $home;
 
 @mixin alterPageColor($color)
 {
-    body, #menuToggle
+    body
     {
        
         // .menu
@@ -70,6 +70,10 @@ $masterColor: $home;
         {
             border-bottom: 4px solid lighten($color, 20%);
             
+        }
+        #menuToggle
+        {
+            border-bottom: none;
         }
     }
 

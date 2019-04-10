@@ -14,7 +14,7 @@ body {
 @media only screen and (min-width: 320px) {
   body {
     background: url("https://i.pinimg.com/564x/1a/cc/b7/1accb78b3e9cafcfcdc4c3d9c6995765.jpg") no-repeat center center fixed;
-    background-size: 100%;
+    background-size: 120%;
     background-attachment: fixed;
   }
 }
@@ -47,7 +47,8 @@ body {
 }
 @media only screen and (min-width: 320px) {
   .central {
-    margin-top: -10em;
+    margin-top: -18em;
+    min-height: 100vh;
   }
 }
 @media only screen and (min-width: 1024px) {
@@ -83,7 +84,7 @@ body {
   font-family: "Germania One";
   color: whitesmoke;
   font-size: 20pt;
-  text-shadow: 1px 1px 3px #1c1c1c;
+  text-shadow: 1px 1px 1px #1c1c1c;
   margin-top: -3vh;
 }
 .central .login h1 {
@@ -91,7 +92,7 @@ body {
   font-family: "Srisakdi";
   color: whitesmoke;
   font-size: 50pt;
-  text-shadow: 1px 1px 3px #1c1c1c;
+  text-shadow: 1px 1px 1px #1c1c1c;
   padding-bottom: 2.5vh;
 }
 .central .login h1 i {
@@ -108,7 +109,7 @@ body {
     font-family: "Srisakdi";
     color: whitesmoke;
     font-size: 35pt;
-    text-shadow: 1px 1px 3px #1c1c1c;
+    text-shadow: 1px 1px 1px #1c1c1c;
   }
 }
 .central .login span {
@@ -116,14 +117,14 @@ body {
   font-family: "Raleway";
   color: whitesmoke;
   font-size: 25pt;
-  text-shadow: 1px 1px 3px #1c1c1c;
+  text-shadow: 1px 1px 1px #1c1c1c;
 }
 .central .login span input {
   font-weight: 600;
   font-family: "Raleway";
   color: whitesmoke;
   font-size: 20pt;
-  text-shadow: 1px 1px 3px #1c1c1c;
+  text-shadow: 1px 1px 1px #1c1c1c;
   background: none;
   border: none;
   outline: none;
@@ -135,7 +136,7 @@ body {
   font-family: "Raleway";
   color: whitesmoke;
   font-size: 20pt;
-  text-shadow: 1px 1px 3px #1c1c1c;
+  text-shadow: 1px 1px 1px #1c1c1c;
   padding: 6pt;
   border-radius: 50pt;
   border: 2px solid #1cbe88;
