@@ -1,16 +1,119 @@
 window.onload = function()
 {
 	desenhaTabuleiro();
-	desenhaInicio();
+	//desenhaInicio();
+}
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
 
-	//AtualizaTela();
+const casas = new Array();
+
+for(var l = 1; l <= 8; l++)
+	for(var c = 1; c <= 8; c++)
+	{
+		if((l * c - 1) % 2 == 0)
+			casas[l*c - 1] = { id: ((l * c) - 1) , x: ((100 * (c - 1)) + 50), y: ((100 * (l - 1)) + 50), color: 'black'};
+		else
+			casas[l*c - 1] = { id: ((l * c) - 1) , x: ((100 * (c - 1)) + 50), y: ((100 * (l - 1)) + 50), color: 'beige'};	
+	}
+
+casas.forEach(casa => {
+	ctx.fillStyle = casa.color;
+	ctx.fillRect(casa.x, casa.y, 100, 100);
+});
+
+
+
+
+function isIntersect(point, casa) {
+  if((point.x-casa.x > -50 || point.x-casa.x < 50) && (point.y-casa.y > -50 || point.y-casa.y < 50))
+  	return true;
+  return false;
 }
 
-/*function AtualizaTela()
-{
+canvas.addEventListener('click', (e) => {
+	
+  const mousePos = {
+  	x: e.clientX,
+  	y: e.clientY
+  	/*
+    x: e.clientX - canvas.offsetLeft,
+    y: e.clientY - canvas.offsetTop
+    */
+  };
+  casas.forEach(casa => {
+    if (isIntersect(mousePos, casa)) {
+      alert('click on circle: ' + casa.id);
+    }
+  });
+});
 
-}*/
+/*
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
 
+const hitCanvas = document.createElement('canvas');
+const hitCtx = hitCanvas.getContext('2d');
+
+const colorsHash = {};
+
+function getRandomColor() {
+ const r = Math.round(Math.random() * 255);
+ const g = Math.round(Math.random() * 255);
+ const b = Math.round(Math.random() * 255);
+ return `rgb(${r},${g},${b})`;
+}
+
+
+
+const circles = [{
+  id: '1', x: 40, y: 40, radius: 10, color: 'rgb(255,0,0)'
+}, {
+  id: '2', x: 100, y: 70, radius: 10, color: 'rgb(0,255,0)'
+}];
+
+circles.forEach(circle => {
+	while(true) {
+     const colorKey = getRandomColor();
+     if (!colorsHash[colorKey]) {
+        circle.colorKey = colorKey;
+        colorsHash[colorKey] = circle;
+        return;
+     }
+  }
+});
+
+circles.forEach(circle => {
+  ctx.beginPath();
+  ctx.arc(circle.x, circle.y, circle.radius, 0, 2 * Math.PI, false);
+  ctx.fillStyle = circle.color;
+  ctx.fill();
+  
+  hitCtx.beginPath();
+  hitCtx.arc(circle.x, circle.y, circle.radius, 0, 2 * Math.PI, false);
+  hitCtx.fillStyle = circle.colorKey;
+  hitCtx.fill();
+});
+
+function hasSameColor(color, shape) {
+  return shape.color === color;
+}
+
+canvas.addEventListener('click', (e) => {
+  const mousePos = {
+    x: e.clientX - canvas.offsetLeft,
+    y: e.clientY - canvas.offsetTop
+  };
+  const pixel = hitCtx.getImageData(mousePos.x, mousePos.y, 1, 1).data;
+  const color = `rgb(${pixel[0]},${pixel[1]},${pixel[2]})`;
+  const shape = colorsHash[color];
+  if (shape) {
+     alert('click on circle: ' + shape.id);
+  }
+ });*/
+
+
+/*
 function desenhaInicio()
 {
 	var letras = new Array("a","b","c","d","e","f","g");
@@ -31,21 +134,20 @@ function desenhaInicio()
 		drawPiece("B",p[i],letras[i],8);
 	}
 }
-
+*/
 function desenhaQuadrado(x, y, cor) 
-{
-	
-	var tela = document.getElementById("canvas");
-	var pincel = tela.getContext('2d');
-	
-	pincel.fillStyle = cor;
-	pincel.fillRect(x, y, 100, 100);
+{	
+	ctx.fillStyle = cor;
+	ctx.fillRect(x, y, 100, 100);
+
+
 	/*pincel.strokeStyle = 'black';
 	pincel.strokeRect(x, y, 100, 100);
 	*/
 	
 }
 
+/*
 function drawPiece(cor, piece, l, c) //Tá em ingles porque em portugues fica feio demais(desenhaPeca)
 {
 	var tela = document.getElementById("canvas");
@@ -117,36 +219,6 @@ function drawPiece(cor, piece, l, c) //Tá em ingles porque em portugues fica fe
 			img.src = 'pB.jpg';
 			pincel.drawImage(img, x, y);
 			break;
-			// case "pB":
-			// img.src = 'pB.jpg';
-			// pincel.drawImage(img, x, y);
-			// break;
-			// case "pC":
-			// img.src = 'pB.jpg';
-			// pincel.drawImage(img, x, y);
-			// break;
-			// case "pD":
-			// img.src = 'pB.jpg';
-			// pincel.drawImage(img, x, y);
-			// break;
-			// case "pE":
-			// img.src = 'pB.jpg';
-			// pincel.drawImage(img, x, y);
-			// break;
-			// case "pF":
-			// img.src = 'pB.jpg';
-			// pincel.drawImage(img, x, y);
-			// break;
-			// case "pG":
-			// img.src = 'pB.jpg';
-			// pincel.drawImage(img, x, y);
-			// break;
-			// case "pH":
-			// img.src = 'pB.jpg';
-			// pincel.drawImage(img, x, y);
-			// break;
-
-
 			case "h":
 			img.src = 'hB.jpg';
 			pincel.drawImage(img, x, y);
@@ -167,18 +239,6 @@ function drawPiece(cor, piece, l, c) //Tá em ingles porque em portugues fica fe
 			img.src = 'kB.jpg';
 			pincel.drawImage(img, x, y);
 			break;
-			// case "bF":
-			// img.src = 'bB.jpg';
-			// pincel.drawImage(img, x, y);
-			// break;
-			// case "kG":
-			// img.src = 'kB.jpg';
-			// pincel.drawImage(img, x, y);
-			// break;
-			// case "hH":
-			// img.src = 'HB.jpg';
-			// pincel.drawImage(img, x, y);
-			// break;
 		}
 	}
 
@@ -190,35 +250,6 @@ function drawPiece(cor, piece, l, c) //Tá em ingles porque em portugues fica fe
 			img.src = 'pN.jpg';
 			pincel.drawImage(img, x, y);
 			break;
-			// case "pB":
-			// img.src = 'pN.jpg';
-			// pincel.drawImage(img, x, y);
-			// break;
-			// case "pC":
-			// img.src = 'pN.jpg';
-			// pincel.drawImage(img, x, y);
-			// break;
-			// case "pD":
-			// img.src = 'pN.jpg';
-			// pincel.drawImage(img, x, y);
-			// break;
-			// case "pE":
-			// img.src = 'pN.jpg';
-			// pincel.drawImage(img, x, y);
-			// break;
-			// case "pF":
-			// img.src = 'pN.jpg';
-			// pincel.drawImage(img, x, y);
-			// break;
-			// case "pG":
-			// img.src = 'pN.jpg';
-			// pincel.drawImage(img, x, y);
-			// break;
-			// case "pH":
-			// img.src = 'pN.jpg';
-			// pincel.drawImage(img, x, y);
-			// break;
-
 			
 			case "h":
 			img.src = 'hN.jpg';
@@ -240,21 +271,9 @@ function drawPiece(cor, piece, l, c) //Tá em ingles porque em portugues fica fe
 			img.src = 'kN.jpg';
 			pincel.drawImage(img, x, y);
 			break;
-			// case "bF":
-			// img.src = 'bN.jpg';
-			// pincel.drawImage(img, x, y);
-			// break;
-			// case "kG":
-			// img.src = 'kN.jpg';
-			// pincel.drawImage(img, x, y);
-			// break;
-			// case "hH":
-			// img.src = 'HN.jpg';
-			// pincel.drawImage(img, x, y);
-			// break;
 		}
 	}
-}
+}*/
 
 
 function desenhaTabuleiro()
@@ -286,277 +305,3 @@ function desenhaTabuleiro()
 
 
 
-/*function getXY(casa)
-{
-	var x = null;
-	var y = null;
-	switch(casa)
-	{
-		case: a1
-		x = ; 50
-		y = ; 50
-		break;
-		case: a2
-		x = ;
-		y = ;
-		break;
-		case: a3
-		x = ;
-		y = ;
-		break;
-		case: a4
-		x = ;
-		y = ;
-		break;
-		case: a5
-		x = ;
-		y = ;
-		break;
-		case: a6
-		x = ;
-		y = ;
-		break;
-		case: a7
-		x = ;
-		y = ;
-		break;
-		case: a8
-		x = ;
-		y = ;
-		break;
-
-
-		case: b1
-		x = ;
-		y = ;
-		break;
-		case: b2
-		x = ;
-		y = ;
-		break;
-		case: b3
-		x = ;
-		y = ;
-		break;
-		case: b4
-		x = ;
-		y = ;
-		break;
-		case: b5
-		x = ;
-		y = ;
-		break;
-		case: b6
-		x = ;
-		y = ;
-		break;
-		case: b7
-		x = ;
-		y = ;
-		break;
-		case: b8
-		x = ;
-		y = ;
-		break;
-
-		case: c1
-		x = ;
-		y = ;
-		break;
-		case: c2
-		x = ;
-		y = ;
-		break;
-		case: c3
-		x = ;
-		y = ;
-		break;
-		case: c4
-		x = ;
-		y = ;
-		break;
-		case: c5
-		x = ;
-		y = ;
-		break;
-		case: c6
-		x = ;
-		y = ;
-		break;
-		case: c7
-		x = ;
-		y = ;
-		break;
-		case: c8
-		x = ;
-		y = ;
-		break;
-
-		case: d1
-		x = ;
-		y = ;
-		break;
-		case: d2
-		x = ;
-		y = ;
-		break;
-		case: d3
-		x = ;
-		y = ;
-		break;
-		case: d4
-		x = ;
-		y = ;
-		break;
-		case: d5
-		x = ;
-		y = ;
-		break;
-		case: d6
-		x = ;
-		y = ;
-		break;
-		case: d7
-		x = ;
-		y = ;
-		break;
-		case: d8
-		x = ;
-		y = ;
-		break;
-
-		case: e1
-		x = ;
-		y = ;
-		break;
-		case: e2
-		x = ;
-		y = ;
-		break;
-		case: e3
-		x = ;
-		y = ;
-		break;
-		case: e4
-		x = ;
-		y = ;
-		break;
-		case: e5
-		x = ;
-		y = ;
-		break;
-		case: e6
-		x = ;
-		y = ;
-		break;
-		case: e7
-		x = ;
-		y = ;
-		break;
-		case: e8
-		x = ;
-		y = ;
-		break;
-
-		case: f1
-		x = ;
-		y = ;
-		break;
-		case: f2
-		x = ;
-		y = ;
-		break;
-		case: f3
-		x = ;
-		y = ;
-		break;
-		case: f4
-		x = ;
-		y = ;
-		break;
-		case: f5
-		x = ;
-		y = ;
-		break;
-		case: f6
-		x = ;
-		y = ;
-		break;
-		case: f7
-		x = ;
-		y = ;
-		break;
-		case: f8
-		x = ;
-		y = ;
-		break;
-
-		case: g1
-		x = ;
-		y = ;
-		break;
-		case: g2
-		x = ;
-		y = ;
-		break;
-		case: g3
-		x = ;
-		y = ;
-		break;
-		case: g4
-		x = ;
-		y = ;
-		break;
-		case: g5
-		x = ;
-		y = ;
-		break;
-		case: g6
-		x = ;
-		y = ;
-		break;
-		case: g7
-		x = ;
-		y = ;
-		break;
-		case: g8
-		x = ;
-		y = ;
-		break;
-
-		case: h1
-		x = ;
-		y = ;
-		break;
-		case: h2
-		x = ;
-		y = ;
-		break;
-		case: h3
-		x = ;
-		y = ;
-		break;
-		case: h4
-		x = ;
-		y = ;
-		break;
-		case: h5
-		x = ;
-		y = ;
-		break;
-		case: h6
-		x = ;
-		y = ;
-		break;
-		case: h7
-		x = ;
-		y = ;
-		break;
-		case: h8
-		x = ;
-		y = ;
-		break;
-
-
-	}
-}*/
