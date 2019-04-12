@@ -119,7 +119,7 @@ $masterColor: $home;
     .navbar
     {
         @include back-text($color, $shiro);
-       
+       .perfil{border: 3.5pt solid lighten($color, 30%); }
     }
 
     ::-webkit-scrollbar-track {
@@ -253,10 +253,31 @@ body
             @include font-edictor(whitesmoke, 1, 70pt, 600);
             padding-bottom: 1.5vh;
             border-bottom: 4px solid lighten($masterColor, 20%);
+            margin-left: 2em;
         }
         i
         {
             font-size: 70pt;
+        }
+        .perfil
+        {
+            
+            color: white;
+            font-size: 200px;
+            @include size(0.4em, 0.4em);
+
+            margin-left: 0.7em;
+            border-radius: 50px;
+            overflow: hidden;
+            border: 3.5pt solid lighten($home, 30%); 
+            &:active{border: 3.5pt solid whitesmoke;}
+            img
+            {
+               margin-bottom: 0.5em;
+                max-height: 0.6em;
+
+                max-width: 0.6em;
+            }
         }
    }
 }
@@ -431,6 +452,7 @@ input[type = checkbox]{opacity: 0;}
 .navbar
 {
     min-height: 10vh;
+    
 }
 
 .menu

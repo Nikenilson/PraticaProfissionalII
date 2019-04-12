@@ -3,14 +3,44 @@
     font-size: 2.4rem;
 }*/
 @import url("https://fonts.googleapis.com/css?family=Germania+One");
+@import url("https://fonts.googleapis.com/css?family=Germania+One");
+@import url("https://fonts.googleapis.com/css?family=Germania+One");
+@import url("https://fonts.googleapis.com/css?family=Germania+One");
 a {
   text-decoration: none; }
 
-.navbar, .menu {
+.navbar, .menu, .data {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center; }
+
+.conteudo, .data .nameImg .name {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center; }
+
+/*@include mq('tablet-wide') {
+    padding-top: 4rem;
+    font-size: 2.4rem;
+}*/
+a {
+  text-decoration: none; }
+
+.navbar, .menu, .data {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; }
+
+.conteudo, .data .nameImg .name {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center; }
 
 @keyframes btnMenu {
   0% {
@@ -304,4 +334,215 @@ input[type=checkbox] {
   min-height: 70pt;
   min-width: 60pt; }
 
-/*# sourceMappingURL=home.css.map */
+/*@include mq('tablet-wide') {
+    padding-top: 4rem;
+    font-size: 2.4rem;
+}*/
+a {
+  text-decoration: none; }
+
+.navbar, .menu, .data {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; }
+
+.conteudo, .data .nameImg .name {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center; }
+
+.menu i {
+  cursor: pointer;
+  transition: 0.5s;
+  position: absolute;
+  top: -1vh;
+  right: 0;
+  top: -15vh; }
+  .menu i:hover {
+    color: white; }
+
+.editando {
+  max-width: 70%; }
+
+@keyframes plus {
+  50% {
+    transform: rotate(360deg); }
+  100% {
+    transform: rotate(360deg); } }
+.edit {
+  z-index: -1;
+  position: fixed;
+  right: 0%;
+  top: 0;
+  width: 30%;
+  background: blue;
+  height: 100vh; }
+  .edit span {
+    margin: 10px;
+    font-weight: 800;
+    font-family: "Raleway";
+    color: #FFFAFA;
+    font-size: 20pt;
+    text-shadow: 1px 1px 1px #480000;
+    padding: 10pt; }
+    .edit span input, .edit span textarea {
+      font-weight: 200;
+      font-family: "Raleway";
+      color: black;
+      font-size: 20pt;
+      border-radius: 20pt;
+      padding: 5pt;
+      border: none;
+      outline: none; }
+    .edit span i {
+      margin-right: 1vw;
+      font-size: 30pt; }
+      .edit span i:hover {
+        animation-name: plus;
+        animation-duration: 1.2s;
+        animation-iteration-count: 1;
+        cursor: pointer; }
+  .edit .hh {
+    margin: 10px;
+    font-weight: 800;
+    font-family: "Allura";
+    color: #FFFAFA;
+    font-size: 42pt;
+    text-shadow: 1px 1px 1px #480000; }
+
+.menu {
+  z-index: 4000; }
+
+.conteudo .back {
+  z-index: -1;
+  position: relative;
+  background: rgba(0, 0, 0, 0.6);
+  height: 100%;
+  width: 100%;
+  top: 0%; }
+
+.navbar {
+  z-index: 100000000000000000000000000099999999999999; }
+
+p {
+  color: white; }
+
+@media only screen and (min-width: 320px) {
+  html body .menu {
+    background: #1cbe88; } }
+@media only screen and (min-width: 1024px) {
+  html body .menu {
+    background: #1cbe88; } }
+@media only screen and (min-width: 320px) {
+  html body {
+    background: #1cbe88; } }
+@media only screen and (min-width: 1024px) {
+  html #menuToggle {
+    background: #1cbe88;
+    transition: 0.5s; }
+    html #menuToggle:hover {
+      background: #1cbe88; } }
+html .navbar, html .menu:hover, html body {
+  background: #1cbe88; }
+  html .navbar span, html .menu:hover span, html body span {
+    border-bottom: 4px solid #59e7b8; }
+  html .navbar #menuToggle, html .menu:hover #menuToggle, html body #menuToggle {
+    border-bottom: none; }
+html .conteudo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center; }
+  html .conteudo ::-webkit-scrollbar {
+    width: 0; }
+  html .conteudo .back {
+    overflow: auto; }
+    html .conteudo .back h1 {
+      font-weight: 800;
+      font-family: "Allura";
+      color: #59e7b8;
+      font-size: 82pt;
+      text-shadow: 1px 1px 1px black; }
+    html .conteudo .back p {
+      font-weight: 800;
+      font-family: "Raleway";
+      color: #59e7b8;
+      font-size: 20pt;
+      text-shadow: 1px 1px 1px black;
+      word-wrap: break-word; }
+html .edit {
+  border-left: 5pt solid #59e7b8;
+  background: #2de0a4; }
+  html .edit span {
+    border-bottom: none; }
+html .navbar {
+  background: #1cbe88;
+  color: #FFFAFA; }
+  html .navbar .perfil {
+    border: 3.5pt solid #86edcb; }
+html ::-webkit-scrollbar-track {
+  background: #1cbe88; }
+html ::-webkit-scrollbar-thumb:hover {
+  background: #59e7b8; }
+html .menu a {
+  border-bottom: 2pt solid #59e7b8; }
+  @media only screen and (min-width: 1024px) {
+    html .menu a {
+      border-bottom: 3pt solid #59e7b8; } }
+html .elMenu {
+  background: #1cbe88; }
+
+.fundo {
+  background: url("https://www.viajes-carrefour.com/blog/wp-content/uploads/2018/01/vuelos-a-alemania-castillo-neuschwanstein.jpg"); }
+
+.navbar span {
+  margin-left: 0.001em; }
+
+.menu {
+  border-bottom: 2pt solid #59e7b8; }
+
+.data {
+  color: #1cbe88; }
+  .data .nameImg {
+    background: whitesmoke;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.527), 0 6px 20px 0 rgba(0, 0, 0, 0.651);
+    border-radius: 20pt;
+    max-height: 40vh;
+    min-height: 40vh;
+    max-width: 20vw;
+    min-width: 20vw; }
+    .data .nameImg .imageUser {
+      background: url("https://media1.tenor.com/images/508fe7a0908b87ea1de36391094a1049/tenor.gif?itemid=9214816") no-repeat;
+      max-height: 30vh;
+      min-height: 30vh;
+      max-width: 20vw;
+      min-width: 20vw;
+      background-size: auto;
+      border-top-left-radius: 20pt;
+      border-top-right-radius: 20pt; }
+    .data .nameImg .name h1 {
+      font-weight: 550;
+      font-family: "Allura";
+      color: #1cbe88;
+      font-size: 60pt;
+      text-shadow: 1px 1px 1px black;
+      margin-top: -0.08em; }
+  .data .information {
+    background: whitesmoke;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.527), 0 6px 20px 0 rgba(0, 0, 0, 0.651);
+    padding: 5vh;
+    margin-left: 5em;
+    border-radius: 20pt; }
+    .data .information span {
+      border-bottom: none;
+      font-weight: 500;
+      font-family: "Germania One";
+      color: #1cbe88;
+      font-size: 30pt;
+      line-height: 1.4em; }
+
+/*# sourceMappingURL=perfil.css.map */

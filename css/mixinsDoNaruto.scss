@@ -107,7 +107,7 @@ $med2: 'Raleway', sans-serif;
         text-align: center;
 }
 
-$fonts:'Allura', 'Raleway', 'Germania One';
+$fonts:'Allura', 'Raleway', 'Germania One', 'Questrial';
 
 @mixin font-edictor($color, $numb, $size, $weight) 
 {
@@ -130,5 +130,14 @@ $fonts:'Allura', 'Raleway', 'Germania One';
 {
     background: $colorB;
     color: $colorT;
+}
+
+
+@mixin size($h, $w)
+{
+    max-height: $h;
+    min-height: $h;
+    max-width: $w;
+    min-width: $w;
 }
 
