@@ -30,6 +30,26 @@
 //         $('.menu').removeClass("scrolling");
 //     }
 // });
+
+
+
+	function amigos()
+	{
+		if(document.getElementById('friends').innerHTML == `<i class="fas fa-user-friends"></i>`)
+		{
+			$(".friends").toggleClass("ef");
+			document.getElementById('friends').innerHTML = `<i class="fas fa-user-friends"></i> <br>Enviar Pedido de Amizade`;
+		}
+		else
+		{
+			$(".friends").toggleClass("ef");
+			document.getElementById('friends').innerHTML = `<i class="fas fa-user-friends"></i>`;
+		}
+			
+
+		
+
+	}
 		
 	</script>
 </head>
@@ -74,7 +94,9 @@
             <span>Amigos: 33</span><br>
             <span>Partidas: 100000</span><br>
             <span>Vitórias: 100000</span>
-        </div>
+		</div>
+		
+		<a class="friends" id="friends" onclick="amigos()"><i class="fas fa-user-friends"></i> <br>Enviar Pedido de Amizade</a> <br><br>
     </div>
 		
 	

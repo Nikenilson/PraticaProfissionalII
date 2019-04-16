@@ -17,7 +17,7 @@ a {
   align-items: center;
 }
 
-.data .nameImg .name, .data, .conteudo {
+.conteudo {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -40,7 +40,7 @@ a {
   align-items: center;
 }
 
-.data .nameImg .name, .data, .conteudo {
+.conteudo {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -428,7 +428,7 @@ a {
   align-items: center;
 }
 
-.data .nameImg .name, .data, .conteudo {
+.conteudo {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -530,33 +530,33 @@ p {
 
 @media only screen and (min-width: 320px) {
   html body .menu {
-    background: #1cbe88;
+    background: #b5222a;
   }
 }
 @media only screen and (min-width: 1024px) {
   html body .menu {
-    background: #1cbe88;
+    background: #b5222a;
   }
 }
 @media only screen and (min-width: 320px) {
   html body {
-    background: #1cbe88;
+    background: #b5222a;
   }
 }
 @media only screen and (min-width: 1024px) {
   html #menuToggle {
-    background: #1cbe88;
+    background: #b5222a;
     transition: 0.5s;
   }
   html #menuToggle:hover {
-    background: #1cbe88;
+    background: #b5222a;
   }
 }
 html .navbar, html .menu:hover, html body {
-  background: #1cbe88;
+  background: #b5222a;
 }
 html .navbar span, html .menu:hover span, html body span {
-  border-bottom: 4px solid #59e7b8;
+  border-bottom: 4px solid #e05d64;
 }
 html .navbar #menuToggle, html .menu:hover #menuToggle, html body #menuToggle {
   border-bottom: none;
@@ -577,140 +577,105 @@ html .conteudo .back {
 html .conteudo .back h1 {
   font-weight: 800;
   font-family: "Allura";
-  color: #59e7b8;
+  color: #e05d64;
   font-size: 82pt;
   text-shadow: 1px 1px 1px black;
 }
 html .conteudo .back p {
   font-weight: 800;
   font-family: "Raleway";
-  color: #59e7b8;
+  color: #e05d64;
   font-size: 20pt;
   text-shadow: 1px 1px 1px black;
   word-wrap: break-word;
 }
 html .edit {
-  border-left: 5pt solid #59e7b8;
-  background: #2de0a4;
+  border-left: 5pt solid #e05d64;
+  background: #d8323b;
 }
 html .edit span {
   border-bottom: none;
 }
 html .navbar {
-  background: #1cbe88;
+  background: #b5222a;
   color: #FFFAFA;
 }
 html .navbar .perfil {
-  border: 3.5pt solid #86edcb;
+  border: 3.5pt solid #e9878d;
 }
 html ::-webkit-scrollbar-track {
-  background: #1cbe88;
+  background: #b5222a;
 }
 html ::-webkit-scrollbar-thumb:hover {
-  background: #59e7b8;
+  background: #e05d64;
 }
 html .menu a {
-  border-bottom: 2pt solid #59e7b8;
+  border-bottom: 2pt solid #e05d64;
 }
 @media only screen and (min-width: 1024px) {
   html .menu a {
-    border-bottom: 3pt solid #59e7b8;
+    border-bottom: 3pt solid #e05d64;
   }
 }
 html .elMenu {
-  background: #1cbe88;
+  background: #b5222a;
 }
 
-.fundo {
-  background: url("https://www.viajes-carrefour.com/blog/wp-content/uploads/2018/01/vuelos-a-alemania-castillo-neuschwanstein.jpg");
+body .fundo {
+  background: url("http://3.bp.blogspot.com/-CGaOHoUQJTs/VBpzb8r7gKI/AAAAAAAABa8/-ra1CgMSHcE/s1600/Westminster_CO_Historic_Place.jpg");
+  background-size: 100%;
 }
 
-.navbar span {
-  margin-left: 0.001em;
-}
-
-.menu {
-  border-bottom: 2pt solid #59e7b8;
-}
-
-.data {
-  color: #1cbe88;
-}
-@media only screen and (min-width: 480px) {
-  .data {
-    flex-direction: row;
-  }
-}
-.data .nameImg {
-  background: whitesmoke;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.527), 0 6px 20px 0 rgba(0, 0, 0, 0.651);
-  border-radius: 20pt;
-  max-height: 40vh;
-  min-height: 40vh;
-  max-width: 20vw;
-  min-width: 20vw;
-}
-.data .nameImg .imageUser {
-  background: url("https://media1.tenor.com/images/508fe7a0908b87ea1de36391094a1049/tenor.gif?itemid=9214816") no-repeat;
-  max-height: 30vh;
-  min-height: 30vh;
-  max-width: 20vw;
-  min-width: 20vw;
-  background-size: auto;
-  border-top-left-radius: 20pt;
-  border-top-right-radius: 20pt;
-}
-.data .nameImg .name h1 {
-  font-weight: 550;
+#f1 {
   font-family: "Allura";
-  color: #1cbe88;
-  font-size: 60pt;
-  text-shadow: 1px 1px 1px black;
-  margin-top: -0.08em;
-}
-.data .information {
-  background: whitesmoke;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.527), 0 6px 20px 0 rgba(0, 0, 0, 0.651);
-  padding: 5vh;
-  margin-left: 5em;
-  border-radius: 20pt;
-}
-.data .information span {
-  border-bottom: none;
-  font-weight: 500;
-  font-family: "Germania One";
-  color: #1cbe88;
-  font-size: 30pt;
-  line-height: 1.4em;
-}
-.data .friends {
-  background: whitesmoke;
-  font-weight: 500;
-  font-family: "Germania One";
-  color: #1cbe88;
-  font-size: 20pt;
-  text-transform: uppercase;
-  padding: 20pt 10pt;
-  border-radius: 20pt;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.527), 0 6px 20px 0 rgba(0, 0, 0, 0.651);
-  margin-left: 2em;
-  transition: 0.5s;
   cursor: pointer;
-  border: 4pt solid whitesmoke;
 }
-.data .friends i {
-  font-size: 40pt;
-}
-.data .friends:hover {
-  background: #1cbe88;
-  color: whitesmoke;
-  border: 4pt solid #159268;
-}
-.data .ef {
-  padding: 22.5pt 20pt;
-  border-radius: 400pt;
+#f1:target {
+  color: black;
 }
 
-@keyframes friend {}
+html .conteudo .back .w1 {
+  font-weight: 10;
+  cursor: pointer;
+}
 
-/*# sourceMappingURL=perfil.css.map */
+#f2 {
+  font-family: "Raleway";
+  cursor: pointer;
+}
+#f2:target {
+  color: black;
+}
+
+html .conteudo .back .w2 {
+  font-weight: 500;
+  cursor: pointer;
+}
+
+#f3 {
+  font-family: "Germania One";
+  cursor: pointer;
+}
+#f3:target {
+  color: black;
+}
+
+html .conteudo .back .w3 {
+  font-weight: 900;
+  cursor: pointer;
+}
+
+html .conteudo .back p {
+  color: white;
+}
+
+input[type=checkbox] .altCol {
+  opacity: 1;
+  z-index: 10;
+}
+
+.altCol:checked ~ p, h1 {
+  color: white;
+}
+
+/*# sourceMappingURL=regras.css.map */
