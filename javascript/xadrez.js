@@ -1,32 +1,64 @@
-window.onload = function()
-{
-	desenhaTabuleiro();
-	//desenhaInicio();
-}
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
 const casas = new Array();
 
-for(var l = 1; l <= 8; l++)
-	for(var c = 1; c <= 8; c++)
-	{
-		if((l * c - 1) % 2 == 0)
-			casas[l*c - 1] = { id: ((l * c) - 1) , x: ((100 * (c - 1)) + 50), y: ((100 * (l - 1)) + 50), color: 'black'};
-		else
-			casas[l*c - 1] = { id: ((l * c) - 1) , x: ((100 * (c - 1)) + 50), y: ((100 * (l - 1)) + 50), color: 'beige'};	
+window.onload = function()
+{
+    for(var l = 1; l <= 8; l++)
+	   for(var c = 1; c <= 8; c++)
+	   {
+            var a    = ((l * c) - 1);
+            var posX = ((100 * (c - 1)) + 50);
+            var posY = ((100 * (l - 1)) + 50);
+        
+            alert(l * c);
+            
+            if(a % 2 == 0)
+                casas[a] = { id: a, x: posX, y: posY, color: 'black'};
+		    else
+			 casas[a] = { id: a, x: posX, y: posY, color: 'beige'};	
+	   }
+
+    casas.forEach(casa => {
+	   ctx.fillStyle = casa.color;
+	   ctx.fillRect(casa.x, casa.y, 100, 100);
+    });
+    
+    
+	desenhaTabuleiro();
+	//desenhaInicio();
+}
+
+function desenhaTabuleiro()
+{
+	var x = 0;
+	var y = 0;
+	var cor = 'beige';
+	contador = 1;
+
+	while (x <= 800 && y <= 800) {
+
+		desenhaQuadrado(x, y, cor);
+		x += 100;
+		contador += 1;
+		if (x == 800) 
+		{
+			x = 0;
+			y += 100;
+			contador -= 1;
+		}
+		if (contador % 2 == 0) 
+			cor = 'black';
+		else 
+			cor = 'beige';
+		
 	}
 
-casas.forEach(casa => {
-	ctx.fillStyle = casa.color;
-	ctx.fillRect(casa.x, casa.y, 100, 100);
-});
-
-
-
+}
 
 function isIntersect(point, casa) {
-  if((point.x-casa.x > -50 || point.x-casa.x < 50) && (point.y-casa.y > -50 || point.y-casa.y < 50))
+  if((point.x - casa.x > -50 || point.x - casa.x < 50) && (point.y - casa.y > -50 || point.y-casa.y < 50))
   	return true;
   return false;
 }
@@ -34,12 +66,11 @@ function isIntersect(point, casa) {
 canvas.addEventListener('click', (e) => {
 	
   const mousePos = {
-  	x: e.clientX,
-  	y: e.clientY
-  	/*
+  	/*x: e.clientX,
+  	y: e.clientY*/
+  	
     x: e.clientX - canvas.offsetLeft,
     y: e.clientY - canvas.offsetTop
-    */
   };
   casas.forEach(casa => {
     if (isIntersect(mousePos, casa)) {
@@ -276,32 +307,6 @@ function drawPiece(cor, piece, l, c) //Tá em ingles porque em portugues fica fe
 }*/
 
 
-function desenhaTabuleiro()
-{
-	var x = 0;
-	var y = 0;
-	var cor = 'beige';
-	contador = 1;
-
-	while (x <= 800 && y <= 800) {
-
-		desenhaQuadrado(x, y, cor);
-		x += 100;
-		contador += 1;
-		if (x == 800) 
-		{
-			x = 0;
-			y += 100;
-			contador -= 1;
-		}
-		if (contador % 2 == 0) 
-			cor = 'black';
-		else 
-			cor = 'beige';
-		
-	}
-
-}
 
 
 
