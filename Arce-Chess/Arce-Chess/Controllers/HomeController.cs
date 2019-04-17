@@ -41,5 +41,10 @@ namespace Arce_Chess.Controllers
         {
             return View();
         }
+
+        public ActionResult Historia()
+        {
+            return View();
+        }
     }
 }

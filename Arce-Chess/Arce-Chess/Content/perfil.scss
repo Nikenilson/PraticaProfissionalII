@@ -39,6 +39,7 @@ html
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.527), 0 6px 20px 0 rgba(0, 0, 0, 0.651);
         border-radius: 20pt;
         @include size(40vh, 20vw);
+        min-width: 500px;
         .imageUser
         {
             background: url("https://media1.tenor.com/images/508fe7a0908b87ea1de36391094a1049/tenor.gif?itemid=9214816") no-repeat;

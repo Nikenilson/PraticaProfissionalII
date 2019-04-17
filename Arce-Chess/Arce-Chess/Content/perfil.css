@@ -649,6 +649,7 @@ html .elMenu {
   min-height: 40vh;
   max-width: 20vw;
   min-width: 20vw;
+  min-width: 500px;
 }
 .data .nameImg .imageUser {
   background: url("https://media1.tenor.com/images/508fe7a0908b87ea1de36391094a1049/tenor.gif?itemid=9214816") no-repeat;
