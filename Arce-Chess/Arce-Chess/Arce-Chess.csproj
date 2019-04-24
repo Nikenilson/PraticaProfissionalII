@@ -126,6 +126,15 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Classes\Coordenada.cs" />
+    <Compile Include="Classes\Jogada.cs" />
+    <Compile Include="Classes\Jogadas.cs" />
+    <Compile Include="Classes\Piece.cs" />
+    <Compile Include="Classes\Pieces.cs" />
+    <Compile Include="Classes\Sala.cs" />
+    <Compile Include="Classes\Salas.cs" />
+    <Compile Include="Classes\Usuario.cs" />
+    <Compile Include="Classes\Usuarios.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
