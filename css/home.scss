@@ -143,6 +143,16 @@ $masterColor: $home;
       {
           background: $color;
       }
+
+      .testTit, #menuToggle span, .navbar span
+      {
+          border-bottom: none;
+      }
+
+      #menuToggle
+      {
+           
+      }
       
 }
 
@@ -228,7 +238,7 @@ body
     
 }
 
-
+  
 .navbar
 {
     
@@ -237,28 +247,16 @@ body
     {
         span
         {
-            @include font-edictor(whitesmoke, 1, 30pt, 600);
-           
+            @include font-edictor(whitesmoke, 1, 40pt, 600);
+           i
+           {
+              
+               background: transparent;
+
+           }
         }
 
         a{margin-top: 2em;}
-    }
-
-   @include mq(tablet-wide)
-   {
-        min-height: 20vh;
-        @include back-text($masterColor, $shiro);
-        span
-        {
-            @include font-edictor(whitesmoke, 1, 70pt, 600);
-            padding-bottom: 1.5vh;
-            border-bottom: 4px solid lighten($masterColor, 20%);
-            margin-left: 2em;
-        }
-        i
-        {
-            font-size: 70pt;
-        }
         .perfil
         {
             
@@ -279,6 +277,24 @@ body
                 max-width: 0.6em;
             }
         }
+    }
+
+   @include mq(tablet-wide)
+   {
+        min-height: 20vh;
+        @include back-text($masterColor, $shiro);
+        span
+        {
+            @include font-edictor(whitesmoke, 1, 70pt, 600);
+            padding-bottom: 1.5vh;
+            border-bottom: 4px solid lighten($masterColor, 20%);
+            margin-left: 2em;
+        }
+        i
+        {
+            font-size: 70pt;
+        }
+        
    }
 }
 
@@ -296,7 +312,9 @@ body
 {
     
     @extend %mp;
-    @extend %conteudo-centralizadoR;
+    @extend %conteudo-centralizado;
+    @include mq(phone){flex-direction: column;}
+    @include mq(tablet-wide){flex-direction: row}
    
        
        background: none;
@@ -365,27 +383,52 @@ input[type = checkbox]{opacity: 0;}
 #menuToggle 
 {
     position: sticky;  
-    background: $home;
     transition: 0.5s;
-    &:hover
+    @include mq(tablet-wide)
     {
         background: $home;
+        &:hover
+        {
+            background: $home;
+        }
     }
+   
 }
+
+
 @media only screen and (max-width : 500px)
 {
+
+
+
+    .testTit
+    {
+        @include font-edictor(whitesmoke, 1, 20pt, 600);
+        margin-right: -50em;
+        margin-bottom: 2em;
+        line-height: 1.5em;
+        i
+        {
+          
+            background: transparent;
+            position: absolute;
+            top: 10%;
+            left: 40%;
+    
+        }
+    }
     
 #menuToggle 
 {
     display: flex;
     flex-direction: column;
     position: relative;
-    top: -5.5vh;
-    left: 25px;
+    top: -16.5vh;
+    left: 14vw;
     z-index: 1;
     -webkit-user-select: none;
     user-select: none;
-    
+    max-width: 10px;
     input
     {
       display: flex;
@@ -418,6 +461,12 @@ input[type = checkbox]{opacity: 0;}
     &:checked ~ .menu
     {
       transform: none;
+      box-shadow: 0 0 200px rgb(0, 0, 0);
+    }
+
+    &:checked ~ #menuToggle 
+    {
+        top: -6vh;
     }
 
     }
@@ -452,7 +501,6 @@ input[type = checkbox]{opacity: 0;}
 .navbar
 {
     min-height: 10vh;
-    
 }
 
 .menu
@@ -460,9 +508,9 @@ input[type = checkbox]{opacity: 0;}
     padding: 0;
     list-style-type: none;
     position: absolute;
-    min-width: 90vw;
+    min-width: 50vw;
     min-height: 80vh;
-    box-shadow: 0 0 10px rgb(0, 0, 0);
+    box-shadow: 0 0 1px rgb(0, 0, 0);
     margin: -50px 0 0 -50px;
     padding: 50px;
     padding-top: 125px;
@@ -498,9 +546,9 @@ input[type = checkbox]{opacity: 0;}
        
     }
 
-    li
+    i
     {
-         
+         display: none;
     }
 
     .mContent
@@ -553,3 +601,5 @@ $bestColorsNames: "Chat", "Regras", "Game", "Historia", "SobreNos";
     min-height: 70pt;
     min-width: 60pt;
 }
+
+

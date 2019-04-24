@@ -9,7 +9,12 @@
 a {
   text-decoration: none; }
 
-.navbar, .menu {
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.navbar {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -29,7 +34,12 @@ a {
 a {
   text-decoration: none; }
 
-.navbar, .menu {
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.navbar {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -104,10 +114,29 @@ body {
     font-weight: 600;
     font-family: "Allura";
     color: whitesmoke;
-    font-size: 30pt;
+    font-size: 40pt;
     text-shadow: 1px 1px 1px #1c1c1c; }
+    .navbar span i {
+      background: transparent; }
   .navbar a {
-    margin-top: 2em; } }
+    margin-top: 2em; }
+  .navbar .perfil {
+    color: white;
+    font-size: 200px;
+    max-height: 0.4em;
+    min-height: 0.4em;
+    max-width: 0.4em;
+    min-width: 0.4em;
+    margin-left: 0.7em;
+    border-radius: 50px;
+    overflow: hidden;
+    border: 3.5pt solid #9fbbe3; }
+    .navbar .perfil:active {
+      border: 3.5pt solid whitesmoke; }
+    .navbar .perfil img {
+      margin-bottom: 0.5em;
+      max-height: 0.6em;
+      max-width: 0.6em; } }
 @media only screen and (min-width: 1024px) {
   .navbar {
     min-height: 20vh;
@@ -123,24 +152,7 @@ body {
       border-bottom: 4px solid #78a0d7;
       margin-left: 2em; }
     .navbar i {
-      font-size: 70pt; }
-    .navbar .perfil {
-      color: white;
-      font-size: 200px;
-      max-height: 0.4em;
-      min-height: 0.4em;
-      max-width: 0.4em;
-      min-width: 0.4em;
-      margin-left: 0.7em;
-      border-radius: 50px;
-      overflow: hidden;
-      border: 3.5pt solid #9fbbe3; }
-      .navbar .perfil:active {
-        border: 3.5pt solid whitesmoke; }
-      .navbar .perfil img {
-        margin-bottom: 0.5em;
-        max-height: 0.6em;
-        max-width: 0.6em; } }
+      font-size: 70pt; } }
 
 /*  img 
   {
@@ -157,6 +169,12 @@ body {
   top: 0;
   min-height: 3vh;
   transition: 0.5s; }
+  @media only screen and (min-width: 320px) {
+    .menu {
+      flex-direction: column; } }
+  @media only screen and (min-width: 1024px) {
+    .menu {
+      flex-direction: row; } }
   .menu a {
     letter-spacing: 2px;
     /* PC */
@@ -188,21 +206,39 @@ input[type=checkbox] {
 
 #menuToggle {
   position: sticky;
-  background: #356ab4;
   transition: 0.5s; }
-  #menuToggle:hover {
-    background: #356ab4; }
+  @media only screen and (min-width: 1024px) {
+    #menuToggle {
+      background: #356ab4; }
+      #menuToggle:hover {
+        background: #356ab4; } }
 
 @media only screen and (max-width: 500px) {
+  .testTit {
+    font-weight: 600;
+    font-family: "Allura";
+    color: whitesmoke;
+    font-size: 20pt;
+    text-shadow: 1px 1px 1px #1c1c1c;
+    margin-right: -50em;
+    margin-bottom: 2em;
+    line-height: 1.5em; }
+    .testTit i {
+      background: transparent;
+      position: absolute;
+      top: 10%;
+      left: 40%; }
+
   #menuToggle {
     display: flex;
     flex-direction: column;
     position: relative;
-    top: -5.5vh;
-    left: 25px;
+    top: -16.5vh;
+    left: 14vw;
     z-index: 1;
     -webkit-user-select: none;
-    user-select: none; }
+    user-select: none;
+    max-width: 10px; }
     #menuToggle input {
       display: flex;
       width: 40px;
@@ -221,7 +257,10 @@ input[type=checkbox] {
       #menuToggle input:checked ~ span:nth-last-child(2) {
         transform: rotate(-45deg) translate(0, -1px); }
       #menuToggle input:checked ~ .menu {
-        transform: none; }
+        transform: none;
+        box-shadow: 0 0 200px black; }
+      #menuToggle input:checked ~ #menuToggle {
+        top: -6vh; }
     #menuToggle span {
       display: flex;
       width: 29px;
@@ -245,9 +284,9 @@ input[type=checkbox] {
     padding: 0;
     list-style-type: none;
     position: absolute;
-    min-width: 90vw;
+    min-width: 50vw;
     min-height: 80vh;
-    box-shadow: 0 0 10px black;
+    box-shadow: 0 0 1px black;
     margin: -50px 0 0 -50px;
     padding: 50px;
     padding-top: 125px;
@@ -274,6 +313,8 @@ input[type=checkbox] {
       .menu a:hover {
         background: none;
         outline: none; }
+    .menu i {
+      display: none; }
     .menu .mContent {
       margin-top: -20em; }
     .menu .fundo {
@@ -341,7 +382,12 @@ input[type=checkbox] {
 a {
   text-decoration: none; }
 
-.navbar, .menu {
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.navbar {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -495,6 +541,8 @@ html .menu a {
       border-bottom: 3pt solid #8f50c6; } }
 html .elMenu {
   background: #5b2b85; }
+html .testTit, html #menuToggle span, html .navbar span {
+  border-bottom: none; }
 
 body .fundo {
   background: url("http://www.wallpapermaiden.com/wallpaper/27942/download/2000x1257/himeji-castle-japanese-architecture-white-building-cherry-blossom-sakura.jpeg"); }

@@ -90,6 +90,13 @@ $bestColors: $chat, $regras, $game, $historia, $sobreNos;
 $med1: 'Srisakdi', cursive;
 $med2: 'Raleway', sans-serif;
 
+%conteudo-centralizado
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 %conteudo-centralizadoR
 {
     display: flex;
