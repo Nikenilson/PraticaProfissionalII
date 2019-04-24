@@ -459,9 +459,6 @@ a {
     font-size: 42pt;
     text-shadow: 1px 1px 1px #480000; }
 
-.menu {
-  z-index: 4000; }
-
 .conteudo .back {
   z-index: -1;
   position: relative;
