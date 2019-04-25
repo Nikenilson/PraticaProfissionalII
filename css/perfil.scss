@@ -32,7 +32,7 @@ background-size: 100%;}
    @extend %conteudo-centralizadoC;
    flex-direction: column;
    flex-wrap: wrap;
-  background: rgba(0, 0, 0, 0.527);
+  background: rgba(0, 0, 0, 0.651);
 
     .nameImg
     {
@@ -69,16 +69,16 @@ background-size: 100%;}
 
     .information
     {
-        background: whitesmoke;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.527), 0 6px 20px 0 rgba(0, 0, 0, 0.651);
+        
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.692), 0 6px 20px 0 rgba(0, 0, 0, 0.774);
         
         padding: 5vh;
-        margin-left: 5em;
+        margin: 5em;
         border-radius: 20pt;
         span
         {
             border-bottom: none;
-            @include font-edictorS($chat, 3, 30pt, 500);
+            @include font-gradient($chat, white, 3, 40pt, 550);
             line-height: 1.4em;
         }
     }
@@ -89,8 +89,7 @@ background-size: 100%;}
         {
             font-size: 40pt;
         }
-        background: whitesmoke;
-        @include font-edictorS($chat, 3, 20pt, 500);
+        @include font-edictorS(WHITE, 3, 20pt, 500);
         text-transform: uppercase;
         padding: 20pt 10pt;
         border-radius: 20pt;

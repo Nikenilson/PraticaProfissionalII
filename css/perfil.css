@@ -579,7 +579,7 @@ html .testTit, html #menuToggle span, html .navbar span {
   color: #1cbe88;
   flex-direction: column;
   flex-wrap: wrap;
-  background: rgba(0, 0, 0, 0.527); }
+  background: rgba(0, 0, 0, 0.651); }
   .data .nameImg {
     margin: 4em;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.527), 0 6px 20px 0 rgba(0, 0, 0, 0.651);
@@ -607,23 +607,23 @@ html .testTit, html #menuToggle span, html .navbar span {
         font-size: 60pt;
         margin-top: -0.08em; }
   .data .information {
-    background: whitesmoke;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.527), 0 6px 20px 0 rgba(0, 0, 0, 0.651);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.692), 0 6px 20px 0 rgba(0, 0, 0, 0.774);
     padding: 5vh;
-    margin-left: 5em;
+    margin: 5em;
     border-radius: 20pt; }
     .data .information span {
       border-bottom: none;
-      font-weight: 500;
+      font-weight: 550;
       font-family: "Germania One";
-      color: #1cbe88;
-      font-size: 30pt;
+      background: -webkit-linear-gradient(#1cbe88, white);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 40pt;
       line-height: 1.4em; }
   .data .friends {
-    background: whitesmoke;
     font-weight: 500;
     font-family: "Germania One";
-    color: #1cbe88;
+    color: WHITE;
     font-size: 20pt;
     text-transform: uppercase;
     padding: 20pt 10pt;
