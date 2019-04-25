@@ -223,7 +223,7 @@ input[type=checkbox] {
         transform: rotate(-45deg) translate(0, -1px); }
       #menuToggle input:checked ~ .menu {
         transform: none;
-        box-shadow: 0 0 200px black; }
+        box-shadow: 0 0 100px black; }
       #menuToggle input:checked ~ #menuToggle {
         top: -6vh; }
     #menuToggle span {
@@ -339,5 +339,21 @@ input[type=checkbox] {
   max-width: 60pt;
   min-height: 70pt;
   min-width: 60pt; }
+
+.topo {
+  font-size: 40pt;
+  position: fixed;
+  bottom: 0;
+  right: 10%;
+  bottom: 5%;
+  color: #356ab4;
+  z-index: 909090;
+  border-radius: 50px; }
+  .topo i {
+    background: white;
+    border-radius: 50px;
+    border: 2px solid #78a0d7;
+    padding: 2px;
+    padding-top: 1px; }
 
 /*# sourceMappingURL=home.css.map */

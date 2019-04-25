@@ -118,11 +118,22 @@ $fonts:'Allura', 'Raleway', 'Germania One', 'Questrial';
 
 @mixin font-edictor($color, $numb, $size, $weight) 
 {
-    font-weight: $weight;
+   font-weight: $weight;
     font-family: nth($fonts, $numb);
     color: $color;
     font-size: $size;
     text-shadow: 1px 1px 1px darken($color, 85%);
+}
+
+
+@mixin font-gradient($color1, $color2, $numb, $size, $weight) 
+{
+    font-weight: $weight;
+    font-family: nth($fonts, $numb);
+    background: -webkit-linear-gradient($color1, $color2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: $size;
 }
 
 @mixin font-edictorS($color, $numb, $size, $weight) 

@@ -258,7 +258,7 @@ input[type=checkbox] {
         transform: rotate(-45deg) translate(0, -1px); }
       #menuToggle input:checked ~ .menu {
         transform: none;
-        box-shadow: 0 0 200px black; }
+        box-shadow: 0 0 100px black; }
       #menuToggle input:checked ~ #menuToggle {
         top: -6vh; }
     #menuToggle span {
@@ -375,6 +375,22 @@ input[type=checkbox] {
   min-height: 70pt;
   min-width: 60pt; }
 
+.topo {
+  font-size: 40pt;
+  position: fixed;
+  bottom: 0;
+  right: 10%;
+  bottom: 5%;
+  color: #356ab4;
+  z-index: 909090;
+  border-radius: 50px; }
+  .topo i {
+    background: white;
+    border-radius: 50px;
+    border: 2px solid #78a0d7;
+    padding: 2px;
+    padding-top: 1px; }
+
 /*@include mq('tablet-wide') {
     padding-top: 4rem;
     font-size: 2.4rem;
@@ -465,7 +481,7 @@ a {
   background: rgba(0, 0, 0, 0.6);
   height: 100%;
   width: 100%;
-  top: 0%; }
+  top: -2em; }
 
 .navbar {
   z-index: 100000000000000000000000000099999999999999; }
@@ -473,6 +489,11 @@ a {
 p {
   color: white; }
 
+html .topo {
+  color: #e64501; }
+  html .topo i {
+    background: white;
+    border: 4px solid #fe834f; }
 @media only screen and (min-width: 320px) {
   html body .menu {
     background: #e64501; } }
@@ -482,12 +503,14 @@ p {
 @media only screen and (min-width: 320px) {
   html body {
     background: #e64501; } }
-@media only screen and (min-width: 1024px) {
-  html #menuToggle {
-    background: #e64501;
-    transition: 0.5s; }
-    html #menuToggle:hover {
-      background: #e64501; } }
+html #menuToggle {
+  background: #e64501; }
+  @media only screen and (min-width: 1024px) {
+    html #menuToggle {
+      background: #e64501;
+      transition: 0.5s; }
+      html #menuToggle:hover {
+        background: #e64501; } }
 html .navbar, html .menu:hover, html body {
   background: #e64501; }
   html .navbar span, html .menu:hover span, html body span {
@@ -529,8 +552,8 @@ html .navbar {
     border: 3.5pt solid #fea782; }
 html ::-webkit-scrollbar-track {
   background: #e64501; }
-html ::-webkit-scrollbar-thumb:hover {
-  background: #fe834f; }
+html ::-webkit-scrollbar-thumb:hover, html ::-webkit-scrollbar-thumb {
+  background: linear-gradient(white 10%, #fe834f 90%); }
 html .menu a {
   border-bottom: 2pt solid #fe834f; }
   @media only screen and (min-width: 1024px) {

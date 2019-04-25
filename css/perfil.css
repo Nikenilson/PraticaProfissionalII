@@ -258,7 +258,7 @@ input[type=checkbox] {
         transform: rotate(-45deg) translate(0, -1px); }
       #menuToggle input:checked ~ .menu {
         transform: none;
-        box-shadow: 0 0 200px black; }
+        box-shadow: 0 0 100px black; }
       #menuToggle input:checked ~ #menuToggle {
         top: -6vh; }
     #menuToggle span {
@@ -375,6 +375,22 @@ input[type=checkbox] {
   min-height: 70pt;
   min-width: 60pt; }
 
+.topo {
+  font-size: 40pt;
+  position: fixed;
+  bottom: 0;
+  right: 10%;
+  bottom: 5%;
+  color: #356ab4;
+  z-index: 909090;
+  border-radius: 50px; }
+  .topo i {
+    background: white;
+    border-radius: 50px;
+    border: 2px solid #78a0d7;
+    padding: 2px;
+    padding-top: 1px; }
+
 /*@include mq('tablet-wide') {
     padding-top: 4rem;
     font-size: 2.4rem;
@@ -465,7 +481,7 @@ a {
   background: rgba(0, 0, 0, 0.6);
   height: 100%;
   width: 100%;
-  top: 0%; }
+  top: -2em; }
 
 .navbar {
   z-index: 100000000000000000000000000099999999999999; }
@@ -473,6 +489,11 @@ a {
 p {
   color: white; }
 
+html .topo {
+  color: #1cbe88; }
+  html .topo i {
+    background: white;
+    border: 4px solid #59e7b8; }
 @media only screen and (min-width: 320px) {
   html body .menu {
     background: #1cbe88; } }
@@ -482,12 +503,14 @@ p {
 @media only screen and (min-width: 320px) {
   html body {
     background: #1cbe88; } }
-@media only screen and (min-width: 1024px) {
-  html #menuToggle {
-    background: #1cbe88;
-    transition: 0.5s; }
-    html #menuToggle:hover {
-      background: #1cbe88; } }
+html #menuToggle {
+  background: #1cbe88; }
+  @media only screen and (min-width: 1024px) {
+    html #menuToggle {
+      background: #1cbe88;
+      transition: 0.5s; }
+      html #menuToggle:hover {
+        background: #1cbe88; } }
 html .navbar, html .menu:hover, html body {
   background: #1cbe88; }
   html .navbar span, html .menu:hover span, html body span {
@@ -529,8 +552,8 @@ html .navbar {
     border: 3.5pt solid #86edcb; }
 html ::-webkit-scrollbar-track {
   background: #1cbe88; }
-html ::-webkit-scrollbar-thumb:hover {
-  background: #59e7b8; }
+html ::-webkit-scrollbar-thumb:hover, html ::-webkit-scrollbar-thumb {
+  background: linear-gradient(white 10%, #59e7b8 90%); }
 html .menu a {
   border-bottom: 2pt solid #59e7b8; }
   @media only screen and (min-width: 1024px) {
@@ -542,7 +565,9 @@ html .testTit, html #menuToggle span, html .navbar span {
   border-bottom: none; }
 
 .fundo {
-  background: url("https://www.viajes-carrefour.com/blog/wp-content/uploads/2018/01/vuelos-a-alemania-castillo-neuschwanstein.jpg"); }
+  background: url("https://www.viajes-carrefour.com/blog/wp-content/uploads/2018/01/vuelos-a-alemania-castillo-neuschwanstein.jpg");
+  background-position: center;
+  background-size: 100%; }
 
 .navbar span {
   margin-left: 0.001em; }
@@ -551,34 +576,36 @@ html .testTit, html #menuToggle span, html .navbar span {
   border-bottom: 2pt solid #59e7b8; }
 
 .data {
-  color: #1cbe88; }
-  @media only screen and (min-width: 480px) {
-    .data {
-      flex-direction: row; } }
+  color: #1cbe88;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background: rgba(0, 0, 0, 0.527); }
   .data .nameImg {
-    background: whitesmoke;
+    margin: 4em;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.527), 0 6px 20px 0 rgba(0, 0, 0, 0.651);
-    border-radius: 20pt;
-    max-height: 40vh;
-    min-height: 40vh;
-    max-width: 20vw;
-    min-width: 20vw; }
+    border-radius: 500pt;
+    padding: 20pt;
+    max-height: 30vh;
+    min-height: 30vh;
+    max-width: 15vw;
+    min-width: 15vw; }
     .data .nameImg .imageUser {
-      background: url("https://media1.tenor.com/images/508fe7a0908b87ea1de36391094a1049/tenor.gif?itemid=9214816") no-repeat;
-      max-height: 30vh;
-      min-height: 30vh;
-      max-width: 20vw;
-      min-width: 20vw;
-      background-size: auto;
-      border-top-left-radius: 20pt;
-      border-top-right-radius: 20pt; }
-    .data .nameImg .name h1 {
-      font-weight: 550;
-      font-family: "Allura";
-      color: #1cbe88;
-      font-size: 60pt;
-      text-shadow: 1px 1px 1px black;
-      margin-top: -0.08em; }
+      background: url("https://web.whatsapp.com/pp?e=https%3A%2F%2Fpps.whatsapp.net%2Fv%2Ft61.24694-24%2F57562855_333480720859593_5964010747074707456_n.jpg%3Foe%3D5CC5A81E%26oh%3D04bb56156dde4f036074e87c98aab00d&t=l&u=5519982480204%40c.us&i=1556118100") no-repeat;
+      height: 30vh;
+      width: 15vw;
+      background-size: 100%;
+      border-radius: 500pt;
+      background-position: center; }
+    .data .nameImg .name {
+      margin: 2em; }
+      .data .nameImg .name h1 {
+        font-weight: 550;
+        font-family: "Germania One";
+        background: -webkit-linear-gradient(white, #1cbe88);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 60pt;
+        margin-top: -0.08em; }
   .data .information {
     background: whitesmoke;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.527), 0 6px 20px 0 rgba(0, 0, 0, 0.651);
@@ -615,5 +642,8 @@ html .testTit, html #menuToggle span, html .navbar span {
   .data .ef {
     padding: 22.5pt 20pt;
     border-radius: 400pt; }
+
+.topo i {
+  padding-top: 2px; }
 
 /*# sourceMappingURL=perfil.css.map */

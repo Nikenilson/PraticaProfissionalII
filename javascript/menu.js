@@ -9,3 +9,9 @@ function trade()
 
     $(".navigation").toggleClass("naviMob");
 };
+
+
+function topo()
+{
+    $('html, body').animate({scrollTop:0}, 'slow');
+}

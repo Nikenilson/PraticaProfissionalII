@@ -258,7 +258,7 @@ input[type=checkbox] {
         transform: rotate(-45deg) translate(0, -1px); }
       #menuToggle input:checked ~ .menu {
         transform: none;
-        box-shadow: 0 0 200px black; }
+        box-shadow: 0 0 100px black; }
       #menuToggle input:checked ~ #menuToggle {
         top: -6vh; }
     #menuToggle span {
@@ -375,6 +375,22 @@ input[type=checkbox] {
   min-height: 70pt;
   min-width: 60pt; }
 
+.topo {
+  font-size: 40pt;
+  position: fixed;
+  bottom: 0;
+  right: 10%;
+  bottom: 5%;
+  color: #356ab4;
+  z-index: 909090;
+  border-radius: 50px; }
+  .topo i {
+    background: white;
+    border-radius: 50px;
+    border: 2px solid #78a0d7;
+    padding: 2px;
+    padding-top: 1px; }
+
 /*@include mq('tablet-wide') {
     padding-top: 4rem;
     font-size: 2.4rem;
@@ -465,7 +481,7 @@ a {
   background: rgba(0, 0, 0, 0.6);
   height: 100%;
   width: 100%;
-  top: 0%; }
+  top: -2em; }
 
 .navbar {
   z-index: 100000000000000000000000000099999999999999; }
@@ -473,6 +489,11 @@ a {
 p {
   color: white; }
 
+html .topo {
+  color: #b5222a; }
+  html .topo i {
+    background: white;
+    border: 4px solid #e05d64; }
 @media only screen and (min-width: 320px) {
   html body .menu {
     background: #b5222a; } }
@@ -482,12 +503,14 @@ p {
 @media only screen and (min-width: 320px) {
   html body {
     background: #b5222a; } }
-@media only screen and (min-width: 1024px) {
-  html #menuToggle {
-    background: #b5222a;
-    transition: 0.5s; }
-    html #menuToggle:hover {
-      background: #b5222a; } }
+html #menuToggle {
+  background: #b5222a; }
+  @media only screen and (min-width: 1024px) {
+    html #menuToggle {
+      background: #b5222a;
+      transition: 0.5s; }
+      html #menuToggle:hover {
+        background: #b5222a; } }
 html .navbar, html .menu:hover, html body {
   background: #b5222a; }
   html .navbar span, html .menu:hover span, html body span {
@@ -529,8 +552,8 @@ html .navbar {
     border: 3.5pt solid #e9878d; }
 html ::-webkit-scrollbar-track {
   background: #b5222a; }
-html ::-webkit-scrollbar-thumb:hover {
-  background: #e05d64; }
+html ::-webkit-scrollbar-thumb:hover, html ::-webkit-scrollbar-thumb {
+  background: linear-gradient(white 10%, #e05d64 90%); }
 html .menu a {
   border-bottom: 2pt solid #e05d64; }
   @media only screen and (min-width: 1024px) {
@@ -542,8 +565,14 @@ html .testTit, html #menuToggle span, html .navbar span {
   border-bottom: none; }
 
 body .fundo {
-  background: url("http://3.bp.blogspot.com/-CGaOHoUQJTs/VBpzb8r7gKI/AAAAAAAABa8/-ra1CgMSHcE/s1600/Westminster_CO_Historic_Place.jpg");
-  background-size: 100%; }
+  background: url("https://live.staticflickr.com/2738/4450639855_6e4676a27c_b.jpg");
+  background-size: 220%;
+  background-attachment: fixed;
+  background-position: center; }
+  @media only screen and (min-width: 1024px) {
+    body .fundo {
+      background: url("http://3.bp.blogspot.com/-CGaOHoUQJTs/VBpzb8r7gKI/AAAAAAAABa8/-ra1CgMSHcE/s1600/Westminster_CO_Historic_Place.jpg");
+      background-size: 100%; } }
 
 #f1 {
   font-family: "Allura";

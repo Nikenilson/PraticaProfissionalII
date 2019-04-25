@@ -19,6 +19,12 @@ $masterColor: $home;
 
 @mixin alterPageColor($color)
 {
+    .topo
+    {
+        color: $color;
+        i{background: white;border: 4px solid lighten($color, 20%);}    
+    }
+
     body
     {
        
@@ -59,8 +65,7 @@ $masterColor: $home;
                 background: $color;
             }
         }
-        background: $home;
-        position: sticky;
+        
     }
 
 
@@ -129,8 +134,8 @@ $masterColor: $home;
         background: $color; 
       }
 
-      ::-webkit-scrollbar-thumb:hover {
-        background: lighten($color, 20%); 
+      ::-webkit-scrollbar-thumb:hover,  ::-webkit-scrollbar-thumb{
+        background: linear-gradient(white 10%, lighten($color, 20%) 90%); 
       }
 
       .menu  a 
@@ -464,7 +469,7 @@ input[type = checkbox]{opacity: 0;}
     &:checked ~ .menu
     {
       transform: none;
-      box-shadow: 0 0 200px rgb(0, 0, 0);
+      box-shadow: 0 0 100px rgb(0, 0, 0);
     }
 
     &:checked ~ #menuToggle 
@@ -606,3 +611,26 @@ $bestColorsNames: "Chat", "Regras", "Game", "Historia", "SobreNos";
 }
 
 
+.topo 
+{
+    font-size: 40pt;
+    position: fixed;
+    bottom: 0;
+    right: 10%;
+    bottom: 5%;
+    color: $home;
+    z-index: 909090;
+    border-radius: 50px;
+    i
+    {
+       background: white;
+       border-radius: 50px;
+       border: 2px solid lighten($home, 20%);
+
+        
+        padding: 2px;
+        padding-top: 1px;
+
+    }
+    @include mq(tablet-wide){}
+}

@@ -258,7 +258,7 @@ input[type=checkbox] {
         transform: rotate(-45deg) translate(0, -1px); }
       #menuToggle input:checked ~ .menu {
         transform: none;
-        box-shadow: 0 0 200px black; }
+        box-shadow: 0 0 100px black; }
       #menuToggle input:checked ~ #menuToggle {
         top: -6vh; }
     #menuToggle span {
@@ -375,6 +375,21 @@ input[type=checkbox] {
   min-height: 70pt;
   min-width: 60pt; }
 
+.topo {
+  font-size: 40pt;
+  position: fixed;
+  bottom: 0;
+  right: 10%;
+  bottom: 5%;
+  color: #356ab4;
+  z-index: 909090;
+  border-radius: 50px; }
+  .topo i {
+    background: white;
+    border-radius: 50px;
+    border: 2px solid white;
+    padding-bottom: 1px; }
+
 /*@include mq('tablet-wide') {
     padding-top: 4rem;
     font-size: 2.4rem;
@@ -465,7 +480,7 @@ a {
   background: rgba(0, 0, 0, 0.6);
   height: 100%;
   width: 100%;
-  top: 0%; }
+  top: -2em; }
 
 .navbar {
   z-index: 100000000000000000000000000099999999999999; }
@@ -473,6 +488,10 @@ a {
 p {
   color: white; }
 
+html .topo {
+  color: #5b2b85; }
+  html .topo i {
+    background: white; }
 @media only screen and (min-width: 320px) {
   html body .menu {
     background: #5b2b85; } }
@@ -482,12 +501,14 @@ p {
 @media only screen and (min-width: 320px) {
   html body {
     background: #5b2b85; } }
-@media only screen and (min-width: 1024px) {
-  html #menuToggle {
-    background: #5b2b85;
-    transition: 0.5s; }
-    html #menuToggle:hover {
-      background: #5b2b85; } }
+html #menuToggle {
+  background: #5b2b85; }
+  @media only screen and (min-width: 1024px) {
+    html #menuToggle {
+      background: #5b2b85;
+      transition: 0.5s; }
+      html #menuToggle:hover {
+        background: #5b2b85; } }
 html .navbar, html .menu:hover, html body {
   background: #5b2b85; }
   html .navbar span, html .menu:hover span, html body span {
