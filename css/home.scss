@@ -49,6 +49,7 @@ $masterColor: $home;
 
     #menuToggle
     {
+        background: $color;
         @include mq(tablet-wide)
         {
             background: $color;
@@ -58,6 +59,8 @@ $masterColor: $home;
                 background: $color;
             }
         }
+        background: $home;
+        position: sticky;
     }
 
 
