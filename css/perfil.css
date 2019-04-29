@@ -20,7 +20,7 @@ a {
   justify-content: center;
   align-items: center; }
 
-.conteudo, .data, .data .nameImg .name {
+.conteudo, .data, .data .name {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -45,7 +45,7 @@ a {
   justify-content: center;
   align-items: center; }
 
-.conteudo, .data, .data .nameImg .name {
+.conteudo, .data, .data .name {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -103,7 +103,8 @@ body {
   @media only screen and (min-width: 320px) {
     .fundo {
       background: url("https://lh5.googleusercontent.com/VuIeKqEjo3G7jE5U1bKyEZcY6fsz6IS9RyBHiy8ODKRZGQeR08PAH-2OApXc1lZ8BhZnEhX8TASAb9UjMv_4=w1960-h3438-rw");
-      background-size: 130%; } }
+      background-size: 100%;
+      background-position: fixed; } }
   @media only screen and (min-width: 768px) {
     .fundo {
       background-size: cover;
@@ -409,7 +410,7 @@ a {
   justify-content: center;
   align-items: center; }
 
-.conteudo, .data, .data .nameImg .name {
+.conteudo, .data, .data .name {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -570,7 +571,7 @@ html .testTit, html #menuToggle span, html .navbar span {
   background-size: 100%; }
 
 .navbar span {
-  margin-left: 0.001em; }
+  margin-left: 0.001esdasm; }
 
 .menu {
   border-bottom: 2pt solid #59e7b8; }
@@ -579,37 +580,38 @@ html .testTit, html #menuToggle span, html .navbar span {
   color: #1cbe88;
   flex-direction: column;
   flex-wrap: wrap;
-  background: rgba(0, 0, 0, 0.651); }
+  background: rgba(0, 0, 0, 0.651);
+  margin-top: -1.3em; }
   .data .nameImg {
     margin: 4em;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.527), 0 6px 20px 0 rgba(0, 0, 0, 0.651);
     border-radius: 500pt;
-    padding: 20pt;
-    max-height: 30vh;
-    min-height: 30vh;
-    max-width: 15vw;
-    min-width: 15vw; }
+    padding: 20pt; }
     .data .nameImg .imageUser {
       background: url("https://web.whatsapp.com/pp?e=https%3A%2F%2Fpps.whatsapp.net%2Fv%2Ft61.24694-24%2F57562855_333480720859593_5964010747074707456_n.jpg%3Foe%3D5CC5A81E%26oh%3D04bb56156dde4f036074e87c98aab00d&t=l&u=5519982480204%40c.us&i=1556118100") no-repeat;
-      height: 30vh;
-      width: 15vw;
+      height: 10em;
+      width: 10em;
       background-size: 100%;
       border-radius: 500pt;
       background-position: center; }
-    .data .nameImg .name {
-      margin: 2em; }
-      .data .nameImg .name h1 {
-        font-weight: 550;
-        font-family: "Germania One";
-        background: -webkit-linear-gradient(white, #1cbe88);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        font-size: 60pt;
-        margin-top: -0.08em; }
+      @media only screen and (min-width: 768px) {
+        .data .nameImg .imageUser {
+          height: 30vh;
+          width: 15vw; } }
+  .data .name {
+    margin: 0em; }
+    .data .name h1 {
+      font-weight: 550;
+      font-family: "Germania One";
+      background: -webkit-linear-gradient(white, #1cbe88);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 60pt;
+      margin-top: -0.08em; }
   .data .information {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.692), 0 6px 20px 0 rgba(0, 0, 0, 0.774);
     padding: 5vh;
-    margin: 5em;
+    margin: 1em;
     border-radius: 20pt; }
     .data .information span {
       border-bottom: none;
@@ -618,18 +620,26 @@ html .testTit, html #menuToggle span, html .navbar span {
       background: -webkit-linear-gradient(#1cbe88, white);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      font-size: 40pt;
+      font-size: 20pt;
       line-height: 1.4em; }
+      @media only screen and (min-width: 768px) {
+        .data .information span {
+          font-weight: 550;
+          font-family: "Germania One";
+          background: -webkit-linear-gradient(#1cbe88, white);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          font-size: 40pt; } }
   .data .friends {
     font-weight: 500;
     font-family: "Germania One";
     color: WHITE;
-    font-size: 20pt;
+    font-size: 15pt;
     text-transform: uppercase;
     padding: 20pt 10pt;
     border-radius: 20pt;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.527), 0 6px 20px 0 rgba(0, 0, 0, 0.651);
-    margin-left: 2em;
+    margin-top: 2em;
     transition: 0.5s;
     cursor: pointer;
     border: 4pt solid whitesmoke; }
