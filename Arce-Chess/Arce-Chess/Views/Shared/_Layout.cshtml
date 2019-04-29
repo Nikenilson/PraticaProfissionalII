@@ -1,10 +1,8 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../Content/home.css">
+    <!-- <link rel="stylesheet" type="text/css" href="../css/menu.css"> -->
+    <link rel="stylesheet" type="text/css" href="../css/home.css">
     <script type='text/javascript' src='../javascript/menu.js'></script>
     <link rel="shortcut icon" type="imagem/x-icon" href="/images/genkii-icon.ico" />
     <title>Arce Chess - Home</title>
@@ -20,17 +18,30 @@
     <meta name="viewport" content="width=device-width">
     <script src='https://code.jquery.com/jquery-3.3.1.min.js' integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=' crossorigin='anonymous'></script>
     <meta charset="utf-8">
+    <script>
+// 		$(window).on("scroll",function() {
+//         navHeight = $('.menu').outerHeight(),
+//         windowTop = $(this).scrollTop();
+
+//     if (windowTop > navHeight) {
+//         $('.menu').addClass("scrolling");
+//     } else {
+//         $('.menu').removeClass("scrolling");
+//     }
+// });
+
+    </script>
 </head>
 <body>
 
     <div class="navbar">
-        <a href="Index">
-            <span>
+        <a href="home.html">
+            <span class="testTit">
                 Arce Chess <i class="fas fa-chess"></i>
             </span>
         </a>
 
-        <a href="/Home/Perfil"> <div class="perfil"><img src="https://media1.tenor.com/images/508fe7a0908b87ea1de36391094a1049/tenor.gif?itemid=9214816" alt=""></a>
+        <a href="perfil.html"> <div class="perfil"><img src="https://media1.tenor.com/images/508fe7a0908b87ea1de36391094a1049/tenor.gif?itemid=9214816" alt=""></a>
     </div></a>
     </div>
 
@@ -42,11 +53,11 @@
         <span></span>
         <ul class="menu">
 
-            <a href="/play" id="play" class="icon-bar btnGame">Jogar</a>
-            <a href="/Home/Regras" id="rules" class="btnRegras">Regras</a>
-            <a href="/Home/Historia" id="history" class="btnHistoria">História</a>
-            <a href="Chat" id="chat" class="btnChat">Chat</a>
-            <a href="/Home/SobreNos" id="criadores" class="btnSobreNos">Sobre Nós</a>
+            <a href="/play" id="play" class="btnGame">Jogar</a>
+            <a href="regras.html" id="rules" class="btnRegras">Regras</a>
+            <a href="historia.html" id="history" class="btnHistoria">História</a>
+            <a href="chat.html" id="chat" class="btnChat">Chat</a>
+            <a href="sobreNos.html" id="criadores" class="btnSobreNos">Sobre Nós</a>
         </ul>
 
     </div>
@@ -55,11 +66,11 @@
         <!-- <img src="https://images.pexels.com/photos/301469/pexels-photo-301469.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="" class="imgTop"> -->
     </div>
 
+    <div class="topo"><i class="fas fa-arrow-circle-up"></i></div>
     <div class="container body-content">
         @RenderBody()
-        
+
     </div>
 
-    
 </body>
 </html>

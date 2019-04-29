@@ -142,58 +142,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap-theme.min.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\cadastro.css" />
-    <Content Include="Content\chat.css" />
-    <Content Include="Content\editorMaster.css" />
-    <Content Include="Content\historia.css" />
-    <Content Include="Content\home.css" />
-    <Content Include="Content\inicio.css" />
-    <Content Include="Content\menu.css" />
-    <Content Include="Content\perfil.css" />
-    <Content Include="Content\regras.css" />
-    <Content Include="Content\Site.css" />
-    <Content Include="Content\sobreNos.css" />
-    <Content Include="Content\xadrez.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="home.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Content\bootstrap-theme.css.map" />
-    <Content Include="Content\bootstrap-theme.min.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\bootstrap.min.css.map" />
-    <Content Include="Content\ae.bat" />
-    <Content Include="Content\alula.bat" />
-    <Content Include="Content\cadastro.css.map" />
-    <Content Include="Content\cadastro.scss" />
-    <Content Include="Content\editorMaster.css.map" />
-    <Content Include="Content\editorMaster.scss" />
-    <Content Include="Content\historia.bat" />
-    <Content Include="Content\historia.css.map" />
-    <Content Include="Content\historia.scss" />
-    <Content Include="Content\home.bat" />
-    <Content Include="Content\home.css.map" />
-    <Content Include="Content\home.csss" />
-    <Content Include="Content\home.csss.map" />
-    <Content Include="Content\home.scss" />
-    <Content Include="Content\inicio.css.map" />
-    <Content Include="Content\inicio.scss" />
-    <Content Include="Content\mixinsDoNaruto.scss" />
-    <Content Include="Content\package-lock.json" />
-    <Content Include="Content\perfil.css.map" />
-    <Content Include="Content\perfil.scss" />
-    <Content Include="Content\regras.bat" />
-    <Content Include="Content\regras.css.map" />
-    <Content Include="Content\regras.scss" />
-    <Content Include="Content\sobreNos.bat" />
-    <Content Include="Content\sobreNos.css.map" />
-    <Content Include="Content\sobreNos.scss" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\editt.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -205,6 +159,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\menu.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -217,7 +172,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Historia.cshtml" />
     <Content Include="Views\Home\SobreNos.cshtml" />
@@ -229,6 +183,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="App_Themes\Tema1\" />
+    <Folder Include="Content\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
