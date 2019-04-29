@@ -46,5 +46,10 @@ namespace Arce_Chess.Controllers
         {
             return View();
         }
+
+        public ActionResult Perfil()
+        {
+            return View();
+        }
     }
 }

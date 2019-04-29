@@ -185,6 +185,7 @@
     <Folder Include="App_Themes\Tema1\" />
     <Folder Include="Content\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\NewFolder1\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
