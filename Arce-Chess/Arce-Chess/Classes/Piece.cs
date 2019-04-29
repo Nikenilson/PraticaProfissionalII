@@ -9,8 +9,6 @@ namespace Arce_Chess.Classes
     {
         private string jogador;
         private string nomePiece;
-        private int movimentos;
-        private int vezesEscolhida;
 
         public Piece(string j, string n, int m)
         {
@@ -40,15 +38,6 @@ namespace Arce_Chess.Classes
                     throw new Exception();
 
                 nomePiece = value;
-            }
-        }
-
-        public int Movimentos
-        {
-            get { return movimentos; }
-            set
-            {
-                movimentos = value;
             }
         }
     }
