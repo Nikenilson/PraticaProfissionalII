@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Arce_Chess.Classes
 {
-    public class Salas
+    public class Partida
     {
     }
 }

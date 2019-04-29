@@ -131,8 +131,8 @@
     <Compile Include="Classes\Jogadas.cs" />
     <Compile Include="Classes\Piece.cs" />
     <Compile Include="Classes\Pieces.cs" />
-    <Compile Include="Classes\Sala.cs" />
-    <Compile Include="Classes\Salas.cs" />
+    <Compile Include="Classes\Partida.cs" />
+    <Compile Include="Classes\Partidas.cs" />
     <Compile Include="Classes\Usuario.cs" />
     <Compile Include="Classes\Usuarios.cs" />
     <Compile Include="Controllers\HomeController.cs" />
