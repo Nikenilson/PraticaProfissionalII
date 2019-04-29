@@ -3,13 +3,14 @@
     ViewBag.Title = "Perfil";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<link rel="stylesheet" type="text/css" href="../Content/perfil.css">
+<link rel="stylesheet" type="text/css" href="../../../../css/perfil.css">
 <br><br><br>
 <div class="data">
     <div class="nameImg">
         <div class="imageUser"></div>
         <div class="name"><h1>Naruto</h1></div>
     </div>
+    <br>
     <div class="information">
         <span>E-mail:  naruto@gmail.com</span><br>
         <span>Nível:   GOD</span><br>
@@ -19,6 +20,10 @@
     </div>
 
     <a class="friends" id="friends" onclick="amigos()"><i class="fas fa-user-friends"></i> <br>Enviar Pedido de Amizade</a> <br><br>
+</div>
+
+<div class="topo" onclick="topo()"><i class="fas fa-arrow-circle-up"></i></div>
+
 </div>
 <script>
     function amigos() {
