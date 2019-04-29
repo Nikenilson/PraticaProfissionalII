@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 
@@ -7,7 +9,7 @@ namespace Arce_Chess.Classes
 {
     public class Pieces
     {
-        static string cs = "Data Source=regulus;Initial Catalog=;User ID=;Password=";
+        static string cs = "Data Source=regulus;Initial Catalog=;User ID=PR118188;Password=PR118188";
 
         public static Piece[] getPiecesJogador(string jogador)
         {
@@ -16,7 +18,7 @@ namespace Arce_Chess.Classes
             SqlConnection conexao = new SqlConnection();
             conexao.ConnectionString = cs.Substring(cs.IndexOf("Data Source"));
 
-            SqlCommand comando = new SqlCommand("Select * from Piece where jogador = @user", con);
+            SqlCommand comando = new SqlCommand("Select * from Piece where jogador = @user", conexao);
             comando.Parameters.AddWithValue("@user", jogador);
 
             conexao.Open();
@@ -45,13 +47,13 @@ namespace Arce_Chess.Classes
 
             string sqlCmd = "update Piece set movimentos = ((select vezesMovida from piece where jogador = @usuario and nome = @nome)+1) where usuario = @usuario and nome = @nome";
 
-            SqlCommand comando = new SqlCommand(sqlCmd, con);
+            SqlCommand comando = new SqlCommand(sqlCmd, conexao);
 
             comando.Parameters.AddWithValue("@usuario", jogador);
             comando.Parameters.AddWithValue("@nome", nomePiece);
 
             conexao.Open();
-            cmd.ExecuteNonQuery();
+            comando.ExecuteNonQuery();
             conexao.Close();
         }
     }

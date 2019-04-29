@@ -15,19 +15,18 @@ constraint fkCodNegras foreign key (codUsuarioNegras) references AC_Usuario(codu
 drop table AC_PNG
 */
 
-Create Table Usuario(
+Create Table Usuario( --DAR UPDATE NA TABELA AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 CodUsuario int primary key not null,
 Nome varchar(40) not null,
 email ntext not null,
 Senha ntext not null,
+partidas int not null,
+vitorias int not null,
 imgPerfil ntext,
 nDeAmigos int not null
 )
 
 select * from AC_Usuario
-
-
-
 
 Create table Partida(
 CodPartida int primary key not null,
@@ -36,6 +35,14 @@ CodUsuario2 int not null
 constraint fkPartidaJogador1 foreign key (codUsuario1) references Usuario(codUsuario),
 constraint fkPartidaJogador2 foreign key (codUsuario2) references Usuario(codUsuario),
 )
+
+Create table Jogada(
+CodJogada int primary key not null,
+CodPartida int not null,
+Cor varchar(7) not null, 
+piece varchar(16) not null,		  
+posicaoOrigem varchar(30) not null,
+posicaoFim varchar(30) not null,
 
 
 

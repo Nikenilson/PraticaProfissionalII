@@ -7,7 +7,7 @@ using System.Web;
 
 namespace Arce_Chess.Classes
 {
-    public class Jogadas
+    public class Partidas
     {
         static string cs = "Data Source=regulus;Initial Catalog=;User ID=PR118188;Password=PR118188";
     }

@@ -8,41 +8,41 @@ namespace Arce_Chess.Classes
     public class Jogada
     {
         private int codJogada;
-        private int CodPartida;
+        private int codPartida;
         private string cor;
         private string piece;
         private Coordenada posicaoOrigem;
         private Coordenada posicaoFim;
 
-        public Jogada(int ID, int IDSala, bool cor, string peca, Coordenada posO, Coordenada posF)
+        public Jogada(int codJogada, int codPartida, string cor, string piece, Coordenada posicaoOrigem, Coordenada posicaoFim)
         {
-            this.ID = ID;
-            this.IDSala = IDSala;
+            this.CodJogada = codJogada;
+            this.CodPartida = codPartida;
             this.Cor = cor;
-            this.Peca = peca;
-            this.PosOrigem = posO;
-            this.PosFim = posF;
+            this.Piece = piece;
+            this.PosicaoOrigem = posicaoOrigem;
+            this.PosicaoFim = posicaoFim;
         }
 
-        public int ID
+        public int CodJogada
         {
-            get { return id; }
+            get { return codJogada; }
             set
             {
-                id = value;
+                codJogada = value;
             }
         }
 
-        public int IDSala
+        public int CodPartida
         {
-            get { return idSala; }
+            get { return codPartida; }
             set
             {
-                idSala = value;
+                codPartida = value;
             }
         }
 
-        public bool Cor //0->preto; 1->branco
+        public string Cor
         {
             get { return cor; }
             set
@@ -51,41 +51,40 @@ namespace Arce_Chess.Classes
             }
         }
 
-        public string Peca
+        public string Piece
         {
-            get { return peca; }
+            get { return piece; }
             set
             {
-                if (string.IsNullOrEmpty(value))
+                if (value == null || value.Equals(""))
                     throw new Exception("Peça indefinida");
 
-                peca = value;
+                piece = value;
             }
         }
 
-        public Coordenada PosOrigem
+        public Coordenada PosicaoOrigem
         {
-            get { return posOrigem; }
+            get { return posicaoOrigem; }
             set
             {
                 if (value == null)
                     throw new Exception("Posição de origem não pode ser nula.");
 
-                posOrigem = value;
+                posicaoOrigem = value;
             }
         }
 
-        public Coordenada PosFim
+        public Coordenada PosicaoFim
         {
-            get { return posFim; }
+            get { return posicaoFim; }
             set
             {
                 if (value == null)
                     throw new Exception("Posição de destino não pode ser nula.");
 
-                posFim = value;
+                posicaoFim = value;
             }
         }
     }
-}
 }
