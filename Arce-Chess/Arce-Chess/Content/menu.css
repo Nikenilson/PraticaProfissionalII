@@ -1,0 +1,455 @@
+
+  @import url('https://fonts.googleapis.com/css?family=MedievalSharp|Muli');
+
+
+        :root
+        {
+            --aoi: rgb(26, 53, 91); 
+            --midori: rgb(36, 163, 22); 
+            --murasaki: rgb(68, 13, 94); 
+            --chairo: rgb(181, 135, 99);
+            --momoiro: rgb(245, 226, 195);
+        }
+
+
+        html, body
+        {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0px;
+        background-size: 100%;
+        background-position: fixed;
+        max-height: 1000px;
+          background: none;
+         
+        
+        }
+
+        a
+        {
+            text-decoration: none;
+            color: inherit;
+        }
+    
+
+        /* .conteudo
+        {
+          background: rgba(0, 0, 0, 0.438);
+          width: 100%;
+          height: 100%;
+          position: absolute;
+        } */
+
+        .slogan
+        {
+          display: block;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+           width: 100%;
+           height: 1090px;
+            z-index: 1000;
+
+        }
+
+        .imgSlogan
+        {
+          object-fit: cover;
+          overflow-x: hidden;
+          
+          overflow: auto;
+          
+          max-height: 700px;
+          width: 100%;
+         
+        }
+
+        .imgSlogan::-webkit-scrollbar {
+          width: 0px;
+        }
+        
+
+        .imgSlogan img
+        {
+          height: 50%;
+          width: 100%;
+        }
+
+        .textSlogan
+        {
+          background: rgba(78, 83, 88, 0.493);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          height: 10vh;
+          width: 20vh;
+          position: absolute;
+          right: 400px;
+          top: 200px;
+          z-index: 1;
+        }
+
+
+        .navbar{
+          z-index: 1000000000000000000000000000000000000000;
+            position: fixed;
+            height: 12.5vh;
+            overflow: hidden;
+            top: 0;
+            display: flex;
+            align-items: center;
+            background: var(--chairo);
+            width: 100%;
+           border-bottom: 10px solid var(--momoiro);
+           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          }
+
+          .navbar input[type = "text"]
+          {
+            background: none;
+            outline: none;
+            border: none;
+
+          }
+
+          .logo
+          {
+            background: url('https://cdn.discordapp.com/attachments/358991776385597441/546815918148288542/genkii-logoW.png') no-repeat 50% 50%;
+            background-size: contain;
+            width: 380px;
+            height: 98px;
+            float: left;
+            margin-left: 10px;
+            border-radius: 20%;
+            max-width: 100px;
+          }
+          .menu
+          {
+            font-family: 'MedievalSharp', cursive;
+            position: absolute;
+            padding: 15px;
+            right: 0px;
+            cursor: context-menu;
+          }
+        
+          .menu a{
+            text-decoration: none;
+            font-size: 16pt;
+            font-weight: 600;
+            margin-left: 20px;
+            transition: color 0.3s;
+            text-transform: uppercase;
+            color: var(--chairo);
+            letter-spacing: 2px;
+            /* PC */
+            background: var(--momoiro);
+            padding: 15px;
+            border-radius: 22.5px;
+            border-bottom: 5px solid rgb(218, 201, 173);
+            padding-bottom: 10px;
+            transition: 0.3s;
+          }
+
+         
+          .menu a i
+          {
+            font-size: 25px;
+          }
+          
+    
+
+          .navbar a img
+          {
+             margin-left: 20px;
+              background-size: 100%;
+              height: 60px;
+              border: 4px solid azure;
+              border-radius: 50px;  
+              object-fit: cover;
+              cursor: pointer;
+
+          }
+
+          .alert
+          {
+              top: 0;
+              position: absolute;
+              background: rgba(0, 0, 0, 0.7);
+              height: 150%;
+              width: 100%;
+              z-index: 100;
+          }
+
+          .sair
+          {
+              position: absolute;
+              top: 20%;
+              left: 35%;
+              height: 200px;
+              width: 700px;
+              background: rgb(39, 51, 68);
+              box-shadow: 0 0 0 0 rgba(0,0,0,0.2),0 0 0 0 rgba(0,0,0,0.17);
+              animation-duration: 0.8s;
+              border: 5px solid azure;
+              border-radius: 50px;
+          }
+
+          .sair h1
+          {
+            font-family: 'Permanent Marker', cursive;
+            font-size: 4vh;
+            color: white;
+            font-weight: 200;
+            /* border-bottom: 3.5px solid rgba(220, 20, 60, 0.774); */
+            max-width: 650px;
+            text-shadow: -2px 1px 10px black;
+            margin-left: 30px;
+            
+          }
+
+          .sair a
+          {
+              text-decoration: none;
+              font-family: 'Permanent Marker', cursive;
+              font-size: 40pt;
+              color: white;
+              border: 4px solid rgba(245, 245, 245, 0.767);
+              padding: 10px 30px;
+              border-radius: 50px;
+              margin-left: 150px;
+              transition: 0.5s;
+              cursor: pointer;
+          }
+
+          .sair a:hover
+          {
+              color: rgb(39, 51, 68);
+              background: rgba(245, 245, 245, 0.767);
+              
+
+          }
+
+          #img
+          {
+              margin: 0;
+          }
+
+      
+
+         
+         
+          .btn{
+            display: none;
+            position: absolute;
+            right: 20px;
+            
+          }
+          
+          .btn span{
+            display: block;
+            margin: 6px;
+            width: 40px;
+            height: 3px;
+            background: azure;
+          }
+
+          .btnX
+          {
+            font-size: 250%;
+            color: var(--chairo);
+            background: azure;
+            font-weight: 700;
+            padding: 4px 15px;
+            border-radius: 100%;
+            font-family: 'Muli', sans-serif;
+         
+          }
+
+          p{
+            padding: 20px;
+            font-size: 20px;
+            text-align: justify;
+          
+          }
+
+
+        
+          .show
+          {
+              min-height: 300px;
+              padding: 15px;
+              
+              display: block;
+                position: absolute;
+               
+              
+          }
+
+
+
+          .alertMob
+            {
+                top: 0;
+                position: absolute;
+                background: rgba(0, 0, 0, 0.7);
+                height: 200px;
+                width: 200px;
+                z-index: 100;
+            }
+
+            @keyframes menuMobile
+            {
+                
+                from
+                {
+                  top: 0;
+                }
+                to
+                {
+                  top: 80px;  
+                }
+            
+          }
+
+            @media (min-width : 601px)
+            {
+              .menu a:hover{
+                /* PC */
+                color: rgb(143, 143, 143);
+                /* padding: 15px;
+                border-radius: 20px; */
+                border-bottom: 5px solid rgba(119, 119, 119, 0.507);
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                background-color: #b8c6db;
+                background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%);
+              }
+    
+            }
+
+            /* @media (max-width : 1050px) and (min-width : 601px)
+            {
+                .menu
+                {
+                    padding: 0px;
+                    left: 40%;
+                }
+            } */
+
+          
+
+        @media only screen and (max-width : 600px) /* 381 X 595 */
+        {
+
+            
+            
+  
+            .sair
+            {
+                position: absolute;
+                top: 20%;
+                left: 35%;
+                height: 200px;
+                width: 700px;
+                background: var(--aoi);
+                box-shadow: 0 0 0 0 rgba(0,0,0,0.2),0 0 0 0 rgba(0,0,0,0.17);
+                animation-duration: 0.8s;
+                border: 5px solid azure;
+                border-radius: 50px;
+            }
+  
+            .sair h1
+            {
+              font-family: 'Permanent Marker', cursive;
+              font-size: 4vh;
+              color: white;
+              font-weight: 200;
+              /* border-bottom: 3.5px solid rgba(220, 20, 60, 0.774); */
+              max-width: 650px;
+              text-shadow: -2px 1px 10px black;
+              margin-left: 30px;
+              
+            }
+  
+            .sair a
+            {
+                text-decoration: none;
+                font-family: 'Permanent Marker', cursive;
+                font-size: 200%;
+                color: white;
+                border: 4px solid rgba(245, 245, 245, 0.767);
+                padding: 10px 30px;
+                border-radius: 50px;
+                margin-left: 150px;
+                transition: 0.5s;
+                cursor: pointer;
+            }
+
+            .navbar
+            {
+                overflow: visible;
+               border-bottom: none;
+               border-bottom: 10px solid var(--chairo)
+            }
+
+
+         
+
+
+            .menu
+            {
+                width: 100%;
+                height: 0;
+                top: 80px;
+                background: var(--chairo);
+                overflow: hidden;
+                max-height: 0;
+                padding: 0;
+                
+                
+                
+            }
+            
+
+            .show:hover
+            {
+                animation-name: menuMobile;
+                animation-delay: 10s;
+            }
+            
+        
+
+           
+
+            .menu a
+            {
+               
+                display: block;
+                text-align: center;
+                padding: 10px;
+                background: none;
+
+                margin: 0;
+                font-weight: 600;
+                margin-left: 20px;
+                transition: color 0.3s;
+                text-transform: uppercase;
+                color: var(--momoiro);
+                border-bottom: 0.5px solid rgba(255, 255, 255, 0.377);
+                max-width: 80vw;
+                border-radius: 0;
+            }
+
+            .btn
+            {
+                display: block;
+                cursor: pointer;
+            }
+
+
+            
+
+    
+        }
+
+
+    
