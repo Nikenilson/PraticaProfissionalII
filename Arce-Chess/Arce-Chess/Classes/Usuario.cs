@@ -36,17 +36,29 @@ namespace Arce_Chess.Classes
         public string Nome
         {
             get => nome;
-            set => nome = value;
+            set
+            {
+                if (value == null || value.Equals(""))
+                    throw new Exception("Nome do Usuario ausente");
+            }
         }
         public string Email
         {
             get => email;
-            set => email = value;
+            set
+            {
+                if (value == null || value.Equals(""))
+                    throw new Exception("Email ausente");
+            }
         }
         public string Senha
         {
             get => senha;
-            set => senha = value;
+            set
+            {
+                if (value == null || value.Equals(""))
+                    throw new Exception("Senha ausente");
+            }
         }
         public int Vitorias
         {
@@ -61,7 +73,11 @@ namespace Arce_Chess.Classes
         public string Imagem
         {
             get => imagem;
-            set => imagem = value;
+            set
+            {
+                if (value == null || value.Equals(""))
+                    throw new Exception("Link para a imagem ausente");
+            }
         }
         public int NDeAmigos
         {

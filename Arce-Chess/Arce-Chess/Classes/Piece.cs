@@ -9,12 +9,13 @@ namespace Arce_Chess.Classes
     {
         private string jogador;
         private string nomePiece;
+        private int qtdMovimentos;
 
         public Piece(string j, string n, int m)
         {
             this.Jogador = j;
             this.NomePiece = n;
-            this.Movimentos = m;
+            this.QtdMovimentos = m;
         }
 
         public string Jogador
@@ -23,7 +24,7 @@ namespace Arce_Chess.Classes
             set
             {
                 if (value == null || value.Equals("") )
-                    throw new Exception("Nome invalido");
+                    throw new Exception("Nome de jogador nulo");
 
                 jogador = value;
             }
@@ -34,10 +35,19 @@ namespace Arce_Chess.Classes
             get { return nomePiece; }
             set
             {
-                if (string.IsNullOrEmpty(value))
-                    throw new Exception();
+                if (value == null || value.Equals(""))
+                    throw new Exception("Nome da Peça nulo");
 
                 nomePiece = value;
+            }
+        }
+
+        public int QtdMovimentos
+        {
+            get { return qtdMovimentos; }
+            set
+            {
+                qtdMovimentos = value;
             }
         }
     }

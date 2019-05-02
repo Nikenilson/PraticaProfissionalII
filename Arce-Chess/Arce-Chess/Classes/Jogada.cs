@@ -47,7 +47,8 @@ namespace Arce_Chess.Classes
             get { return cor; }
             set
             {
-                cor = value;
+                if (value == null || !value.ToUpper().Equals("B") || !value.ToUpper().Equals("P"))
+                    cor = value.ToUpper();
             }
         }
 
@@ -69,7 +70,7 @@ namespace Arce_Chess.Classes
             set
             {
                 if (value == null)
-                    throw new Exception("Posição de origem não pode ser nula.");
+                    throw new Exception("Posição inicial nula.");
 
                 posicaoOrigem = value;
             }
@@ -81,7 +82,7 @@ namespace Arce_Chess.Classes
             set
             {
                 if (value == null)
-                    throw new Exception("Posição de destino não pode ser nula.");
+                    throw new Exception("Posição final nula.");
 
                 posicaoFim = value;
             }

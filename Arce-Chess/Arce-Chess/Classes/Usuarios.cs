@@ -41,35 +41,6 @@ namespace Arce_Chess.Classes
             return ret;
         }
 
-        public static int[] getVLT(string login)
-        {
-            int[] ret;
-
-            SqlConnection con = new SqlConnection();
-            cs = cs.Substring(cs.IndexOf("Data Source"));
-            con.ConnectionString = cs;
-
-            SqlCommand cmd = new SqlCommand("Select Victories, Losses, Ties from usuario where username = @user", con);
-            cmd.Parameters.AddWithValue("@user", login);
-
-            con.Open();
-            SqlDataAdapter adapt = new SqlDataAdapter(cmd);
-            DataSet ds = new DataSet();
-
-            adapt.Fill(ds);
-            con.Close();
-
-            if (ds.Tables[0].Rows.Count == 1)
-            {
-                DataRow dr = ds.Tables[0].Rows[0];
-                ret = new int[3] { Convert.ToInt32(dr.ItemArray[0]), Convert.ToInt32(dr.ItemArray[1]), Convert.ToInt32(dr.ItemArray[2]) };
-            }
-            else
-                throw new Exception("Usuário não existente");
-
-            return ret;
-        }
-
         public static void Cadastrar(Usuario usu)
         {
             SqlConnection con = new SqlConnection();
