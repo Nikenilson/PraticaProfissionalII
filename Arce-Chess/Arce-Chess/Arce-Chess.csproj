@@ -173,6 +173,23 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\1.png" />
+    <Content Include="Content\2.png" />
+    <Content Include="Content\3.png" />
+    <Content Include="Content\4.png" />
+    <Content Include="Content\5.png" />
+    <Content Include="Content\cadastro.css" />
+    <Content Include="Content\chat.css" />
+    <Content Include="Content\editorMaster.css" />
+    <Content Include="Content\historia.css" />
+    <Content Include="Content\home.css" />
+    <Content Include="Content\inicio.css" />
+    <Content Include="Content\logoGreenB.png" />
+    <Content Include="Content\menu.css" />
+    <Content Include="Content\perfil.css" />
+    <Content Include="Content\regras.css" />
+    <Content Include="Content\sobreNos.css" />
+    <Content Include="Content\xadrez.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -193,6 +210,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\menu.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\xadrez.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -216,7 +234,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="App_Themes\Tema1\" />
     <Folder Include="Classes\" />
-    <Folder Include="Content\" />
     <Folder Include="Views\NewFolder1\" />
   </ItemGroup>
   <ItemGroup>
