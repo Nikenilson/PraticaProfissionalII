@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Arce_Chess.Models;
+using Arce_Chess.DAO;
 
 namespace Arce_Chess.Controllers
 {
@@ -47,9 +49,6 @@ namespace Arce_Chess.Controllers
             return View();
         }
 
-        public ActionResult Perfil()
-        {
-            return View();
-        }
+    
     }
 }
