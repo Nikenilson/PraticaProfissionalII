@@ -6,11 +6,102 @@
 
 
 <link rel="stylesheet" type="text/css" href="../../../../css/sobreNos.css">
+<script type="text/javascript" src="../Scripts/Chart.js"></script>
 
 <div class="conteudo">
     <div class="back">
         <h1>Sobre Nós</h1>
     </div>
 </div>
+
+<canvas id="myChart" width="100" height="100"></canvas>
+<script>
+    var data = {
+        labels: ['Formatação do Sass', 'Erros de integração ao Visual Studio', 'Compilação do Sass', 'Erro de acesso ao Banco', 'Responsividade do Site', 'Menu Mobile'],
+        datasets: [{
+            type: 'line',
+            label: '% dos erros',
+            borderColor: "#BA1E14",
+            backgroundColor: "#BA1E14",
+            pointBorderWidth: 5,
+            fill: false,
+            data: [50, 80, 90, 96, 99, 100],
+            yAxisID: 'y2'          
+        },
+        {
+            type: 'bar',
+            label: 'Quantidade de Erros',
+            data: [25, 15, 5, 3, 2, 1],
+            yAxisID: 'y1',
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    };
+
+    var options = {
+        scales: {
+            yAxes: [{
+                stacked: true,
+                scaleLabel: {
+                    display: true,
+                    labelString: "Erros"
+                },
+                ticks: {
+                    beginAtZero: true
+                }
+            }],
+            yAxes: [{
+                type: "linear",
+                position: "left",
+                id: "y1",
+                stacked: true,
+                ticks: {
+                    suggestedMin: 0
+                },
+                scaleLabel: {
+                    display: true,
+                    labelString: "Quantidade de erros"
+                }
+            }, {
+                type: "linear",
+                position: "right",
+                id: "y2",
+                ticks: {
+                    suggestedMin: 0,
+                    callback: function (value) {
+                        return value + "%";
+                    }
+                },
+                scaleLabel: {
+                    display: true,
+                    labelString: "Porcentagem"
+                }
+            }]
+        }
+    }
+
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: data,
+        options: options
+    });
+        
+</script>
 
 <script type="text/javascript" src="../Scripts/editt.js"></script>
