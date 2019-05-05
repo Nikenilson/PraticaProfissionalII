@@ -635,3 +635,47 @@ $bestColorsNames: "Chat", "Regras", "Game", "Historia", "SobreNos";
     }
     @include mq(tablet-wide){}
 }
+
+
+$um: "http://www.candssportscenter.com/wp-content/uploads/2017/11/Fotolia_132164078_Subscription_Monthly_M.jpg";
+$dois: "https://www.worldchesspieces.com/wp-content/uploads/2018/12/Chess-Movies.jpg";
+$tres: "https://ryver.com/wp-content/uploads/2015/08/chess-836784_1920.jpg";
+$quatro: "https://coloradomasterchess.com/wp-content/uploads/2017/11/chess-1226126_1920.jpg";
+
+
+.slider
+{ 
+ width: 100%;
+ height: 100%;
+ background: url($um);
+ background-size: 100%;
+ margin: 100px auto;
+ animation: slide 10s infinite;
+
+}
+
+
+@keyframes slide
+{
+    25%
+    {
+        background: url($dois);
+
+        background-size: 100%;
+    }
+    50%
+    {
+        background: url($tres);
+        background-size: 100%;
+    }
+    75%
+    {
+        background: url($quatro);
+        background-size: 100%;
+    }
+    100%
+    {
+        background: url($um);
+        background-size: 100%;
+    }
+}
