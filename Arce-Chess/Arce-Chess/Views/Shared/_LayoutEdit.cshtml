@@ -2,7 +2,6 @@
 <html>
 <head>
     <!-- <link rel="stylesheet" type="text/css" href="../css/menu.css"> -->
-    <link rel="stylesheet" type="text/css" href="../css/regras.css">
     <script type='text/javascript' src='../javascript/menu.js'></script>
     <link rel="shortcut icon" type="imagem/x-icon" href="/images/genkii-icon.ico" />
     <title></title>
@@ -19,6 +18,7 @@
     <script src='https://code.jquery.com/jquery-3.3.1.min.js' integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=' crossorigin='anonymous'></script>
     <meta charset="utf-8">
     <script type="text/javascript" src="../javascript/editt.js"></script>
+    <script src="~/Scripts/menu.js"></script>
     <script>
         // 		$(window).on("scroll",function() {
         //         navHeight = $('.menu').outerHeight(),
@@ -36,14 +36,13 @@
 <body>
 
     <div class="navbar">
-        <a href="home.html">
+        <a href="/Home">
             <span class="testTit">
                 Arce Chess <i class="fas fa-chess"></i>
             </span>
         </a>
-        <div href="" class="perfil">
-            <img src="https://media1.tenor.com/images/508fe7a0908b87ea1de36391094a1049/tenor.gif?itemid=9214816" alt=""></a>
-        </div>
+        <a href="/Home/Perfil"> <div class="perfil"><img src="https://media1.tenor.com/images/508fe7a0908b87ea1de36391094a1049/tenor.gif?itemid=9214816" alt=""></a>
+    </div></a>
     </div>
 
     <div id="menuToggle" class="elMenu">
@@ -53,11 +52,11 @@
         <span></span>
         <ul class="menu">
 
-            <a href="/play" id="play" class="btnGame">Jogar</a>
-            <a href="/Regras" id="rules" class="btnRegras">Regras</a>
-            <a href="/Historia" id="history" class="btnHistoria">História</a>
-            <a href="/Chat" id="chat" class="btnChat">Chat</a>
-            <a href="/SobreNos" id="criadores" class="btnSobreNos">Sobre Nós</a>
+            <a href="/Home/play" id="play" class="btnGame">Jogar</a>
+            <a href="/Home/Regras" id="rules" class="btnRegras">Regras</a>
+            <a href="/Home/Historia" id="history" class="btnHistoria">História</a>
+            <a href="/Home/Chat" id="chat" class="btnChat">Chat</a>
+            <a href="/Home/SobreNos" id="criadores" class="btnSobreNos">Sobre Nós</a>
             <i class="far fa-edit" onclick="Editar()"></i>
         </ul>
 
