@@ -21,7 +21,7 @@ background-size: 100%;}
 
 .navbar span
 {
-    margin-left: 0.001em;
+    margin-left: 0.001esdasm;
 }
 
 .menu{border-bottom: 2pt solid lighten($chat, 20%);}
@@ -33,52 +33,62 @@ background-size: 100%;}
    flex-direction: column;
    flex-wrap: wrap;
   background: rgba(0, 0, 0, 0.651);
-
+    margin-top: -1.3em;
     .nameImg
     {
         margin: 4em;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.527), 0 6px 20px 0 rgba(0, 0, 0, 0.651);
         border-radius: 500pt;
         padding: 20pt;
-        @include size(30vh, 15vw);
+ 
         .imageUser
         {
             background: url("https://web.whatsapp.com/pp?e=https%3A%2F%2Fpps.whatsapp.net%2Fv%2Ft61.24694-24%2F57562855_333480720859593_5964010747074707456_n.jpg%3Foe%3D5CC5A81E%26oh%3D04bb56156dde4f036074e87c98aab00d&t=l&u=5519982480204%40c.us&i=1556118100") no-repeat;
-            height: 30vh;
-            width: 15vw;
+            height: 10em;
+            width: 10em;
             background-size: 100%;
+            @include mq(tablet)
+            { 
+               height: 30vh;
+               width: 15vw;
+
+            }
+            
             border-radius: 500pt;
             background-position: center;
             
         }
 
-        .name
-        {
+       
+        
+    }
+
+
+    .name
+    {
             @extend %conteudo-centralizadoC;
-            margin: 2em;
+            margin: 0em;
             h1
             {
                 @include font-gradient(white, $chat, 3, 60pt, 550);
                 margin-top: -0.08em; 
             }
             
-        }
-    
-        
     }
-
+    
     .information
     {
         
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.692), 0 6px 20px 0 rgba(0, 0, 0, 0.774);
         
         padding: 5vh;
-        margin: 5em;
+        margin: 1em;
         border-radius: 20pt;
         span
         {
             border-bottom: none;
-            @include font-gradient($chat, white, 3, 40pt, 550);
+            @include font-gradient($chat, white, 3, 20pt, 550);
+            @include mq(tablet){@include font-gradient($chat, white, 3, 40pt, 550);}
             line-height: 1.4em;
         }
     }
@@ -89,12 +99,12 @@ background-size: 100%;}
         {
             font-size: 40pt;
         }
-        @include font-edictorS(WHITE, 3, 20pt, 500);
+        @include font-edictorS(WHITE, 3, 15pt, 500);
         text-transform: uppercase;
         padding: 20pt 10pt;
         border-radius: 20pt;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.527), 0 6px 20px 0 rgba(0, 0, 0, 0.651);
-        margin-left: 2em;
+        margin-top: 2em;
         transition: 0.5s;
         cursor: pointer;
         border: 4pt solid whitesmoke;
