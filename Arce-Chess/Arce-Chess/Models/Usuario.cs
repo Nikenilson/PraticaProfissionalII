@@ -7,7 +7,19 @@ namespace Arce_Chess.Models
 {
     public class Usuario
     {
-        private int codUsuario;
+
+        public int CodUsuario { get; set; }
+        public string Nome { get; set; }
+        public string Email { get; set; }
+        public string senha;
+        public int Vitorias { get; set; }
+        public int Partidas { get; set; }
+        public string Imagem { get; set; }
+        public int NDeAmigos { get; set; }
+
+
+
+        /*private int codUsuario;
         private string nome;
         private string email;
         private string senha;
@@ -84,5 +96,6 @@ namespace Arce_Chess.Models
             get => nDeAmigos;
             set => nDeAmigos = value;
         }
+    }*/
     }
 }

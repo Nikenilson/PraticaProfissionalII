@@ -54,9 +54,15 @@ namespace Arce_Chess.Controllers
             return View();
         }
 
-        public ActionResult Cadastro()
+        public ActionResult Cadastro(Usuario usu)
         {
-            return View();
+            if(usu.Nome != null && usu.Nome.Length < 30)
+            {
+                UsuarioDAO dao = new UsuarioDAO();
+                dao.Adiciona(usu);
+                return RedirectToAction("Index", "Home");
+            }
+            return RedirectToAction("Login", "Home");
         }
 
     

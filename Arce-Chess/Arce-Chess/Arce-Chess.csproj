@@ -160,6 +160,7 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="DAO\UsuarioDAO.cs" />
     <Compile Include="Models\Coordenada.cs" />
     <Compile Include="Models\Jogada.cs" />
     <Compile Include="Models\Piece.cs" />
