@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Interactive.Async;
 using System.Web.Mvc;
 using Arce_Chess.Models;
 using Arce_Chess.DAO;
@@ -12,18 +11,23 @@ namespace Arce_Chess.Controllers
     public class HomeController : Controller
     {
         [Route("home")]
-        public ActionResult Index(Usuario usu)
+        public ActionResult Index()
         {
-            if (usu.Nome != null && usu.Nome.Length < 30)
+            if (Session["usu"]!= null)
             {
-                UsuarioDAO dao = new UsuarioDAO();
-                if (dao.BuscaPorNome(usu.Nome) != null)
-                    return View();
-                else
-                    return null;
+                UsuarioDAO dao = new UsuarioDAO(); 
+
+                if ((bool)Session["cadastrando"])
+                {
+                  
+                }
+                else if((bool)Session["logando"])
+                {
+                    return RedirectToAction("cadastrar", "Home"); 
+                }
+
             }
-            else
-                return null;
+            
             
         }
 
@@ -81,12 +85,14 @@ namespace Arce_Chess.Controllers
                  return RedirectToAction("Index", "Home");
              }
              return RedirectToAction("Login", "Home");*/
+            Session["cadastrando"] = false;
+            Session["logando"] = true;
             return null;
         }
 
         public ActionResult Cadastro()
         {
-
+            Session["cadastrando"] = true;
             return View();
         }
 
