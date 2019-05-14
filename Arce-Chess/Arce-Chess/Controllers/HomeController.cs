@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Interactive.Async;
 using System.Web.Mvc;
 using Arce_Chess.Models;
 using Arce_Chess.DAO;
@@ -11,30 +10,10 @@ namespace Arce_Chess.Controllers
 {
     public class HomeController : Controller
     {
-        [Route("home")]
-        public ActionResult Index(Usuario usu)
+        public ActionResult Index()
         {
-            if (usu.Nome != null && usu.Nome.Length < 30)
-            {
-                UsuarioDAO dao = new UsuarioDAO();
-                if (dao.BuscaPorNome(usu.Nome) != null)
-                    return View();
-                else
-                    return null;
-            }
-            else
-                return null;
-            
+            return View();
         }
-
-        public ActionResult Cadastrar(Usuario usu)
-        {
-            UsuarioDAO dao = new UsuarioDAO();
-            dao.Adiciona(usu);
-            Session["usu"] = usu;
-            return RedirectToAction("home", "Home");
-        }
-
 
         public ActionResult About()
         {
@@ -70,30 +49,22 @@ namespace Arce_Chess.Controllers
             return View();
         }
 
-        [Route("Principal")]
-        public ActionResult Login(Usuario usu) //Usuario usu
+        public ActionResult Login()
         {
-
-            /* if (usu.Nome != null && usu.Nome.Length < 30)
-             {
-                 UsuarioDAO dao = new UsuarioDAO();
-                 dao.Adiciona(usu);
-                 return RedirectToAction("Index", "Home");
-             }
-             return RedirectToAction("Login", "Home");*/
-            return null;
-        }
-
-        public ActionResult Cadastro()
-        {
-
             return View();
         }
 
-        [Route("teste")]
-        public ActionResult Teste()
+        public ActionResult Cadastro(Usuario usu)
         {
-            return View("Index");
+            if(usu.Nome != null && usu.Nome.Length < 30)
+            {
+                UsuarioDAO dao = new UsuarioDAO();
+                dao.Adiciona(usu);
+                return RedirectToAction("Index", "Home");
+            }
+            return RedirectToAction("Login", "Home");
         }
+
+    
     }
 }

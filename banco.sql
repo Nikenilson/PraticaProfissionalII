@@ -15,8 +15,8 @@ constraint fkCodNegras foreign key (codUsuarioNegras) references AC_Usuario(codu
 drop table AC_PNG
 */
 
-Create Table Usuario(
-Id int identity(1,1) primary key not null,
+Create Table Usuario( --DAR UPDATE NA TABELA AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+CodUsuario int primary key not null,
 Nome varchar(40) not null,
 email ntext not null,
 Senha ntext not null,
@@ -29,7 +29,7 @@ nDeAmigos int not null
 select * from AC_Usuario
 
 Create table Partida(
-id int identity(1,1) primary key not null,
+CodPartida int primary key not null,
 CodUsuario1 int not null,
 CodUsuario2 int not null
 constraint fkPartidaJogador1 foreign key (codUsuario1) references Usuario(codUsuario),
@@ -37,7 +37,7 @@ constraint fkPartidaJogador2 foreign key (codUsuario2) references Usuario(codUsu
 )
 
 Create table Jogada(
-id int identity(1,1) primary key not null,
+CodJogada int primary key not null,
 CodPartida int not null,
 Cor varchar(7) not null, 
 piece varchar(16) not null,		  
@@ -47,7 +47,7 @@ posicaoFim varchar(30) not null,
 
 
 create table Amizade(
-id int identity(1,1) primary key not null,
+CodAmizade int primary key,
 CodUsuario1 int not null,
 CodUsuario2 int not null
 constraint fkAmizadeAmigo1 foreign key (codUsuario1) references Usuario(codUsuario),
@@ -57,7 +57,7 @@ constraint fkAmizadeAmigo2 foreign key (codUsuario2) references Usuario(codUsuar
 
 
 create table Conversa(
-id int identity(1,1) primary key not null,
+CodConversa int primary key not null ,
 CodAmizade int not null,
 constraint fkCodAmizade foreign key (codAmizade) references Amizade (codAmizade)
 )
@@ -65,7 +65,7 @@ constraint fkCodAmizade foreign key (codAmizade) references Amizade (codAmizade)
 
 
 create table Mensagem(
-id int identity(1,1) primary key not null,
+CodMensagem int primary key,
 CodConversa int not null,
 CodRemetente int not null,
 Mensagem ntext not null,
