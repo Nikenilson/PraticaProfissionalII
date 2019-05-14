@@ -10,23 +10,13 @@ namespace Arce_Chess.Controllers
 {
     public class HomeController : Controller
     {
+        
+
         [Route("home")]
         public ActionResult Index()
         {
-            if (Session["usu"]!= null)
-            {
-                UsuarioDAO dao = new UsuarioDAO(); 
-
-                if ((bool)Session["cadastrando"])
-                {
-                  
-                }
-                else if((bool)Session["logando"])
-                {
-                    return RedirectToAction("cadastrar", "Home"); 
-                }
-
-            }
+           
+            
             
             
         }
@@ -46,7 +36,7 @@ namespace Arce_Chess.Controllers
 
             return View();
         }
-
+        
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
@@ -75,7 +65,7 @@ namespace Arce_Chess.Controllers
         }
 
         [Route("Principal")]
-        public ActionResult Login(Usuario usu) //Usuario usu
+        public ActionResult Login() //Usuario usu
         {
 
             /* if (usu.Nome != null && usu.Nome.Length < 30)
@@ -85,8 +75,23 @@ namespace Arce_Chess.Controllers
                  return RedirectToAction("Index", "Home");
              }
              return RedirectToAction("Login", "Home");*/
-            Session["cadastrando"] = false;
-            Session["logando"] = true;
+            if(Session["cadastrou"] == true)
+                return RedirectToAction("cadastrar", "Home"); 
+            else
+            {
+                UsuarioDAO dao = new UsuarioDAO();
+                Usuario usu = new Usuario();
+                usu.Nome() = txtNome;
+                usu.Senha() = txtSenha;
+                if (dao.BuscaPorNome(usu.Nome()).Nome() == usu.Nome() && dao.BuscaPorNome(usu.Nome()).Senha() == usu.Senha())
+                {
+                    Session["usu"] = dao.BuscaPorNome(usu.Nome());
+                    return RedirectToAction("home", "Home");
+                }
+                else
+                    return null;
+            }
+            
             return null;
         }
 
