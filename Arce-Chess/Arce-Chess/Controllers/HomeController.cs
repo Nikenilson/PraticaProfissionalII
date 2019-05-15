@@ -10,35 +10,10 @@ namespace Arce_Chess.Controllers
 {
     public class HomeController : Controller
     {
-        [Route("home")]
         public ActionResult Index()
         {
-            if (Session["usu"]!= null)
-            {
-                UsuarioDAO dao = new UsuarioDAO(); 
-
-                if ((bool)Session["cadastrando"])
-                {
-                  
-                }
-                else if((bool)Session["logando"])
-                {
-                    return RedirectToAction("cadastrar", "Home"); 
-                }
-
-            }
-            
-            
+            return View();
         }
-
-        public ActionResult Cadastrar(Usuario usu)
-        {
-            UsuarioDAO dao = new UsuarioDAO();
-            dao.Adiciona(usu);
-            Session["usu"] = usu;
-            return RedirectToAction("home", "Home");
-        }
-
 
         public ActionResult About()
         {
@@ -74,32 +49,22 @@ namespace Arce_Chess.Controllers
             return View();
         }
 
-        [Route("Principal")]
-        public ActionResult Login(Usuario usu) //Usuario usu
+        public ActionResult Login()
         {
-
-            /* if (usu.Nome != null && usu.Nome.Length < 30)
-             {
-                 UsuarioDAO dao = new UsuarioDAO();
-                 dao.Adiciona(usu);
-                 return RedirectToAction("Index", "Home");
-             }
-             return RedirectToAction("Login", "Home");*/
-            Session["cadastrando"] = false;
-            Session["logando"] = true;
-            return null;
-        }
-
-        public ActionResult Cadastro()
-        {
-            Session["cadastrando"] = true;
             return View();
         }
 
-        [Route("teste")]
-        public ActionResult Teste()
+        public ActionResult Cadastro(Usuario usu)
         {
-            return View("Index");
+            if(usu.Nome != null && usu.Nome.Length < 30)
+            {
+                UsuarioDAO dao = new UsuarioDAO();
+                dao.Adiciona(usu);
+                return RedirectToAction("Index", "Home");
+            }
+            return RedirectToAction("Login", "Home");
         }
+
+    
     }
 }
