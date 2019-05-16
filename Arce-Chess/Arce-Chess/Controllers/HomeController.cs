@@ -10,6 +10,7 @@ namespace Arce_Chess.Controllers
 {
     public class HomeController : Controller
     {
+        [Route("home")]
         public ActionResult Index()
         {
             return View();
@@ -49,20 +50,55 @@ namespace Arce_Chess.Controllers
             return View();
         }
 
+        [Route("login")]
         public ActionResult Login()
         {
+
             return View();
         }
 
-        public ActionResult Cadastro(Usuario usu)
+
+        [Route("logar")]
+        public ActionResult Logar(Usuario usu)
         {
-            if(usu.Nome != null && usu.Nome.Length < 30)
+            UsuarioDAO dao = new UsuarioDAO();
+            if (dao.BuscaPorNome(usu.Nome) == null)
             {
-                UsuarioDAO dao = new UsuarioDAO();
-                dao.Adiciona(usu);
-                return RedirectToAction("Index", "Home");
+                
+                if ()
+                {
+                    Session["usu"] = verific;
+                    return RedirectToAction("Index", "Home");
+                }
             }
+
             return RedirectToAction("Login", "Home");
+        }
+
+        [Route("cadastrar")]
+        public ActionResult Cadastrar(Usuario usuario)
+        {
+            UsuarioDAO dao = new UsuarioDAO();
+            if (dao.BuscaPorNome(usuario.Nome) != null)
+            {
+                Usuario verific = dao.BuscaPorNome(usuario.Nome);
+                if (verific.Nome == usuario.Nome && verific.Senha == usuario.Senha)
+                {
+                    Session["usu"] = verific;
+                    return RedirectToAction("Index", "Home");
+                }
+            }
+
+            return RedirectToAction("Cadastro", "Home");
+        }
+
+        [Route("cadastro")]
+        public ActionResult Cadastro()
+        {
+            
+                return RedirectToAction("Index", "Home");
+           
+         
         }
 
     

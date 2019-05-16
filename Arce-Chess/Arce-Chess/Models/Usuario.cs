@@ -8,13 +8,13 @@ namespace Arce_Chess.Models
     public class Usuario
     {
 
-        public int CodUsuario { get; set; }
+        public int Id { get; set; }
         public string Nome { get; set; }
         public string Email { get; set; }
-        public string senha;
+        public string Senha;
         public int Vitorias { get; set; }
         public int Partidas { get; set; }
-        public string Imagem { get; set; }
+        public string ImgPerfil { get; set; }
         public int NDeAmigos { get; set; }
 
 

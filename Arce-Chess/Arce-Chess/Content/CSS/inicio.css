@@ -126,18 +126,32 @@ body {
   margin-left: 1vw;
   border-bottom: 2pt solid #1cbe88;
 }
-.central .login a {
-  font-weight: 550;
-  font-family: "Raleway";
-  color: whitesmoke;
-  font-size: 20pt;
-  text-shadow: 1px 1px 1px #1c1c1c;
-  padding: 6pt;
-  border-radius: 50pt;
-  border: 2px solid #1cbe88;
-  margin: 10pt;
-  cursor: pointer;
-  transition: 0.5s;
+.central .login a{
+    font-weight: 550;
+    font-family: "Raleway";
+    color: whitesmoke;
+    font-size: 20pt;
+    text-shadow: 1px 1px 1px #1c1c1c;
+    padding: 6pt;
+    border-radius: 50pt;
+    border: 2px solid #1cbe88;
+    margin: 10pt;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+input.logaR {
+    font-weight: 550;
+    font-family: "Raleway";
+    color: whitesmoke;
+    font-size: 20pt;
+    text-shadow: 1px 1px 1px #1c1c1c;
+    padding: 6pt;
+    border-radius: 50pt;
+    border: 2px solid #1cbe88;
+    margin: 10pt;
+    cursor: pointer;
+    transition: 0.5s;
 }
 @media only screen and (min-width: 1248px) {
   .central .login a:hover {
