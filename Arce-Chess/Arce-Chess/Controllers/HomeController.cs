@@ -58,25 +58,16 @@ namespace Arce_Chess.Controllers
         }
 
 
-        [Route("logar")]
-        public ActionResult Logar(Usuario usu)
+        
+        [Route("cadastrar")]
+        public ActionResult Cadastrar(Usuario usu)
         {
-            UsuarioDAO dao = new UsuarioDAO();
-            if (dao.BuscaPorNome(usu.Nome) == null)
-            {
-                
-                if ()
-                {
-                    Session["usu"] = verific;
-                    return RedirectToAction("Index", "Home");
-                }
-            }
-
+           
             return RedirectToAction("Login", "Home");
         }
 
-        [Route("cadastrar")]
-        public ActionResult Cadastrar(Usuario usuario)
+        [Route("logar")]
+        public ActionResult Logar(Usuario usuario)
         {
             UsuarioDAO dao = new UsuarioDAO();
             if (dao.BuscaPorNome(usuario.Nome) != null)
