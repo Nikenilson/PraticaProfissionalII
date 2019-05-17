@@ -79,7 +79,7 @@ namespace Arce_Chess.Controllers
                 }
             }
 
-            return RedirectToAction("Cadastro", "Home");
+            return RedirectToAction("Logar", "Home");
         }
 
         [Route("cadastro")]
