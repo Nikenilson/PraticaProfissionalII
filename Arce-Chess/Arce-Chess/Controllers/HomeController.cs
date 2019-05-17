@@ -61,8 +61,11 @@ namespace Arce_Chess.Controllers
         [Route("cadastrar")]
         public ActionResult Cadastrar(Usuario usu)
         {
-           
-            return RedirectToAction("Login", "Home");
+
+            UsuarioDAO dao = new UsuarioDAO();
+            dao.Adiciona(usu);
+            Session["usu"] = usu;
+            return RedirectToAction("home", "Home");
         }
 
         [Route("logar")]
@@ -85,8 +88,8 @@ namespace Arce_Chess.Controllers
         [Route("cadastro")]
         public ActionResult Cadastro()
         {
-            
-                return RedirectToAction("Index", "Home");
+
+            return View();
            
          
         }

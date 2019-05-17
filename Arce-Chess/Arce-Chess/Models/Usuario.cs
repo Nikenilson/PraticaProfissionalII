@@ -11,7 +11,7 @@ namespace Arce_Chess.Models
         public int Id { get; set; }
         public string Nome { get; set; }
         public string Email { get; set; }
-        public string Senha;
+        public string Senha { get; set; }
         public int Vitorias { get; set; }
         public int Partidas { get; set; }
         public string ImgPerfil { get; set; }
