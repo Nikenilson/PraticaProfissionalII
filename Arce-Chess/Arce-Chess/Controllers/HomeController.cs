@@ -57,7 +57,6 @@ namespace Arce_Chess.Controllers
             return View();
         }
 
-
         
         [Route("cadastrar")]
         public ActionResult Cadastrar(Usuario usu)
