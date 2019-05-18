@@ -5,20 +5,19 @@
 }
 
 <link rel="stylesheet" type="text/css" href="~/Content/CSS/perfil.css">
-
 <div class="fundo"></div>
 
 <div class="data">
     <div class="nameImg">
-        <div class="imageUser"></div>
+        <div class="imageUser" style=""></div>
 
     </div>
-    <div class="name"><h1>Naruto</h1></div>
+    <div class="name"><h1>@ViewBag.Usuario.Nome</h1></div>
     <div class="information">
-        <span>E-mail:  naruto@gmail.com</span><br>
-        <span>Amigos: 33</span><br>
-        <span>Partidas: 100000</span><br>
-        <span>Vitórias: 100000</span>
+        <span>E-mail:  @ViewBag.Usuario.Email</span><br>
+        <span>Amigos: @ViewBag.Usuario.NDeAmigos</span><br>
+        <span>Partidas: @ViewBag.Usuario.Partidas</span><br>
+        <span>Vitórias: @ViewBag.Usuario.Vitorias</span>
     </div>
 
     <a class="friends" id="friends" onclick="amigos()"><i class="fas fa-user-friends"></i> <br>Enviar Pedido de Amizade</a> <br><br>

@@ -277,11 +277,11 @@ input[type=checkbox] {
 
 @media only screen and (min-width: 1024px) {
     #menuToggle {
-        background: #356ab4;
+        background: red;
     }
 
         #menuToggle:hover {
-            background: #356ab4;
+            background: red;
         }
 }
 

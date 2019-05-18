@@ -13,6 +13,7 @@ namespace Arce_Chess.Controllers
         [Route("home")]
         public ActionResult Index()
         {
+            @ViewBag.Usuario = Session["usu"];
             return View();
         }
 
@@ -30,23 +31,31 @@ namespace Arce_Chess.Controllers
             return View();
         }
 
+        [Route("regras")]
         public ActionResult Regras()
         {
+            @ViewBag.Usuario = Session["usu"];
             return View();
         }
 
+        [Route("sobreNos")]
         public ActionResult SobreNos()
         {
+            @ViewBag.Usuario = Session["usu"];
             return View();
         }
 
+        [Route("perfil")]
         public ActionResult Perfil()
         {
+            @ViewBag.Usuario = Session["usu"];
             return View();
         }
 
+        [Route("historia")]
         public ActionResult Historia()
         {
+            @ViewBag.Usuario = Session["usu"];
             return View();
         }
 
@@ -77,7 +86,7 @@ namespace Arce_Chess.Controllers
                 Usuario verific = dao.BuscaPorNome(usuario.Nome);
                 if (verific.Nome == usuario.Nome && verific.Senha == usuario.Senha)
                 {
-                    Session["usu"] = verific;
+                   Session["usu"] = verific;
                     return RedirectToAction("Index", "Home");
                 }
             }
