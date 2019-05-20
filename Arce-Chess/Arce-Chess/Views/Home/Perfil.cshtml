@@ -6,10 +6,16 @@
 
 <link rel="stylesheet" type="text/css" href="~/Content/CSS/perfil.css">
 <div class="fundo"></div>
-
+<script>
+    function mudarImg()
+    {
+        $("#mImg").addClass("visivel");
+    }
+</script>
 <div class="data">
-    <div class="nameImg">
-        <div class="imageUser" style=""></div>
+    <div class="nameImg" onclick="mudarImg()">
+            <img class="imagemPerf" src="@ViewBag.Usuario.ImgPerfil"/>
+            <input type="text" />
 
     </div>
     <div class="name"><h1>@ViewBag.Usuario.Nome</h1></div>

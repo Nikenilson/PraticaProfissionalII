@@ -154,7 +154,7 @@ input.logaR {
     transition: 0.5s;
 }
 @media only screen and (min-width: 1248px) {
-  .central .login a:hover {
+  .central .login a:hover, input[type=submit]:hover {
     background: #1cbe88;
     animation-name: btnAnimation;
     animation-duration: 1.2s;
@@ -241,5 +241,8 @@ img {
     transform: rotate(450deg);
   }
 }
+
+
+input[type = submit]{background: transparent;}
 
 /*# sourceMappingURL=inicio.css.map */

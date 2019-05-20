@@ -119,18 +119,18 @@ body {
   font-size: 25pt;
   text-shadow: 1px 1px 1px #1c1c1c;
 }
-.central .login span input[type=submit] {
-  font-weight: 600;
-  font-family: "Raleway";
-  color: whitesmoke;
-  font-size: 20pt;
-  text-shadow: 1px 1px 1px #1c1c1c;
-  background: none;
-  border: none;
-  outline: none;
-  margin-left: 1vw;
-  border-bottom: 2pt solid #1cbe88;
-}
+    .central .login span input[type=text], input[type=password], input[type=email] {
+        font-weight: 600;
+        font-family: "Raleway";
+        color: whitesmoke;
+        font-size: 20pt;
+        text-shadow: 1px 1px 1px #1c1c1c;
+        background: transparent;
+        border: none;
+        outline: none;
+        margin-left: 1vw;
+        border-bottom: 2pt solid #1cbe88;
+    }
 .central .login input[type=submit] {
     font-weight: 500;
     font-family: "Raleway";
@@ -143,14 +143,15 @@ body {
     margin: 10pt;
     cursor: pointer;
     transition: 0.5s;
+    background: transparent;
 }
 @media only screen and (min-width: 1248px) {
-  .central .login input:hover {
-    background: #1cbe88;
-    animation-name: btnAnimation;
-    animation-duration: 1.2s;
-    animation-iteration-count: infinite;
-  }
+    .central .login input[type = button], .central .login input[type = submit]:hover {
+        background: #1cbe88;
+        animation-name: btnAnimation;
+        animation-duration: 1.2s;
+        animation-iteration-count: infinite;
+    }
 }
 
 img {

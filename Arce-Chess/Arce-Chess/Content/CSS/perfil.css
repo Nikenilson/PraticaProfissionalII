@@ -160,13 +160,11 @@ body {
     .navbar .perfil {
         color: white;
         font-size: 200px;
-        max-height: 0.4em;
-        min-height: 0.4em;
-        max-width: 0.4em;
-        min-width: 0.4em;
         margin-left: 0.7em;
-        border-radius: 50px;
+        border-radius: 500pt;
         overflow: hidden;
+        height: 0.5em;
+        width: 0.5em;
         border: 3.5pt solid #9fbbe3;
     }
 
@@ -175,9 +173,10 @@ body {
         }
 
         .navbar .perfil img {
-            margin-bottom: 0.5em;
-            max-height: 0.6em;
-            max-width: 0.6em;
+            border-radius: 100pt;
+            height: 0.5em;
+            margin-bottom: 100%;
+            width: 0.5em;
         }
 }
 
@@ -679,6 +678,7 @@ html .topo {
     html body {
         background: #1cbe88;
     }
+    
 }
 
 html #menuToggle {
@@ -814,9 +814,15 @@ html .testTit, html #menuToggle span, html .navbar span {
         padding: 20pt;
     }
 
+    .imagemPerf
+    {
+        border-radius: 100pt;
+        height: 15em;
+        whidht: 15em;
+    }
+
         .data .nameImg .imageUser {
-            background: url("https://web.whatsapp.com/pp?e=https%3A%2F%2Fpps.whatsapp.net%2Fv%2Ft61.24694-24%2F57562855_333480720859593_5964010747074707456_n.jpg%3Foe%3D5CC5A81E%26oh%3D04bb56156dde4f036074e87c98aab00d&t=l&u=5519982480204%40c.us&i=1556118100") no-repeat;
-            height: 10em;
+             height: 10em;
             width: 10em;
             background-size: 100%;
             border-radius: 500pt;
@@ -905,6 +911,15 @@ html .testTit, html #menuToggle span, html .navbar span {
 
 .topo i {
     padding-top: 2px;
+}
+
+
+#mImg{
+    display: none;
+}
+
+.visivel{
+    display: block;
 }
 
 /*# sourceMappingURL=perfil.css.map */

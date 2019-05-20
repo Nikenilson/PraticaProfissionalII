@@ -26,13 +26,16 @@ body, .menu {
   padding: 0; }
 
 body {
+   
   background-attachment: fixed;
   background-size: 50%;
   background-repeat: no-repeat; }
 
 body {
-  background: #356ab4;
-  list-style: none; }
+    background: #356ab4;
+    background-image: linear-gradient(#356ab4 60%, #78a0d7);
+    list-style: none;
+}
 
 /* width */
 ::-webkit-scrollbar {
@@ -86,20 +89,20 @@ body {
   .navbar .perfil {
     color: white;
     font-size: 200px;
-    max-height: 0.4em;
-    min-height: 0.4em;
-    max-width: 0.4em;
-    min-width: 0.4em;
     margin-left: 0.7em;
-    border-radius: 50px;
+    border-radius: 500pt;
     overflow: hidden;
+    height: 0.5em;
+    width: 0.5em;
     border: 3.5pt solid #9fbbe3; }
     .navbar .perfil:active {
       border: 3.5pt solid whitesmoke; }
     .navbar .perfil img {
-      margin-bottom: 0.5em;
-      max-height: 0.6em;
-      max-width: 0.6em; } }
+        border-radius: 100pt;
+        height: 0.5em;
+        margin-bottom: 100%;
+        width: 0.5em;
+    } }
 @media only screen and (min-width: 1024px) {
   .navbar {
     min-height: 20vh;
@@ -112,7 +115,6 @@ body {
       font-size: 70pt;
       text-shadow: 1px 1px 1px #1c1c1c;
       padding-bottom: 1.5vh;
-      border-bottom: 4px solid #78a0d7;
       margin-left: 2em; }
     .navbar i {
       font-size: 70pt; } }
@@ -361,12 +363,13 @@ input[type=checkbox] {
     overflow: hidden; } }
 @media only screen and (min-width: 1024px) {
   .slidershow {
-    width: 45em;
-    height: 25em;
+    width: 60%;
+    height: 100%;
     overflow: hidden; } }
 
 .middle {
   position: relative;
+  top: 2em;
   margin-top: 15em;
   left: 50%;
   transform: translate(-50%, -50%); }

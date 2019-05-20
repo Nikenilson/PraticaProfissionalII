@@ -22,7 +22,9 @@
     <script src='https://code.jquery.com/jquery-3.3.1.min.js' integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=' crossorigin='anonymous'></script>
     <meta charset="utf-8">
     <script>
-
+        if ($("#sen2").val() != $("#sen1").val())
+            $("#ntf").html("Senha foi digitada incorretamente")
+            
     </script>
 </head>
 <body>
@@ -40,12 +42,12 @@
                 Arce Chess <i class="fas fa-chess"></i>
             </h1>
 
-            <p>Crie uma conta no nosso site!</p>
+            <p id="ntf">@ViewBag.Cadastro</p>
             <br>
             <span><i class="fas fa-user"></i><input type="text" name="usu.Nome" id="" placeholder="Nome de Usuário"></span>
             <br>
-            <span><i class="fas fa-lock"></i><input type="password" name="usu.Senha" id="" placeholder="Senha"></span><br>
-            <span><i class="fas fa-lock"></i><input type="password" name="" id="sen2" placeholder="Repetir Senha"></span>
+            <span><i class="fas fa-lock"></i><input type="password" name="usu.Senha" id="sen1" placeholder="Senha"></span><br>
+            <span><i class="fas fa-lock"></i><input type="password" name="senha2" id="senha2" placeholder="Repetir Senha"></span>
             <br>
             <span><i class="fas fa-at"></i><input type="email" name="usu.Email" id="" placeholder="E-Mail"></span>
             <br>
