@@ -254,6 +254,8 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\Chart.js" />
+    <Content Include="Scripts\Xadrez.js" />
+    <Content Include="Scripts\Coordenada.js" />
     <Content Include="Scripts\editt.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -266,7 +268,15 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\menu.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Scripts\xadrez.js" />
+    <Content Include="Scripts\Pecas\Bishop.js" />
+    <Content Include="Scripts\Pecas\DeadPiece.js" />
+    <Content Include="Scripts\Pecas\King.js" />
+    <Content Include="Scripts\Pecas\Knight.js" />
+    <Content Include="Scripts\Pecas\Pawn.js" />
+    <Content Include="Scripts\Pecas\Peca.js" />
+    <Content Include="Scripts\Pecas\Queen.js" />
+    <Content Include="Scripts\Pecas\Tower.js" />
+    <Content Include="Scripts\xadrez1.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
