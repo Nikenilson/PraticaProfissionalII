@@ -86,23 +86,32 @@ body {
       background: transparent; }
   .navbar a {
     margin-top: 2em; }
-  .navbar .perfil {
-    color: white;
-    font-size: 200px;
-    margin-left: 0.7em;
-    border-radius: 500pt;
-    overflow: hidden;
-    height: 0.5em;
-    width: 0.5em;
-    border: 3.5pt solid #9fbbe3; }
+    .navbar .perfil {
+        color: white;
+        font-size: 200px;
+        margin-left: 0.7em;
+        border-radius: 500pt;
+        overflow: hidden;
+        height: 0.5em;
+        width: 0.5em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100pt;
+        overflow: hidden;
+        border: 3.5pt solid #9fbbe3;
+    }
+    .navbar .perfil a{
+        margin-top: 0;
+        
+    }
     .navbar .perfil:active {
       border: 3.5pt solid whitesmoke; }
-    .navbar .perfil img {
-        border-radius: 100pt;
-        height: 0.5em;
-        margin-bottom: 100%;
-        width: 0.5em;
-    } }
+        .navbar .perfil img {
+            max-height: 0.6em;
+            max-widht: 0.6em;
+        } }
 @media only screen and (min-width: 1024px) {
   .navbar {
     min-height: 20vh;
@@ -429,3 +438,83 @@ input[name="r"] {
   margin-left: -80%; }
 
 /*# sourceMappingURL=home.css.map */
+
+
+.laka {
+    position: absolute;
+    top: 40%;
+    left: 85%;
+    transform: translate(-50%,-50%);
+    z-index: 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999;
+}
+
+
+
+.input {
+    width: 60px;
+    height: 60px;
+    background: none;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    box-sizing: border-box;
+    outline: none;
+    transition: width 0.4s ease-in-out, border-radius 0.8s ease-in-out, padding 0.2s;
+    transition-delay: 0.4s;
+    color: white;
+    font-size: 21pt;
+    letter-spacing: 0.05em;
+    font-family: "Germania One";
+     
+}
+
+.inclicked {
+    width: 360px;
+    border-radius: 100pt;
+    padding: 0 15px;
+    padding-right: 40px;
+    /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+}
+
+.btn {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    top: 0;
+    right: 0;
+    box-sizing: border-box;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+    .btn::before {
+        content: "";
+        width: 4px;
+        height: 25px;
+        background: white;
+        position: absolute;
+        transform: rotate(-45deg);
+        bottom: -16px;
+        right: -6px;
+        transition: 0.3s;
+         
+    }
+
+.close::before, .close::after {
+    content: "";
+    width: 4px;
+    height: 34px;
+    background: white;
+    position: absolute;
+    bottom: 12px;
+    right: 28px;
+}
+
+.close::before {
+    transform: rotate(-45deg);
+}
+
+.close::after {
+    transform: rotate(45deg);
+}

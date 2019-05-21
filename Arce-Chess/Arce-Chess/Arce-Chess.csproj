@@ -228,6 +228,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\CSS\busca.css" />
     <Content Include="Content\IMG\1.png" />
     <Content Include="Content\IMG\2.png" />
     <Content Include="Content\IMG\3.png" />
@@ -297,6 +298,7 @@
     <Content Include="Views\Home\Perfil.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Home\Cadastro.cshtml" />
+    <Content Include="Views\Home\Busca.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

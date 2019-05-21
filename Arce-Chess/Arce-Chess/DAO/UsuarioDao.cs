@@ -37,6 +37,24 @@ namespace Arce_Chess.DAO
             }
         }
 
+        public IList<Usuario> PesquisaUsuarios(string palavra)
+        {
+            using (var contexto = new ChessContext())
+            {
+                Usuario[] lista = new Usuario[contexto.Usuario.ToArray().Length];
+                int indice = 0;
+               for(int i = 0; i < contexto.Usuario.ToArray().Length; i++)
+                {
+                    if(contexto.Usuario.ToArray()[i].Nome.ToUpper().Contains(palavra.ToUpper()))
+                    {
+                        lista[indice] = contexto.Usuario.ToArray()[i];
+                        indice++;
+                    }
+                }
+                return lista.ToList();
+            }
+        }
+
         public void Atualiza(Usuario usu)
         {
             using (var contexto = new ChessContext())

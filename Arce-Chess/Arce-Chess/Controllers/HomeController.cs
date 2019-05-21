@@ -47,10 +47,22 @@ namespace Arce_Chess.Controllers
 
         [Route("perfil")]
         public ActionResult Perfil()
-        {
+        {    
             @ViewBag.Usuario = Session["usu"];
             return View();
         }
+
+        [Route("mimg")]
+        public ActionResult MudarImg(string imagPerf)
+        {
+            UsuarioDAO dao = new UsuarioDAO();
+            Usuario usu = (Usuario)Session["usu"];
+            usu.ImgPerfil = imagPerf;
+            dao.Atualiza(usu);
+            Session["usu"] = dao.BuscaPorNome(usu.Nome);
+            return RedirectToAction("Perfil", "Home");
+        }
+
 
         [Route("historia")]
         public ActionResult Historia()
@@ -62,6 +74,7 @@ namespace Arce_Chess.Controllers
         [Route("login")]
         public ActionResult Login()
         {
+            Session["usu"] = null;
             Session["alert"] = "Crie uma conta no nosso site!";
             return View();
         }
@@ -104,10 +117,30 @@ namespace Arce_Chess.Controllers
         {
             ViewBag.Cadastro = Session["alert"];
             return View();
-           
-         
         }
 
-    
+
+        [Route("busca")]
+        public ActionResult Busca()
+        {
+            @ViewBag.Usuario = Session["usu"];
+            if (Session["listaPesquisa"] != null)
+            {
+                ViewBag.PesquisaResult = Session["listaPesquisa"];
+            }
+            else
+                ViewBag.PesquisaResult = null;
+            return View();
+        }
+
+        [Route("buscar")]
+        public ActionResult Buscar(string trecho)
+        {
+            UsuarioDAO dao = new UsuarioDAO();
+            Session["listaPesquisa"] = dao.PesquisaUsuarios(trecho);
+            return RedirectToAction("Busca", "Home");
+        }
+
+
     }
 }

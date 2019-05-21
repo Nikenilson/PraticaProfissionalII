@@ -17,20 +17,22 @@
     <meta name="viewport" content="width=device-width">
     <script src='https://code.jquery.com/jquery-3.3.1.min.js' integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=' crossorigin='anonymous'></script>
     <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="~/Scripts/menu.js"></script>
     <script>
-// 		$(window).on("scroll",function() {
-//         navHeight = $('.menu').outerHeight(),
-//         windowTop = $(this).scrollTop();
+        // 		$(window).on("scroll",function() {
+        //         navHeight = $('.menu').outerHeight(),
+        //         windowTop = $(this).scrollTop();
 
-//     if (windowTop > navHeight) {
-//         $('.menu').addClass("scrolling");
-//     } else {
-//         $('.menu').removeClass("scrolling");
-//     }
-// });
+        //     if (windowTop > navHeight) {
+        //         $('.menu').addClass("scrolling");
+        //     } else {
+        //         $('.menu').removeClass("scrolling");
+        //     }
+        // });
 
     </script>
+
 </head>
 <body>
 
@@ -41,7 +43,10 @@
             </span>
         </a>
 
-        <a href="/perfil"> <div class="perfil"><img src="@ViewBag.Usuario.ImgPerfil" alt=""></a>
+        <a href="/perfil">
+            <div class="perfil">
+                <img src="@ViewBag.Usuario.ImgPerfil" alt="">
+        </a>
     </div></a>
     </div>
 
@@ -58,11 +63,18 @@
             <a href="/Home/Historia" id="history" class="btnHistoria">História</a>
             <a href="/Home/Chat" id="chat" class="btnChat">Chat</a>
             <a href="/Home/SobreNos" id="criadores" class="btnSobreNos">Sobre Nós</a>
+            <div class="laka">
+                <form class="search-box" action="/buscar" method="post">
+                    <input type="text" class="input" name="trecho" value="">
+                    <button type="button" class="btn" name="button"></button>
+                    
+                </form>
+            </div>
         </ul>
 
     </div>
 
-    
+
 
     <div class="topo" onclick="topo()"><i class="fas fa-arrow-circle-up"></i></div>
     <div class="container body-content">
@@ -70,6 +82,13 @@
 
     </div>
 
-
+    <script type="text/javascript">
+        $(".btn").on("click", function () {
+            $(".input").toggleClass("inclicked");
+            $(".btn").toggleClass("close");
+            $(".input").val("");
+        });
+    </script>
 </body>
+
 </html>

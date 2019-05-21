@@ -575,3 +575,8 @@ C:\Users\kaika\OneDrive\Documentos\GitHub\PraticaProfissionalII\Arce-Chess\Arce-
 C:\Users\kaika\OneDrive\Documentos\GitHub\PraticaProfissionalII\Arce-Chess\Arce-Chess\bin\Microsoft.VisualStudio.Text.Logic.xml
 C:\Users\kaika\OneDrive\Documentos\GitHub\PraticaProfissionalII\Arce-Chess\Arce-Chess\bin\Microsoft.VisualStudio.Text.UI.Wpf.xml
 C:\Users\kaika\OneDrive\Documentos\GitHub\PraticaProfissionalII\Arce-Chess\Arce-Chess\bin\Microsoft.VisualStudio.Text.UI.xml
+C:\Users\kaika\OneDrive\Documentos\GitHub\PraticaProfissionalII\Arce-Chess\Arce-Chess\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\kaika\OneDrive\Documentos\GitHub\PraticaProfissionalII\Arce-Chess\Arce-Chess\bin\roslyn\System.IO.Pipes.dll
+C:\Users\kaika\OneDrive\Documentos\GitHub\PraticaProfissionalII\Arce-Chess\Arce-Chess\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\kaika\OneDrive\Documentos\GitHub\PraticaProfissionalII\Arce-Chess\Arce-Chess\bin\roslyn\System.Security.Claims.dll
+C:\Users\kaika\OneDrive\Documentos\GitHub\PraticaProfissionalII\Arce-Chess\Arce-Chess\bin\roslyn\System.Security.Principal.Windows.dll

@@ -165,18 +165,26 @@ body {
         overflow: hidden;
         height: 0.5em;
         width: 0.5em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100pt;
+        overflow: hidden;
         border: 3.5pt solid #9fbbe3;
     }
+
+        .navbar .perfil a {
+            margin-top: 0;
+        }
 
         .navbar .perfil:active {
             border: 3.5pt solid whitesmoke;
         }
 
         .navbar .perfil img {
-            border-radius: 100pt;
-            height: 0.5em;
-            margin-bottom: 100%;
-            width: 0.5em;
+            max-height: 0.6em;
+            max-widht: 0.6em;
         }
 }
 
@@ -914,12 +922,48 @@ html .testTit, html #menuToggle span, html .navbar span {
 }
 
 
+.editImg {
+    font-weight: 600;
+    font-family: "Raleway";
+    color: whitesmoke;
+    font-size: 25pt;
+    padding: 0.25em;
+    text-shadow: 1px 1px 1px #1c1c1c;
+    background: rgba(10, 10, 10, 0.7);
+    border: none;
+    outline: none;
+    margin-left: 1vw;
+    border-bottom: 2pt solid #1cbe88;
+    margin-bottom: 2em;
+}
+
+.btns {
+    font-weight: 550;
+    font-family: "Raleway";
+    color: whitesmoke;
+    font-size: 20pt;
+    text-shadow: 1px 1px 1px #1c1c1c;
+    padding: 6pt;
+    border-radius: 50pt;
+    border: 2px solid #1cbe88;
+    margin: 10pt;
+    cursor: pointer;
+    transition: 0.5s;
+    margin-bottom: 01em;
+}
+
+    .btns:hover {
+        background: #1cbe88;
+    }
+
+
+
 #mImg{
     display: none;
 }
 
 .visivel{
-    display: block;
+    display: none;
 }
 
 /*# sourceMappingURL=perfil.css.map */
