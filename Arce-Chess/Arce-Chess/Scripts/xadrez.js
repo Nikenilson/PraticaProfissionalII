@@ -1,3 +1,5 @@
+//Tem que mudar ainda
+
 function Xadrez(tamanho, pieces)
 {
     this.tamanho = tamanho;
