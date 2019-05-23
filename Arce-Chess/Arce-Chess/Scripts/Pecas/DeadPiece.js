@@ -1,12 +1,12 @@
-function DeadPiece(x,y, color, pClass)
+function DeadPiece(x,y, cor, pClass)
 {
     Piece.call(this);
     
-    this.whiteImage = new pClass(5, 5, "white").getImage();
-    this.blackImage = new pClass(5, 5, "black").getImage();
-    this.color = color || "black";
+    this.brancasIMG = new pClass(5, 5, "brancas").getImage();
+    this.pretasIMG = new pClass(5, 5, "negras").getImage();
+    this.cor = cor;
     
-    this.value = new pClass(5, 5, color).value;
+    this.valor = new pClass(5, 5, color).valor;
     
     this.pClass = pClass;
     
@@ -17,25 +17,25 @@ function DeadPiece(x,y, color, pClass)
     
     this.vaue = null;
     
-    this.hasAlreadymove = false;
+    this.jaMoveu = false;
     
-    this.nomePeca = "deadPiece";
+    this.nomePiece = "deadPiece";
 }
 
 DeadPiece.prototype = Object.create(Piece.prototype);
 
-DeadPiece.prototype.whereCanGo = function(m)
+DeadPiece.prototype.paraOndePodeAndar = function(m)
 {
     var ret = [];
     var t = m.length;
-    if(this.value != 1)
+    if(this.valor != 1)
     {
         if(this.qtd > 0)
             for(var i = 0; i < t; i++)
                 for(var j = 0; j < t; j++)
                     if(m[i][j] == null)
                     {
-                        ret.push(new Coordinate(i, j));       
+                        ret.push(new Coordenada(i, j));       
                     }
     }
     else
@@ -47,13 +47,13 @@ DeadPiece.prototype.whereCanGo = function(m)
                 for(var j = 0; j < t; j++)
                     if(m[i][j] != null)
                         if(m[i][j].value == 1)
-                            if(m[i][j].color == this.color)
+                            if(m[i][j].cor == this.cor)
                                 aux = false;
                         
                 if(aux)
                     for(var j = 0; j < t; j++)
                         if(m[i][j] == null)
-                            ret.push(new Coordinate(i, j));
+                            ret.push(new Coordenada(i, j));
                 
             }
     return ret;
