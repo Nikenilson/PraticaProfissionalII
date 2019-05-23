@@ -856,6 +856,11 @@
             Makes the file Read Write.
             </summary>
         </member>
+        <member name="T:Microsoft.AspNet.Scaffolding.INetCoreScaffolderFactory">
+            <summary>
+            Indicator interface for .NET Core scaffolders
+            </summary>
+        </member>
         <member name="T:Microsoft.AspNet.Scaffolding.IReflectedTypesService">
             <summary>
             Service for getting the types within a project.
@@ -1761,6 +1766,11 @@
         <member name="F:Microsoft.AspNet.Scaffolding.Categories.Layouts">
             <summary>
             Represents "Layouts" category.
+            </summary>
+        </member>
+        <member name="F:Microsoft.AspNet.Scaffolding.Categories.Identity">
+            <summary>
+            Represents "Identity" category.
             </summary>
         </member>
         <member name="T:Microsoft.AspNet.Scaffolding.IServiceRegistrar">

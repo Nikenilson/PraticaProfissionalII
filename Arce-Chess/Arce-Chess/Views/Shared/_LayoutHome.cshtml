@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!-- <link rel="stylesheet" type="text/css" href="../css/menu.css"> -->
+    <link rel="stylesheet" type="text/css" href="~/Content/CSS/home.css">
+    <link rel="shortcut icon" type="imagem/x-icon" href="/images/genkii-icon.ico" />
+    <title>Arce Chess - Home</title>
+    <script type='text/javascript' src='~/Scripts/'></script>
+    <link href="https://fonts.googleapis.com/css?family=MedievalSharp|Srisakdi" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Exo+2|Permanent+Marker" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Allura" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+    <meta name="viewport" content="width=device-width">
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src='https://code.jquery.com/jquery-2.2.2.min.js' integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=' crossorigin='anonymous'></script>
+
+    <script src="~/Scripts/menu.js"></script>
+    <script>
+        // 		$(window).on("scroll",function() {
+        //         navHeight = $('.menu').outerHeight(),
+        //         windowTop = $(this).scrollTop();
+
+        //     if (windowTop > navHeight) {
+        //         $('.menu').addClass("scrolling");
+        //     } else {
+        //         $('.menu').removeClass("scrolling");
+        //     }
+        // });
+
+    </script>
+
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="/Home">
+            <span class="testTit">
+                Arce Chess <i class="fas fa-chess"></i>
+            </span>
+        </a>
+
+        <a href="/perfil?nome=@ViewBag.Usuario.Nome">
+            <div class="perfil">
+                <img src="@ViewBag.Usuario.ImgPerfil" alt="">
+            </div>
+        </a>
+        </a>
+    </div>
+
+
+    <div id="menuToggle" class="elMenu">
+        <input type="checkbox" />
+        <span></span>
+        <span></span>
+        <span></span>
+        <ul class="menu">
+
+            <a href="/Home/play" id="play" class="btnGame">Jogar</a>
+            <a href="/Home/Regras" id="rules" class="btnRegras">Regras</a>
+            <a href="/Home/Historia" id="history" class="btnHistoria">História</a>
+            <a href="/Home/Chat" id="chat" class="btnChat">Chat</a>
+            <a href="/Home/SobreNos" id="criadores" class="btnSobreNos">Sobre Nós</a>
+            <div class="laka">
+                <form class="search-box" action="/buscar" method="post">
+                    <input type="text" class="input" name="trecho" value="">
+                    <button type="button" class="btn" name="button"></button>
+                </form>
+            </div>
+        </ul>
+
+    </div>
+
+
+
+    <div class="topo" onclick="topo()"><i class="fas fa-arrow-circle-up"></i></div>
+    <div class="container body-content">
+        @RenderBody()
+
+    </div>
+
+    <script type="text/javascript">
+        $(".btn").on("click", function () {
+            $(".input").toggleClass("inclicked");
+            $(".btn").toggleClass("close");
+            $(".input").val("");
+        });
+    </script>
+</body>
+
+</html>

@@ -45,10 +45,15 @@ namespace Arce_Chess.Controllers
             return View();
         }
 
+
+
+
         [Route("perfil")]
-        public ActionResult Perfil()
-        {    
-            @ViewBag.Usuario = Session["usu"];
+        public ActionResult Perfil(string nome)
+        {
+            UsuarioDAO dao = new UsuarioDAO();
+            ViewBag.User = dao.BuscaPorNome(nome);
+            ViewBag.Usuario = Session["usu"];
             return View();
         }
 
@@ -60,7 +65,7 @@ namespace Arce_Chess.Controllers
             usu.ImgPerfil = imagPerf;
             dao.Atualiza(usu);
             Session["usu"] = dao.BuscaPorNome(usu.Nome);
-            return RedirectToAction("Perfil", "Home");
+            return RedirectToAction("Perfil", new { nome = usu.Nome });
         }
 
 
@@ -79,11 +84,11 @@ namespace Arce_Chess.Controllers
             return View();
         }
 
-        
+
         [Route("cadastrar")]
         public ActionResult Cadastrar(Usuario usu)
         {
-            if(Request["senha2"] != usu.Senha)
+            if (Request["senha2"] != usu.Senha)
             {
                 Session["alert"] = "Digite a mesma senha nos dois campos!";
                 return RedirectToAction("Cadastro", "Home");
@@ -104,7 +109,7 @@ namespace Arce_Chess.Controllers
                 Usuario verific = dao.BuscaPorNome(usuario.Nome);
                 if (verific.Nome == usuario.Nome && verific.Senha == usuario.Senha)
                 {
-                   Session["usu"] = verific;
+                    Session["usu"] = verific;
                     return RedirectToAction("Index", "Home");
                 }
             }
@@ -140,6 +145,15 @@ namespace Arce_Chess.Controllers
             Session["listaPesquisa"] = dao.PesquisaUsuarios(trecho);
             return RedirectToAction("Busca", "Home");
         }
+
+
+        public ActionResult Chat()
+        {
+            @ViewBag.Usuario = Session["usu"];
+            return View();
+        }
+
+
 
 
     }
