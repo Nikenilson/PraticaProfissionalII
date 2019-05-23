@@ -48,7 +48,7 @@
             </span>
         </a>
 
-        <a href="/perfil">
+        <a href="/perfil?nome=@ViewBag.Usuario.Nome">
             <div class="perfil">
                 <img src="@ViewBag.Usuario.ImgPerfil" alt="">
         </a>
@@ -80,7 +80,7 @@
         <form class="search" action="/buscar" method="post">
             <h1>Pesquisar</h1>
             <div class="search-box">
-                <input name="trecho" type="text"  />
+                <input name="trecho" type="text" />
                 <i class="fas fa-search"></i>
             </div>
         </form>
@@ -92,7 +92,7 @@
                     if (result != null)
                     {
                         <div class="user">
-                            <div class="userImage"><img src="@result.ImgPerfil" /></div>
+                            <a href="perfil?nome=@result.Nome" class="userImage"><img src="@result.ImgPerfil" /></a>
                             <div class="userName"><span>@result.Nome</span></div>
                         </div>
                     }

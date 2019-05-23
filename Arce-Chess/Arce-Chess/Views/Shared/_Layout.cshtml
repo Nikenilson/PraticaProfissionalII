@@ -43,11 +43,12 @@
             </span>
         </a>
 
-        <a href="/perfil">
+        <a href="/perfil?nome=@ViewBag.Usuario.Nome">
             <div class="perfil">
                 <img src="@ViewBag.Usuario.ImgPerfil" alt="">
+            </div>
         </a>
-    </div></a>
+        </a>
     </div>
 
 
@@ -67,7 +68,6 @@
                 <form class="search-box" action="/buscar" method="post">
                     <input type="text" class="input" name="trecho" value="">
                     <button type="button" class="btn" name="button"></button>
-                    
                 </form>
             </div>
         </ul>
