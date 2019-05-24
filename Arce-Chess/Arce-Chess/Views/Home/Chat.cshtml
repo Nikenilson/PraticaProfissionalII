@@ -16,9 +16,11 @@
 
 
     <div class="container">
-        <input type="text" id="message" />
-        <input type="button" id="sendmessage" value="Send" />
-        <input type="hidden" id="displayname" />
+        <div class="send">
+            <input type="text" id="message" placeholder="Digite uma mensagem" />
+            <i class="fas fa-paper-plane" id="sendmessage"></i>
+            <input type="hidden" id="displayname" />
+        </div>
 
     </div>
 </div>
@@ -40,7 +42,7 @@
                 var usuAt = "@ViewBag.Usuario.Nome";
                 if (usuAt == htmlEncode(name))
                     $('#discussion').append('<li class="usu"><strong>' + htmlEncode(name)
-                        + '</strong>: ' + htmlEncode(message) + '</li>');
+                        + '</strong> <span>: ' + htmlEncode(message) + '</span></li>');
                 else
                     $('#discussion').append('<li><strong>' + htmlEncode(name)
                         + '</strong>: ' + htmlEncode(message) + '</li>');

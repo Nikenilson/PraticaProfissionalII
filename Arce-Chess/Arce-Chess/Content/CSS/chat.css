@@ -800,11 +800,41 @@ html .testTit, html #menuToggle span, html .navbar span {
     margin-bottom: 10em;
 }
 
+    .chat-box input[type=text] {
+        padding: 0.5em;
+        font-family: "Raleway";
+        font-size: 16pt;
+        border: none;
+        outline: none;
+        border-radius: 100pt;
+    }
+
+    .chat-box .container {
+        background: rgb(239, 239, 239);
+        width: 100%;
+        margin-top: -1em;
+        padding: 1em 0;
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        justify-content: center;
+    }
+        .chat-box .container i {
+            font-size: 20pt;
+            color: rgb(148, 154, 156);
+        }
+
+        .chat-box .container input[type = text] {
+            font-size: 20pt;
+            width: 30em;
+            background: rgb(255, 255, 255);
+        }
+
     .chat-box .discussion {
         background: #1cbe88;
         background-size: 100%;
-        height: 80%;
-        width: 80%;
+        height: 90%;
+        width: 90%;
         overflow-y: scroll;
     }
 
@@ -815,9 +845,17 @@ html .testTit, html #menuToggle span, html .navbar span {
             padding: 0.5em;
             border-radius: 10pt;
             margin: 1em;
-            max-width: 10em;
             font-family: "Raleway";
+            overflow: hidden;
+            
         }
+
+        .chat-box .discussion li span {
+            white-space:pre-line;
+        }
+
+
+
 
 
         .chat-box .discussion .usu {
