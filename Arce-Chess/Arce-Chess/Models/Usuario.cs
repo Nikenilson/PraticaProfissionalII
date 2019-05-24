@@ -16,6 +16,7 @@ namespace Arce_Chess.Models
         public int Partidas { get; set; }
         public string ImgPerfil { get; set; }
         public int NDeAmigos { get; set; }
+        public string Wallpaper { get; set; }
 
 
 

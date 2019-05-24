@@ -5,11 +5,14 @@ using System.Web;
 using System.Web.Mvc;
 using Arce_Chess.Models;
 using Arce_Chess.DAO;
+using Arce_Chess.Filtros;
 
 namespace Arce_Chess.Controllers
 {
     public class HomeController : Controller
     {
+
+        [AutorizacaoFilterAtribute]
         [Route("home")]
         public ActionResult Index()
         {
@@ -31,6 +34,7 @@ namespace Arce_Chess.Controllers
             return View();
         }
 
+        [AutorizacaoFilterAtribute]
         [Route("regras")]
         public ActionResult Regras()
         {
@@ -38,6 +42,7 @@ namespace Arce_Chess.Controllers
             return View();
         }
 
+        [AutorizacaoFilterAtribute]
         [Route("sobreNos")]
         public ActionResult SobreNos()
         {
@@ -47,7 +52,7 @@ namespace Arce_Chess.Controllers
 
 
 
-
+        [AutorizacaoFilterAtribute]
         [Route("perfil")]
         public ActionResult Perfil(string nome)
         {
@@ -57,6 +62,7 @@ namespace Arce_Chess.Controllers
             return View();
         }
 
+        [AutorizacaoFilterAtribute]
         [Route("mimg")]
         public ActionResult MudarImg(string imagPerf)
         {
@@ -68,7 +74,19 @@ namespace Arce_Chess.Controllers
             return RedirectToAction("Perfil", new { nome = usu.Nome });
         }
 
+        [AutorizacaoFilterAtribute]
+        [Route("mwalp")]
+        public ActionResult MudarWalp(string imagWalp)
+        {
+            UsuarioDAO dao = new UsuarioDAO();
+            Usuario usu = (Usuario)Session["usu"];
+            usu.Wallpaper = imagWalp;
+            dao.Atualiza(usu);
+            Session["usu"] = dao.BuscaPorNome(usu.Nome);
+            return RedirectToAction("Perfil", new { nome = usu.Nome });
+        }
 
+        [AutorizacaoFilterAtribute]
         [Route("historia")]
         public ActionResult Historia()
         {
@@ -76,6 +94,7 @@ namespace Arce_Chess.Controllers
             return View();
         }
 
+        
         [Route("login")]
         public ActionResult Login()
         {
@@ -84,7 +103,7 @@ namespace Arce_Chess.Controllers
             return View();
         }
 
-
+        
         [Route("cadastrar")]
         public ActionResult Cadastrar(Usuario usu)
         {
@@ -100,6 +119,7 @@ namespace Arce_Chess.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        
         [Route("logar")]
         public ActionResult Logar(Usuario usuario)
         {
@@ -117,6 +137,7 @@ namespace Arce_Chess.Controllers
             return RedirectToAction("Logar", "Home");
         }
 
+        
         [Route("cadastro")]
         public ActionResult Cadastro()
         {
@@ -124,7 +145,7 @@ namespace Arce_Chess.Controllers
             return View();
         }
 
-
+        [AutorizacaoFilterAtribute]
         [Route("busca")]
         public ActionResult Busca()
         {
@@ -146,10 +167,11 @@ namespace Arce_Chess.Controllers
             return RedirectToAction("Busca", "Home");
         }
 
-
+        [AutorizacaoFilterAtribute]
         public ActionResult Chat()
         {
             @ViewBag.Usuario = Session["usu"];
+            ViewBag.ChatName = "";
             return View();
         }
 

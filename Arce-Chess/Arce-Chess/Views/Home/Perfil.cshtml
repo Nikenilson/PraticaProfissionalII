@@ -5,7 +5,15 @@
 }
 
 <link rel="stylesheet" type="text/css" href="~/Content/CSS/perfil.css">
-<div class="fundo"></div>
+@if (ViewBag.User.Wallpaper != null)
+{
+    <div class="fundo" style="background:url('@ViewBag.User.Wallpaper');"></div>
+}
+else
+{
+    <div class="fundo"></div>
+}
+
 <script>
     function mudarImg() {
         $("form").removeClass("visivel");
@@ -14,6 +22,9 @@
     function mudarImgS() {
         $("form").addClass("visivel");
     }
+
+
+
 </script>
 <div class="data">
     <div class="nameImg" onclick="mudarImg()">
@@ -24,7 +35,11 @@
     {
 
         <form class="visivel" action="/mimg">
-            <input class="editImg" name="imagPerf" type="text" />
+        <input class="editImg" placeholder="Alterar Imagem De Perfil" name="imagPerf" type="text" />
+        <input type="submit" class="btns" value="Mudar Imagem">
+        </form>
+        <form class="visivel" action="/mwalp">
+            <input class="editImg" placeholder="Alterar Wallpaper" name="imagWalp" type="text" />
             <input type="submit" class="btns" value="Mudar Imagem">
         </form>
     }

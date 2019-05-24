@@ -1,0 +1,15 @@
+
+@import "mixinsDoNaruto.scss";
+@import "home.scss";
+@import "editorMaster.scss";
+
+html
+{
+    @include alterPageColor($chat);
+    // #menuToggle
+    // {
+    //     background: $historia;
+    // }
+
+    
+}

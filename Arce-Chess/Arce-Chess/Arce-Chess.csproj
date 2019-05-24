@@ -236,6 +236,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="ChatHub.cs" />
     <Compile Include="DAO\UsuarioDAO.cs" />
+    <Compile Include="Filtros\AutorizacaoFilterAtribute.cs" />
     <Compile Include="Models\Coordenada.cs" />
     <Compile Include="Models\Jogada.cs" />
     <Compile Include="Models\Piece.cs" />
