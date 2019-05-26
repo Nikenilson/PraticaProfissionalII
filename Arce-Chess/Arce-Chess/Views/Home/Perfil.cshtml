@@ -24,48 +24,74 @@ else
     }
 
 
+    function chatGo() {
+        $(".chatgo").submit();
+    }
+
 
 </script>
 <div class="data">
-    <div class="nameImg" onclick="mudarImg()">
-        <img class="imagemPerf" src="@ViewBag.User.ImgPerfil" />
-    </div>
+
 
     @if (ViewBag.Usuario.Nome == ViewBag.User.Nome)
     {
 
+        <div class="nameImg" onclick="mudarImg()">
+            <img class="imagemPerf" src="@ViewBag.User.ImgPerfil" />
+        </div>
+
         <form class="visivel" action="/mimg">
-        <input class="editImg" placeholder="Alterar Imagem De Perfil" name="imagPerf" type="text" />
-        <input type="submit" class="btns" value="Mudar Imagem">
+            <input class="editImg" placeholder="Alterar Imagem De Perfil" name="imagPerf" type="text" />
+            <input type="submit" class="btns" value="Mudar Imagem">
         </form>
         <form class="visivel" action="/mwalp">
             <input class="editImg" placeholder="Alterar Wallpaper" name="imagWalp" type="text" />
             <input type="submit" class="btns" value="Mudar Imagem">
         </form>
+        <div class="name"><h1>@ViewBag.User.Nome</h1></div>
     }
-
-
-    <div class="name"><h1>@ViewBag.User.Nome</h1></div>
-    @if (ViewBag.Usuario.Nome == ViewBag.User.Nome)
+    else
     {
-        <a href="/login" class="btns">Sair</a>
+        <form action="/tochat" class="chatgo">
+            <div class="nameImg" onclick="chatGo()">
+                <img class="imagemPerf" src="@ViewBag.User.ImgPerfil" />
+            </div>
+            <div class="name"><h1 name="user">@ViewBag.User.Nome</h1></div>
+        </form>
     }
 
-    <div class="information">
-        <span>E-mail:  @ViewBag.User.Email</span><br>
-        <span>Amigos: @ViewBag.User.NDeAmigos</span><br>
-        <span>Partidas: @ViewBag.User.Partidas</span><br>
-        <span>Vitórias: @ViewBag.User.Vitorias</span>
+
+
+            @if (ViewBag.Usuario.Nome == ViewBag.User.Nome)
+            {
+                <a href="/login" class="btns">Sair</a>
+            }
+
+            <div class="information">
+                <span>E-mail:  @ViewBag.User.Email</span><br>
+                <span>Amigos: @ViewBag.User.NDeAmigos</span><br>
+                <span>Partidas: @ViewBag.User.Partidas</span><br>
+                <span>Vitórias: @ViewBag.User.Vitorias</span>
+            </div>
+            <br><br>
+
+
+            @if (ViewBag.Usuario.Nome != ViewBag.User.Nome)
+            {
+
+                if (ViewBag.Amizade != null)
+                {
+                    <a class="friends ef" id="friends"><i class="fas fa-user-friends"></i></a> <br><br>
+
+                }
+                else
+                {
+                    <a class="friends" id="friends"><i class="fas fa-user-friends"></i> <br>Enviar Pedido de Amizade</a> <br><br>
+                }
+
+            }
+
     </div>
-    <br><br>
-
-
-    @if (ViewBag.Usuario.Nome != ViewBag.User.Nome)
-    {
-        <a class="friends" id="friends" onclick="amigos()"><i class="fas fa-user-friends"></i> <br>Enviar Pedido de Amizade</a> <br><br>
-    }
-
-</div>
 
 <div class="topo" onclick="topo()"><i class="fas fa-arrow-circle-up"></i></div>
 

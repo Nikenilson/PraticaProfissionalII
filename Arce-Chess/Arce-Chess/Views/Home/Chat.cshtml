@@ -41,21 +41,20 @@
                 // Add the message to the page.
                 var usuAt = "@ViewBag.Usuario.Nome";
                 if (usuAt == htmlEncode(name))
-                    $('#discussion').append('<li class="usu"><strong>' + htmlEncode(name)
-                        + '</strong> <span>: ' + htmlEncode(message) + '</span></li>');
+                    $('#discussion').append('<div class="usu"><li class="usuu"><span>' + htmlEncode(message) + '</span></li><div>');
                 else
-                    $('#discussion').append('<li><strong>' + htmlEncode(name)
-                        + '</strong>: ' + htmlEncode(message) + '</li>');
+                    $('#discussion').append('<div class="mensagem"><li><span>' + htmlEncode(message) + '</span></li><div>');
             };
             // Get the user name and store it to prepend to messages.
             $('#displayname').val("@ViewBag.Usuario.Nome");
             // Set initial focus to message input box.
             $('#message').focus();
+            var idgeral = "@ViewBag.Usuario.Id" + "";
             // Start the connection.
             $.connection.hub.start().done(function () {
                 $('#sendmessage').click(function () {
                     // Call the Send method on the hub.
-                    chat.server.send($('#displayname').val(), $('#message').val());
+                    chat.server.send($('#displayname').val(), $('#message').val(), idgeral);
                     // Clear text box and reset focus for next comment.
                     $('#message').val('').focus();
                 });

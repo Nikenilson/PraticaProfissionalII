@@ -836,9 +836,16 @@ html .testTit, html #menuToggle span, html .navbar span {
         height: 90%;
         width: 90%;
         overflow-y: scroll;
+        vertical-align: baseline;
+
     }
 
-
+    .mensagem{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+    }
 
         .chat-box .discussion li {
             background: whitesmoke;
@@ -846,23 +853,27 @@ html .testTit, html #menuToggle span, html .navbar span {
             border-radius: 10pt;
             margin: 1em;
             font-family: "Raleway";
-            overflow: hidden;
+            max-width: 20em;
+            word-wrap: break-word;
             
         }
 
         .chat-box .discussion li span {
-            white-space:pre-line;
+            border-bottom: none;
         }
 
 
+.chat-box .discussion .usu {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+}
 
 
 
-        .chat-box .discussion .usu {
-            margin-left: 80%;
-            background: #6fdbb7;
-            
-        }
+    .chat-box .discussion .usu .usuu {
+        background: #6fdbb7;
+    }
 
 
 
