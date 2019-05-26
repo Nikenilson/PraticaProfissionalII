@@ -47,11 +47,11 @@ posicaoFim varchar(30) not null,
 
 
 create table Amizade(
-CodAmizade int primary key,
-CodUsuario1 int not null,
-CodUsuario2 int not null
-constraint fkAmizadeAmigo1 foreign key (codUsuario1) references Usuario(codUsuario),
-constraint fkAmizadeAmigo2 foreign key (codUsuario2) references Usuario(codUsuario),
+Id int identity primary key,
+IdUsu1 int not null,
+IdUsu2 int not null
+constraint fkAmizadeAmigo1 foreign key (idUsu1) references Usuario(Id),
+constraint fkAmizadeAmigo2 foreign key (idUsu2) references Usuario(Id),
 )
 
 

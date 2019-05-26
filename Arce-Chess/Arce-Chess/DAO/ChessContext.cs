@@ -10,6 +10,7 @@ namespace Arce_Chess.DAO
     public class ChessContext: DbContext
     {
         public DbSet<Usuario> Usuario { get; set; }
+        public DbSet<Amizade> Amizade { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("Data Source=regulus.cotuca.unicamp.br;Initial Catalog=PR118188;User ID=PR118188;Password=PR118188");

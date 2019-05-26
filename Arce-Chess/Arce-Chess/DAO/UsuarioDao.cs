@@ -37,6 +37,16 @@ namespace Arce_Chess.DAO
             }
         }
 
+        public Usuario BuscaPorId(int idUsuario)
+        {
+            using (var contexto = new ChessContext())
+            {
+                return contexto.Usuario
+                    .Where(p => p.Id == idUsuario)
+                    .FirstOrDefault();
+            }
+        }
+
         public IList<Usuario> PesquisaUsuarios(string palavra)
         {
             using (var contexto = new ChessContext())

@@ -59,8 +59,52 @@ namespace Arce_Chess.Controllers
             UsuarioDAO dao = new UsuarioDAO();
             ViewBag.User = dao.BuscaPorNome(nome);
             ViewBag.Usuario = Session["usu"];
+            if (ViewBag.User != ViewBag.Usuario)
+            {
+                AmizadeDAO daoAmi = new AmizadeDAO();
+                if (daoAmi.ExisteAmizade(ViewBag.User.Id, ViewBag.Usuario.Id) != null)
+                    ViewBag.Amizade = daoAmi.ExisteAmizade(ViewBag.User.Id, ViewBag.Usuario.Id);
+                else
+                    ViewBag.Amizade = null;
+            }
+            Session["userOther"] = ViewBag.User;
             return View();
         }
+
+
+        [AutorizacaoFilterAtribute]
+        public ActionResult Chat(int amizadeId)
+        {
+            ViewBag.Usuario = Session["usu"];
+            AmizadeDAO daoAmi = new AmizadeDAO();
+            if(daoAmi.ExisteAmizade(amizadeId) != null)
+            {
+                Usuario[] eles = daoAmi.Amigos(amizadeId);
+                if (ViewBag.Usuario == eles[0])
+                    ViewBag.User = eles[1];
+                else
+                    ViewBag.User = eles[0];
+                ViewBag.ChatId = daoAmi.ExisteAmizade(amizadeId).Id;
+
+                return View();
+            }
+
+            return RedirectToAction("Perfil", new { nome = Session["usu"] });
+        }
+
+
+        [AutorizacaoFilterAtribute]
+        [Route("tochat")]
+        public ActionResult ParaChat()
+        {
+            AmizadeDAO daoAmi = new AmizadeDAO();
+            UsuarioDAO dao = new UsuarioDAO();
+            Usuario usu = (Usuario)Session["usu"];
+            Usuario friend = (Usuario)Session["userOther"];
+            Amizade yey = daoAmi.ExisteAmizade(usu.Id, friend.Id);
+            return RedirectToAction("Chat", new { amizadeId = yey.Id });
+        }
+
 
         [AutorizacaoFilterAtribute]
         [Route("mimg")]
@@ -73,6 +117,9 @@ namespace Arce_Chess.Controllers
             Session["usu"] = dao.BuscaPorNome(usu.Nome);
             return RedirectToAction("Perfil", new { nome = usu.Nome });
         }
+
+
+
 
         [AutorizacaoFilterAtribute]
         [Route("mwalp")]
@@ -165,14 +212,6 @@ namespace Arce_Chess.Controllers
             UsuarioDAO dao = new UsuarioDAO();
             Session["listaPesquisa"] = dao.PesquisaUsuarios(trecho);
             return RedirectToAction("Busca", "Home");
-        }
-
-        [AutorizacaoFilterAtribute]
-        public ActionResult Chat()
-        {
-            @ViewBag.Usuario = Session["usu"];
-            ViewBag.ChatName = "";
-            return View();
         }
 
 
