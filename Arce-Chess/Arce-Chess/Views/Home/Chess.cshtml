@@ -1,0 +1,129 @@
+﻿<center><canvas id="game"></canvas></center>
+
+<!-- Modal -->
+<div id="modalPromote" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+
+        <!-- Modal content-->
+        <div class="modal-content" id="ModalInterno">
+            <div class="modal-header">
+                <!--  <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+                <h4 class="modal-title" style="color: gray;">Promover para?</h4>
+            </div>
+            <div class="center modal-body">
+                <button onclick="selected = 'queen'"> <img src="img/WQueen.png" id="modalQueen"></button>
+                <button onclick="selected = 'knight'"><img src="img/WKnight.png" id="modalKnight"></button>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" onclick="" id="BTNCLOSEMODAL">Confirmar</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!--Fim do modal-->
+
+<script>
+    var main;
+
+    initGame();
+
+    var pawn;
+    var selected = "queen";
+    $('#modalPromote').on('hidden.bs.modal', function (e) {
+        var i = 0;
+        var aux = false;
+        main.pieces.forEach(
+            function (p) {
+                if (p == pawn)
+                    aux = true;
+
+                if (!aux)
+                    i++;
+            }
+        );
+        if (main.pieces[i].color == "white") {
+            if (selected == "queen")
+                main.pieces[i] = new Queen(main.pieces[i].getX(), main.pieces[i].getY(), main.pieces[i].color);
+
+            if (selected == "knight")
+                main.pieces[i] = new Knight(main.pieces[i].getX(), main.pieces[i].getY(), main.pieces[i].color);
+        }
+        else {
+            if (selected == "queen")
+                main.pieces[i] = new Queen(main.pieces[i].getX(), main.pieces[i].getY(), main.pieces[i].color);
+
+            if (selected == "knight")
+                main.pieces[i] = new Knight(main.pieces[i].getX(), main.pieces[i].getY(), main.pieces[i].color);
+        }
+
+
+        main.updateScreen();
+    });
+
+    $('#modalPromote').on('show.bs.modal', function (e) {
+        document.getElementById("modalQueen").src = new Queen(0, 0, pawn.color).getImage().src;
+        document.getElementById("modalKnight").src = new Knight(0, 0, pawn.color).getImage().src;
+    });
+</script>
+
+
+<script src="js/Chess.js"></script>
+<script src="js/Coordinate.js"></script>
+<script src="js/Pieces/Piece.js"></script>
+<script src="js/Pieces/Tower.js"></script>
+<script src="js/Pieces/Knight.js"></script>
+<script src="js/Pieces/Bishop.js"></script>
+<script src="js/Pieces/Pawn.js"></script>
+<script src="js/Pieces/Queen.js"></script>
+<script src="js/Pieces/King.js"></script>
+
+<!-- Bootstrap -->
+<script src="js/boosttrap/jquery-3.2.1.js"></script>
+<script src="js/boosttrap/popper.js"></script>
+<script src="js/boosttrap/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="js/boosttrap/bootstrap.min.css">
+
+<script>
+    function initGame() {
+        var pieces = [];
+
+        pieces.push(new Tower(0, 0, "black"));
+        pieces.push(new Tower(7, 0, "black"));
+        pieces.push(new Knight(1, 0, "black"));
+        pieces.push(new Knight(6, 0, "black"));
+        pieces.push(new Bishop(2, 0, "black"));
+        pieces.push(new Bishop(5, 0, "black"));
+        pieces.push(new Queen(3, 0, "black"));
+        pieces.push(new King(4, 0, "black"));
+        pieces.push(new Pawn(0, 1, "black"));
+        pieces.push(new Pawn(1, 1, "black"));
+        pieces.push(new Pawn(2, 1, "black"));
+        pieces.push(new Pawn(3, 1, "black"));
+        pieces.push(new Pawn(4, 1, "black"));
+        pieces.push(new Pawn(5, 1, "black"));
+        pieces.push(new Pawn(6, 1, "black"));
+        pieces.push(new Pawn(7, 1, "black"));
+
+        pieces.push(new Tower(0, 7, "white"));
+        pieces.push(new Tower(7, 7, "white"));
+        pieces.push(new Knight(1, 7, "white"));
+        pieces.push(new Knight(6, 7, "white"));
+        pieces.push(new Bishop(2, 7, "white"));
+        pieces.push(new Bishop(5, 7, "white"));
+        pieces.push(new Queen(3, 7, "white"));
+        pieces.push(new King(4, 7, "white"));
+        pieces.push(new Pawn(0, 6, "white"));
+        pieces.push(new Pawn(1, 6, "white"));
+        pieces.push(new Pawn(2, 6, "white"));
+        pieces.push(new Pawn(3, 6, "white"));
+        pieces.push(new Pawn(4, 6, "white"));
+        pieces.push(new Pawn(5, 6, "white"));
+        pieces.push(new Pawn(6, 6, "white"));
+        pieces.push(new Pawn(7, 6, "white"));
+
+        main = new Chess(8, pieces);
+
+        setInterval(function () { main.updateScreen() }, 10)
+    }
+</script>

@@ -206,6 +206,7 @@ namespace Arce_Chess.Controllers
             return View();
         }
 
+        [AutorizacaoFilterAtribute]
         [Route("buscar")]
         public ActionResult Buscar(string trecho)
         {
@@ -213,6 +214,16 @@ namespace Arce_Chess.Controllers
             Session["listaPesquisa"] = dao.PesquisaUsuarios(trecho);
             return RedirectToAction("Busca", "Home");
         }
+
+        [AutorizacaoFilterAtribute]
+        [Route("chess")]
+
+        public ActionResult Chess()
+        {
+            ViewBag.Usuario = Session["usu"];
+            return View();
+        }
+
 
 
 
