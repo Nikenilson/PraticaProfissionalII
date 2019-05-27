@@ -110,34 +110,53 @@ body {
       background-size: cover;
       background: url("https://images.pexels.com/photos/301469/pexels-photo-301469.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"); } }
 
-@media only screen and (min-width: 320px) {
-  .navbar span {
-    font-weight: 600;
-    font-family: "Allura";
-    color: whitesmoke;
-    font-size: 40pt;
-    text-shadow: 1px 1px 1px #1c1c1c; }
-    .navbar span i {
-      background: transparent; }
-  .navbar a {
-    margin-top: 2em; }
-  .navbar .perfil {
-    color: white;
-    font-size: 200px;
-    max-height: 0.4em;
-    min-height: 0.4em;
-    max-width: 0.4em;
-    min-width: 0.4em;
-    margin-left: 0.7em;
-    border-radius: 50px;
-    overflow: hidden;
-    border: 3.5pt solid #9fbbe3; }
-    .navbar .perfil:active {
-      border: 3.5pt solid whitesmoke; }
-    .navbar .perfil img {
-      margin-bottom: 0.5em;
-      max-height: 0.6em;
-      max-width: 0.6em; } }
+@me @media only screen and (min-width: 320px) {
+    .navbar span {
+        font-weight: 600;
+        font-family: "Allura";
+        color: whitesmoke;
+        font-size: 40pt;
+        text-shadow: 1px 1px 1px #1c1c1c;
+    }
+
+        .navbar span i {
+            background: transparent;
+        }
+
+    .navbar a {
+        margin-top: 2em;
+    }
+
+    .navbar .perfil {
+        color: white;
+        font-size: 200px;
+        margin-left: 0.7em;
+        border-radius: 500pt;
+        overflow: hidden;
+        height: 0.5em;
+        width: 0.5em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100pt;
+        overflow: hidden;
+        border: 3.5pt solid #9fbbe3;
+    }
+
+        .navbar .perfil a {
+            margin-top: 0;
+        }
+
+        .navbar .perfil:active {
+            border: 3.5pt solid whitesmoke;
+        }
+
+        .navbar .perfil img {
+            max-height: 0.6em;
+            max-widht: 0.6em;
+        }
+}
 @media only screen and (min-width: 1024px) {
   .navbar {
     min-height: 20vh;
