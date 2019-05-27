@@ -39,13 +39,15 @@
             // Create a function that the hub can call back to display messages.
             chat.client.addNewMessageToPage = function (name, message, idchat) {
                 // Add the message to the page. 
-                var usuAt = "@ViewBag.Usuario.Nome";
+                if (message != "") {
+                     var usuAt = "@ViewBag.Usuario.Nome";
                 if (usuAt == htmlEncode(name))
                     $('#discussion').append('<div class="usu"><div class="imgUser"><img src="@ViewBag.Usuario.ImgPerfil"></div><li class="usuu"><span>'
                         + htmlEncode(message) + '</span></li><div>');
                 else if(idchat == "@ViewBag.ChatId")
                     $('#discussion').append('<div class="mensagem"><div class="imgUser"><img src="@ViewBag.User.ImgPerfil"></div><li><span>'
                         + htmlEncode(message) + '</span></li><div>');
+                }
             };
             // Get the user name and store it to prepend to messages.
             $('#displayname').val("@ViewBag.Usuario.Nome");
