@@ -1,7 +1,7 @@
 ﻿function Rei(x, y, cor) {
     Piece.call(this);
 
-    this.setImages("../../../IMG/GKing.png", "../../../IMG/BKing.png");
+    this.setImages("./Content/IMG/GKing.png", "./Content/IMG/BKing.png");
     this.cor = cor;
 
     this.valor = 0;
@@ -13,7 +13,7 @@
 
 Rei.prototype = Object.create(Piece.prototype);
 
-King.prototype.paraOndePodeAndar = function (m, t) {
+Rei.prototype.paraOndePodeAndar = function (m, t) {
     var ret = [];
 
     var x = this.getX();

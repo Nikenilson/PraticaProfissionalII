@@ -1,12 +1,12 @@
-﻿-function Xadrez(tamanho, pieces) {
+﻿function Xadrez(tamanho, pieces) {
     this.tamanho = tamanho;
-    this.setPiece(pieces);
+    this.setPieces(pieces);
 
     this.pieceSelecionada = null;
     this.vez = "brancas";
 
     this.canvas = document.getElementById("game");
-    this.canvasContext = this.cvs.getContext("2d");
+    this.canvasContext = this.canvas.getContext("2d");
 
     this.canvas.width = (this.tamanho == 8) ? 720 : 900;
     this.canvas.height = 720;
@@ -41,7 +41,7 @@
             if (pieceSelecionada != null) {
                 if (pieceSelecionada.cor != funcAux.vez) {
                     if (funcAux.pieceSelecionada != null) {
-                        funcAux.pieceSelecionada.paraOndePodeIr(funcAux.matriz, funcAux.tamanho).forEach(
+                        funcAux.pieceSelecionada.paraOndePodeAndar(funcAux.matriz, funcAux.tamanho).forEach(
                             function (coordenada) {
                                 if (coordenada.x == Math.floor(x / ((funcAux.tamanho == 8) ? 90 : 80)) && coordenada.y == Math.floor(y / ((funcAux.tamanho == 8) ? 90 : 80))) {
                                     funcAux.comer(x, y);
@@ -161,10 +161,10 @@ Xadrez.prototype.atualizarTela = function () {
     this.setTabuleiro();
 
     for (var i = 0; i < this.pieces.length; i++)
-        this.pieces[i].selfDraw(this.canvasContext, this.tamanho);
+        this.pieces[i].desenhar(this.canvasContext, this.tamanho);
 
     if (this.pieceSelecionada != null)
-        this.putGreenBalls(this.pieceSelecionada.paraOndePodeIr(this.matriz, this.tamanho));
+        this.putGreenBalls(this.pieceSelecionada.paraOndePodeAndar(this.matriz, this.tamanho));
 }
 
 Xadrez.prototype.putGreenBalls = function (positions, pieceSelecionada) {

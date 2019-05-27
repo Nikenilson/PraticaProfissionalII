@@ -1,7 +1,7 @@
-﻿-function Rainha(x, y, cor) {
-    Peca.call(this);
+﻿function Rainha(x, y, cor) {
+    Piece.call(this);
 
-    this.setImages("../../../IMG/GQueen.png", "../../../IMG/BQueen.png");
+    this.setImages("./Content/IMG/GQueen.png", "./Content/IMG/BQueen.png");
     this.cor = cor;
 
     this.setXY(x || 0, y || 0);
