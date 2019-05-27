@@ -11,8 +11,8 @@
                 <h4 class="modal-title" style="color: gray;">Promover para?</h4>
             </div>
             <div class="center modal-body">
-                <button onclick="selected = 'queen'"> <img src="img/WQueen.png" id="modalQueen"></button>
-                <button onclick="selected = 'knight'"><img src="img/WKnight.png" id="modalKnight"></button>
+                <button onclick="selected = 'rainha'"> <img src="img/WRainha.png" id="modalRainha"></button>
+                <button onclick="selected = 'cavalo'"><img src="img/WCavalo.png" id="modalCavalo"></button>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal" onclick="" id="BTNCLOSEMODAL">Confirmar</button>
@@ -29,7 +29,7 @@
     initGame();
 
     var pawn;
-    var selected = "queen";
+    var selected = "rainha";
     $('#modalPromote').on('hidden.bs.modal', function (e) {
         var i = 0;
         var aux = false;
@@ -42,19 +42,19 @@
                     i++;
             }
         );
-        if (main.pieces[i].color == "white") {
-            if (selected == "queen")
-                main.pieces[i] = new Queen(main.pieces[i].getX(), main.pieces[i].getY(), main.pieces[i].color);
+        if (main.pieces[i].color == "brancas") {
+            if (selected == "rainha")
+                main.pieces[i] = new Rainha(main.pieces[i].getX(), main.pieces[i].getY(), main.pieces[i].color);
 
-            if (selected == "knight")
-                main.pieces[i] = new Knight(main.pieces[i].getX(), main.pieces[i].getY(), main.pieces[i].color);
+            if (selected == "cavalo")
+                main.pieces[i] = new Cavalo(main.pieces[i].getX(), main.pieces[i].getY(), main.pieces[i].color);
         }
         else {
-            if (selected == "queen")
-                main.pieces[i] = new Queen(main.pieces[i].getX(), main.pieces[i].getY(), main.pieces[i].color);
+            if (selected == "rainha")
+                main.pieces[i] = new Rainha(main.pieces[i].getX(), main.pieces[i].getY(), main.pieces[i].color);
 
-            if (selected == "knight")
-                main.pieces[i] = new Knight(main.pieces[i].getX(), main.pieces[i].getY(), main.pieces[i].color);
+            if (selected == "cavalo")
+                main.pieces[i] = new Cavalo(main.pieces[i].getX(), main.pieces[i].getY(), main.pieces[i].color);
         }
 
 
@@ -62,8 +62,8 @@
     });
 
     $('#modalPromote').on('show.bs.modal', function (e) {
-        document.getElementById("modalQueen").src = new Queen(0, 0, pawn.color).getImage().src;
-        document.getElementById("modalKnight").src = new Knight(0, 0, pawn.color).getImage().src;
+        document.getElementById("modalRainha").src = new Rainha(0, 0, pawn.color).getImage().src;
+        document.getElementById("modalCavalo").src = new Cavalo(0, 0, pawn.color).getImage().src;
     });
 </script>
 
@@ -82,41 +82,41 @@
     function initGame() {
         var pieces = [];
 
-        pieces.push(new Tower(0, 0, "black"));
-        pieces.push(new Tower(7, 0, "black"));
-        pieces.push(new Knight(1, 0, "black"));
-        pieces.push(new Knight(6, 0, "black"));
-        pieces.push(new Bishop(2, 0, "black"));
-        pieces.push(new Bishop(5, 0, "black"));
-        pieces.push(new Queen(3, 0, "black"));
-        pieces.push(new King(4, 0, "black"));
-        pieces.push(new Pawn(0, 1, "black"));
-        pieces.push(new Pawn(1, 1, "black"));
-        pieces.push(new Pawn(2, 1, "black"));
-        pieces.push(new Pawn(3, 1, "black"));
-        pieces.push(new Pawn(4, 1, "black"));
-        pieces.push(new Pawn(5, 1, "black"));
-        pieces.push(new Pawn(6, 1, "black"));
-        pieces.push(new Pawn(7, 1, "black"));
+        pieces.push(new Torre(0, 0, "negras"));
+        pieces.push(new Torre(7, 0, "negras"));
+        pieces.push(new Cavalo(1, 0, "negras"));
+        pieces.push(new Cavalo(6, 0, "negras"));
+        pieces.push(new Bispo(2, 0, "negras"));
+        pieces.push(new Bispo(5, 0, "negras"));
+        pieces.push(new Rainha(3, 0, "negras"));
+        pieces.push(new Rei(4, 0, "negras"));
+        pieces.push(new Pawn(0, 1, "negras"));
+        pieces.push(new Pawn(1, 1, "negras"));
+        pieces.push(new Pawn(2, 1, "negras"));
+        pieces.push(new Pawn(3, 1, "negras"));
+        pieces.push(new Pawn(4, 1, "negras"));
+        pieces.push(new Pawn(5, 1, "negras"));
+        pieces.push(new Pawn(6, 1, "negras"));
+        pieces.push(new Pawn(7, 1, "negras"));
 
-        pieces.push(new Tower(0, 7, "white"));
-        pieces.push(new Tower(7, 7, "white"));
-        pieces.push(new Knight(1, 7, "white"));
-        pieces.push(new Knight(6, 7, "white"));
-        pieces.push(new Bishop(2, 7, "white"));
-        pieces.push(new Bishop(5, 7, "white"));
-        pieces.push(new Queen(3, 7, "white"));
-        pieces.push(new King(4, 7, "white"));
-        pieces.push(new Pawn(0, 6, "white"));
-        pieces.push(new Pawn(1, 6, "white"));
-        pieces.push(new Pawn(2, 6, "white"));
-        pieces.push(new Pawn(3, 6, "white"));
-        pieces.push(new Pawn(4, 6, "white"));
-        pieces.push(new Pawn(5, 6, "white"));
-        pieces.push(new Pawn(6, 6, "white"));
-        pieces.push(new Pawn(7, 6, "white"));
+        pieces.push(new Torre(0, 7, "brancas"));
+        pieces.push(new Torre(7, 7, "brancas"));
+        pieces.push(new Cavalo(1, 7, "brancas"));
+        pieces.push(new Cavalo(6, 7, "brancas"));
+        pieces.push(new Bispo(2, 7, "brancas"));
+        pieces.push(new Bispo(5, 7, "brancas"));
+        pieces.push(new Rainha(3, 7, "brancas"));
+        pieces.push(new Rei(4, 7, "brancas"));
+        pieces.push(new Pawn(0, 6, "brancas"));
+        pieces.push(new Pawn(1, 6, "brancas"));
+        pieces.push(new Pawn(2, 6, "brancas"));
+        pieces.push(new Pawn(3, 6, "brancas"));
+        pieces.push(new Pawn(4, 6, "brancas"));
+        pieces.push(new Pawn(5, 6, "brancas"));
+        pieces.push(new Pawn(6, 6, "brancas"));
+        pieces.push(new Pawn(7, 6, "brancas"));
 
-        main = new Chess(8, pieces);
+        main = new Xadrez(8, pieces);
 
         setInterval(function () { main.updateScreen() }, 10)
     }

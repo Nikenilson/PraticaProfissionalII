@@ -9,7 +9,7 @@
 
     this.brancasImg.src = whiteSprite || "";
     this.negrasImg.src = blackSprite || "";
-
+    
 };
 
 Piece.prototype.getNomePiece = function () {

@@ -271,6 +271,17 @@
     <Content Include="Content\CSS\regras.css" />
     <Content Include="Content\CSS\sobreNos.css" />
     <Content Include="Content\CSS\xadrez.css" />
+    <Content Include="Content\JS\Chart.js" />
+    <Content Include="Content\JS\Xadrezz\Coordenada.js" />
+    <Content Include="Content\JS\Xadrezz\Pieces\Bispo.js" />
+    <Content Include="Content\JS\Xadrezz\Pieces\Cavalo.js" />
+    <Content Include="Content\JS\Xadrezz\Pieces\DeadPiece.js" />
+    <Content Include="Content\JS\Xadrezz\Pieces\Pawn.js" />
+    <Content Include="Content\JS\Xadrezz\Pieces\Piece.js" />
+    <Content Include="Content\JS\Xadrezz\Pieces\Rainha.js" />
+    <Content Include="Content\JS\Xadrezz\Pieces\Rei.js" />
+    <Content Include="Content\JS\Xadrezz\Pieces\Torre.js" />
+    <Content Include="Content\JS\Xadrezz\Xadrez.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -320,7 +331,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="App_Themes\Tema1\" />
     <Folder Include="Classes\" />
-    <Folder Include="Content\JS\" />
     <Folder Include="Views\NewFolder1\" />
   </ItemGroup>
   <ItemGroup>
