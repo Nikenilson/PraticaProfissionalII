@@ -1,5 +1,59 @@
 ﻿<center><canvas id="game"></canvas></center>
 
+<script src="~/Content/JS/Xadrezz/Xadrez.js"></script>
+<script src="~/Content/JS/Xadrezz/Coordenada.js"></script>
+<script src="~/Content/JS/Xadrezz/Pieces/Piece.js"></script>
+<script src="~/Content/JS/Xadrezz/Pieces/Torre.js"></script>
+<script src="~/Content/JS/Xadrezz/Pieces/Cavalo.js"></script>
+<script src="~/Content/JS/Xadrezz/Pieces/Bispo.js"></script>
+<script src="~/Content/JS/Xadrezz/Pieces/Pawn.js"></script>
+<script src="~/Content/JS/Xadrezz/Pieces/Rainha.js"></script>
+<script src="~/Content/JS/Xadrezz/Pieces/Rei.js"></script>
+
+<script>
+    function initGame() {
+        var pieces = [];
+
+        pieces.push(new Torre(0, 0, "negras"));
+        pieces.push(new Torre(7, 0, "negras"));
+        pieces.push(new Cavalo(1, 0, "negras"));
+        pieces.push(new Cavalo(6, 0, "negras"));
+        pieces.push(new Bispo(2, 0, "negras"));
+        pieces.push(new Bispo(5, 0, "negras"));
+        pieces.push(new Rainha(3, 0, "negras"));
+        pieces.push(new Rei(4, 0, "negras"));
+        pieces.push(new Pawn(0, 1, "negras"));
+        pieces.push(new Pawn(1, 1, "negras"));
+        pieces.push(new Pawn(2, 1, "negras"));
+        pieces.push(new Pawn(3, 1, "negras"));
+        pieces.push(new Pawn(4, 1, "negras"));
+        pieces.push(new Pawn(5, 1, "negras"));
+        pieces.push(new Pawn(6, 1, "negras"));
+        pieces.push(new Pawn(7, 1, "negras"));
+
+        pieces.push(new Torre(0, 7, "brancas"));
+        pieces.push(new Torre(7, 7, "brancas"));
+        pieces.push(new Cavalo(1, 7, "brancas"));
+        pieces.push(new Cavalo(6, 7, "brancas"));
+        pieces.push(new Bispo(2, 7, "brancas"));
+        pieces.push(new Bispo(5, 7, "brancas"));
+        pieces.push(new Rainha(3, 7, "brancas"));
+        pieces.push(new Rei(4, 7, "brancas"));
+        pieces.push(new Pawn(0, 6, "brancas"));
+        pieces.push(new Pawn(1, 6, "brancas"));
+        pieces.push(new Pawn(2, 6, "brancas"));
+        pieces.push(new Pawn(3, 6, "brancas"));
+        pieces.push(new Pawn(4, 6, "brancas"));
+        pieces.push(new Pawn(5, 6, "brancas"));
+        pieces.push(new Pawn(6, 6, "brancas"));
+        pieces.push(new Pawn(7, 6, "brancas"));
+
+        main = new Xadrez(8, pieces);
+
+        setInterval(function () { main.atualizarTela() }, 10)
+    }
+</script>
+
 <!-- Modal -->
 <div id="modalPromote" class="modal fade" role="dialog">
     <div class="modal-dialog modal-lg">
@@ -68,56 +122,5 @@
 </script>
 
 
-<script src="~/Content/JS/Xadrezz/Xadrez.js"></script>
-<script src="~/Content/JS/Xadrezz/Coordenada.js"></script>
-<script src="~/Content/JS/Xadrezz/Pieces/Piece.js"></script>
-<script src="~/Content/JS/Xadrezz/Pieces/Torre.js"></script>
-<script src="~/Content/JS/Xadrezz/Pieces/Cavalo.js"></script>
-<script src="~/Content/JS/Xadrezz/Pieces/Bispo.js"></script>
-<script src="~/Content/JS/Xadrezz/Pieces/Pawn.js"></script>
-<script src="~/Content/JS/Xadrezz/Pieces/Rainha.js"></script>
-<script src="~/Content/JS/Xadrezz/Pieces/Rei.js"></script>  
 
-<script>
-    function initGame() {
-        var pieces = [];
 
-        pieces.push(new Torre(0, 0, "negras"));
-        pieces.push(new Torre(7, 0, "negras"));
-        pieces.push(new Cavalo(1, 0, "negras"));
-        pieces.push(new Cavalo(6, 0, "negras"));
-        pieces.push(new Bispo(2, 0, "negras"));
-        pieces.push(new Bispo(5, 0, "negras"));
-        pieces.push(new Rainha(3, 0, "negras"));
-        pieces.push(new Rei(4, 0, "negras"));
-        pieces.push(new Pawn(0, 1, "negras"));
-        pieces.push(new Pawn(1, 1, "negras"));
-        pieces.push(new Pawn(2, 1, "negras"));
-        pieces.push(new Pawn(3, 1, "negras"));
-        pieces.push(new Pawn(4, 1, "negras"));
-        pieces.push(new Pawn(5, 1, "negras"));
-        pieces.push(new Pawn(6, 1, "negras"));
-        pieces.push(new Pawn(7, 1, "negras"));
-
-        pieces.push(new Torre(0, 7, "brancas"));
-        pieces.push(new Torre(7, 7, "brancas"));
-        pieces.push(new Cavalo(1, 7, "brancas"));
-        pieces.push(new Cavalo(6, 7, "brancas"));
-        pieces.push(new Bispo(2, 7, "brancas"));
-        pieces.push(new Bispo(5, 7, "brancas"));
-        pieces.push(new Rainha(3, 7, "brancas"));
-        pieces.push(new Rei(4, 7, "brancas"));
-        pieces.push(new Pawn(0, 6, "brancas"));
-        pieces.push(new Pawn(1, 6, "brancas"));
-        pieces.push(new Pawn(2, 6, "brancas"));
-        pieces.push(new Pawn(3, 6, "brancas"));
-        pieces.push(new Pawn(4, 6, "brancas"));
-        pieces.push(new Pawn(5, 6, "brancas"));
-        pieces.push(new Pawn(6, 6, "brancas"));
-        pieces.push(new Pawn(7, 6, "brancas"));
-
-        main = new Xadrez(8, pieces);
-
-        setInterval(function () { main.updateScreen() }, 10)
-    }
-</script>

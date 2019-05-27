@@ -1,4 +1,4 @@
-﻿-function Piece(x, y, cor, spriteBrancas, spriteNegras) {
+﻿function Piece(x, y, cor, spriteBrancas, spriteNegras) {
     this.setXY(x || 0, y || 0);
     this.cor = cor;
     this.nomePiece = "piece";
@@ -7,8 +7,8 @@
     this.brancasImg = new Image();
     this.negrasImg = new Image();
 
-    this.brancasImg.src = whiteSprite || "";
-    this.negrasImg.src = blackSprite || "";
+    this.brancasImg.src = spriteBrancas || "";
+    this.negrasImg.src = spriteNegras || "";
     
 };
 
@@ -38,12 +38,12 @@ Piece.prototype.getY = function () {
 }
 
 Piece.prototype.getImage = function () {
-    return (this.color == "white") ? this.whiteImage : this.blackImage;
+    return (this.cor == "brancas") ? this.brancasImg : this.negrasImg;
 }
 
-Piece.prototype.setImages = function (whiteSprite, blackSprite) {
-    this.whiteImage.src = whiteSprite;
-    this.blackImage.src = blackSprite;
+Piece.prototype.setImages = function (spriteBrancas, blackSprite) {
+    this.brancasImg.src = spriteBrancas;
+    this.negrasImg.src = blackSprite;
 }
 
 Piece.prototype.desenhar = function (context, tamanho) {
