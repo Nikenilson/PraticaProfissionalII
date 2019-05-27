@@ -1,7 +1,7 @@
 ﻿function Bispo(x, y, cor) {
     Piece.call(this);
 
-    this.setImages("", ""); //Imagens de cor branca e preta da pe�a
+    this.setImages("../../../IMG/GBishop.png", "../../../IMG/BBishop.png"); //Imagens de cor branca e preta da pe�a
     this.cor = cor;
 
     this.valor = 3;

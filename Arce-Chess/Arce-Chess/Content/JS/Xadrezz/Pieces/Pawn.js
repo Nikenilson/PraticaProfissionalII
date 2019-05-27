@@ -2,7 +2,7 @@
 {
     Piece.call(this);
 
-    this.setImages("", "");
+    this.setImages("../../../IMG/GPawn.png", "../../../IMG/BPawn.png");
     this.cor = cor;
 
     this.naosei = false;

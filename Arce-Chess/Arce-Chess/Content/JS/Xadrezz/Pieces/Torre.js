@@ -1,7 +1,7 @@
 ﻿function Torre(x, y, cor) {
     Piece.call(this);
 
-    this.setImages("w", "b");
+    this.setImages("../../../IMG/GTower.png", "../../../IMG/BTower.png");
     this.cor = cor;
 
     this.setXY(x || 0, y || 0);

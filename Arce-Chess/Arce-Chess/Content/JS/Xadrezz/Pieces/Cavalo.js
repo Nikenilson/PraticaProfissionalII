@@ -1,7 +1,7 @@
 ﻿function Cavalo(x, y, cor) {
     Piece.call(this);
 
-    this.setImages("", "");
+    this.setImages("../../../IMG/GHorse.png", "../../../IMG/BHorse.png");
     this.cor = cor;
 
     this.valor = 3;

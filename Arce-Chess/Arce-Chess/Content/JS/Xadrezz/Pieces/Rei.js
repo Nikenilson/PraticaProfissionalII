@@ -1,7 +1,7 @@
 ﻿function Rei(x, y, cor) {
     Piece.call(this);
 
-    this.setImages("", "");
+    this.setImages("../../../IMG/GKing.png", "../../../IMG/BKing.png");
     this.cor = cor;
 
     this.valor = 0;
