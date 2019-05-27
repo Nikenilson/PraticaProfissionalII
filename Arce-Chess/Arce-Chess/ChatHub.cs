@@ -10,9 +10,9 @@ namespace Arce_Chess
     public class ChatHub : Hub
     {
 
-        public void Send(string name, string message)
+        public void Send(string name, string message, int idchat)
         {
-            Clients.All.addNewMessageToPage(name, message);
+            Clients.All.addNewMessageToPage(name, message, idchat);
         }
     }
 }

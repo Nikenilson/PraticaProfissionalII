@@ -37,13 +37,13 @@
             // Reference the auto-generated proxy for the hub.
             var chat = $.connection.chatHub;
             // Create a function that the hub can call back to display messages.
-            chat.client.addNewMessageToPage = function (name, message) {
+            chat.client.addNewMessageToPage = function (name, message, idchat) {
                 // Add the message to the page. 
                 var usuAt = "@ViewBag.Usuario.Nome";
                 if (usuAt == htmlEncode(name))
                     $('#discussion').append('<div class="usu"><div class="imgUser"><img src="@ViewBag.Usuario.ImgPerfil"></div><li class="usuu"><span>'
                         + htmlEncode(message) + '</span></li><div>');
-                else if(name == "@ViewBag.User.Nome")
+                else if(idchat == "@ViewBag.ChatId")
                     $('#discussion').append('<div class="mensagem"><div class="imgUser"><img src="@ViewBag.User.ImgPerfil"></div><li><span>'
                         + htmlEncode(message) + '</span></li><div>');
             };
@@ -56,7 +56,7 @@
             $.connection.hub.start().done(function () {
                 $('#sendmessage').click(function () {
                     // Call the Send method on the hub.
-                    chat.server.send($('#displayname').val(), $('#message').val());
+                    chat.server.send($('#displayname').val(), $('#message').val(), "@ViewBag.ChatId");
                     // Clear text box and reset focus for next comment.
                     $('#message').val('').focus();
                 });
