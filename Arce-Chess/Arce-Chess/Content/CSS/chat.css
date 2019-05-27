@@ -787,8 +787,18 @@ html .testTit, html #menuToggle span, html .navbar span {
     display: none;
 }
 
+
+.chatal {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
 .chat-box {
-    height: 40em;
+    height: 50em;
     width: 90em;
     display: flex;
     flex-direction: column;
@@ -796,7 +806,6 @@ html .testTit, html #menuToggle span, html .navbar span {
     align-items: center;
     background: whitesmoke;
     margin-top: 2%;
-    margin-left: 15em;
     margin-bottom: 10em;
 }
 
@@ -894,9 +903,71 @@ html .testTit, html #menuToggle span, html .navbar span {
         max-height: 5em;
     }
 
+.userImage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100pt;
+    overflow: hidden;
+    border: 0.5em solid whitesmoke;
+    z-index: 2;
+    height: 10em;
+    width: 8em;
+}
+
+    .userImage img {
+        max-height: 9em;
+    }
+
+.contacts {
+    margin-top: -7.60em;
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+    background: whitesmoke; 
+    min-height: 50em;
+
+}
+.contact {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.chatal .contact li {
+    background: whitesmoke;
+    padding: 0.5em;
+    border-radius: 10pt;
+    margin: 1em;
+    font-family: "Raleway";
+    max-width: 20em;
+    word-wrap: break-word;
+}
+
+    .chatal .contact li span {
+        border-bottom: none;
+    }
 
 
+.chatal .contact .imgUser {
+    height: 5em;
+    width: 5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100pt;
+    overflow: hidden;
+    margin: 0.5em;
+}
 
+
+    .chatal .contact .imgUser img {
+        max-height: 5em;
+    }
 
 
 

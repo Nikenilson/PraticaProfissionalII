@@ -97,6 +97,28 @@ namespace Arce_Chess.DAO
             }
         }
 
+        public IList<Usuario> PesquisaAmigos(int id)
+        {
+            
+               IList<Amizade> listinha = PesquisaAmizades(id);
+                Usuario[] amigos = new Usuario[listinha.ToArray().Length];
+                UsuarioDAO dao = new UsuarioDAO();
+                for (int i = 0; i < listinha.ToArray().Length; i++)
+                {
+                    if(listinha.ToArray()[i] != null)
+                    {
+                        if (listinha.ToArray()[i].IdUsu1 == id)
+                            amigos[i] = dao.BuscaPorId(listinha.ToArray()[i].IdUsu2);
+                        else
+                            amigos[i] = dao.BuscaPorId(listinha.ToArray()[i].IdUsu1);
+                    }
+                }
+
+                return amigos.ToList();
+            
+        }
+
+
 
         public void Remover(Amizade amigos)
         {

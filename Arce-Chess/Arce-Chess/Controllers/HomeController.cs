@@ -89,6 +89,7 @@ namespace Arce_Chess.Controllers
                 Session["usu"] = ViewBag.Usuario;
                 UsuarioDAO daoUsu = new UsuarioDAO();
                 daoUsu.Atualiza(ViewBag.Usuario);
+                ViewBag.ListaAmigos = daoAmi.PesquisaAmigos(ViewBag.Usuario.Id);
                 return View();
             }
 
@@ -106,6 +107,27 @@ namespace Arce_Chess.Controllers
             Usuario friend = (Usuario)Session["userOther"];
             Amizade yey = daoAmi.ExisteAmizade(usu.Id, friend.Id);
             return RedirectToAction("Chat", new { amizadeId = yey.Id });
+        }
+
+        [AutorizacaoFilterAtribute]
+        [Route("tochatat")]
+        public ActionResult ParaChatAt(int usu2)
+        {
+            ViewBag.Usuario = Session["usu"];
+            AmizadeDAO daoAmi = new AmizadeDAO();
+            UsuarioDAO dao = new UsuarioDAO();
+            Amizade yey = daoAmi.ExisteAmizade(ViewBag.Usuario.Id, usu2);
+            return RedirectToAction("Chat", new { amizadeId = yey.Id });
+        }
+
+        [AutorizacaoFilterAtribute]
+        [Route("friendlist")]
+        public ActionResult AmigosLista()
+        {
+            ViewBag.Usuario = Session["usu"];
+            AmizadeDAO dao = new AmizadeDAO();
+            ViewBag.ListaAmigos = dao.PesquisaAmigos(ViewBag.Usuario.Id);
+            return View();
         }
 
 
