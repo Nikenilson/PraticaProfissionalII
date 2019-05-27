@@ -80,7 +80,7 @@ namespace Arce_Chess.Controllers
             if(daoAmi.ExisteAmizade(amizadeId) != null)
             {
                 Usuario[] eles = daoAmi.Amigos(amizadeId);
-                if (ViewBag.Usuario == eles[0])
+                if (ViewBag.Usuario.Id == eles[0].Id)
                     ViewBag.User = eles[1];
                 else
                     ViewBag.User = eles[0];
