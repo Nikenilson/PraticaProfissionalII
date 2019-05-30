@@ -11,7 +11,7 @@
                     if (result != null)
                     {
                         <div class="contact">
-                            <a href="ParaChatAt?usu2=@result.Id" class="imgUser"><img src="@result.ImgPerfil" /></a>
+                            <a href="../tochatat?usu2=@result.Id" class="imgUser"><img src="@result.ImgPerfil" /></a>
                             <li class="userName"><span>@result.Nome</span></li>
                         </div>
                     }
@@ -66,6 +66,10 @@
                     $('#discussion').append('<div class="mensagem"><div class="imgUser"><img src="@ViewBag.User.ImgPerfil"></div><li><span>'
                         + htmlEncode(message) + '</span></li><div>');
                 }
+
+
+                var x = document.getElementById("discussion");
+                x.scrollTop = x.scrollHeight;
             };
             // Get the user name and store it to prepend to messages.
             $('#displayname').val("@ViewBag.Usuario.Nome");
@@ -79,13 +83,15 @@
                     chat.server.send($('#displayname').val(), $('#message').val(), "@ViewBag.ChatId");
                     // Clear text box and reset focus for next comment.
                     $('#message').val('').focus();
+                    
                 });
                 $(document).on('keypress', function (e) {
                     if (e.which == 13) {
                         // Call the Send method on the hub.
                     chat.server.send($('#displayname').val(), $('#message').val(), "@ViewBag.ChatId");
                     // Clear text box and reset focus for next comment.
-                    $('#message').val('').focus();
+                        $('#message').val('').focus();
+                        
                     }
                 });
             });

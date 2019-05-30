@@ -18,6 +18,7 @@ namespace Arce_Chess.Models
         public int NDeAmigos { get; set; }
         public string Wallpaper { get; set; }
         public int ConversaAtual { get; set; }
+        public int Notificacoes { get; set; }
 
 
         /*private int codUsuario;

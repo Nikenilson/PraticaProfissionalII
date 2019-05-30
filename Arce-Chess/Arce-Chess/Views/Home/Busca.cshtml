@@ -49,7 +49,7 @@
             </span>
         </a>
 
-        <a href="/perfil?nome=@ViewBag.Usuario.Nome">
+        <a href="/perfil?usuId=@ViewBag.Usuario.Id">
             <div class="perfil">
                 <img src="@ViewBag.Usuario.ImgPerfil" alt="">
         </a>
@@ -93,7 +93,7 @@
                     if (result != null)
                     {
                         <div class="user">
-                            <a href="perfil?nome=@result.Nome" class="userImage"><img src="@result.ImgPerfil" /></a>
+                            <a href="perfil?usuId=@result.Id" class="userImage"><img src="@result.ImgPerfil" /></a>
                             <div class="userName"><span>@result.Nome</span></div>
                         </div>
                     }

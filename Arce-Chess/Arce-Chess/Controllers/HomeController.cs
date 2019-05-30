@@ -54,19 +54,34 @@ namespace Arce_Chess.Controllers
 
         [AutorizacaoFilterAtribute]
         [Route("perfil")]
-        public ActionResult Perfil(string nome)
+        public ActionResult Perfil(int usuId)
         {
             UsuarioDAO dao = new UsuarioDAO();
-            ViewBag.User = dao.BuscaPorNome(nome);
+            ViewBag.User = dao.BuscaPorId(usuId);
             ViewBag.Usuario = Session["usu"];
-            if (ViewBag.User != ViewBag.Usuario)
+            if (ViewBag.User.Id != ViewBag.Usuario.Id)
             {
                 AmizadeDAO daoAmi = new AmizadeDAO();
                 if (daoAmi.ExisteAmizade(ViewBag.User.Id, ViewBag.Usuario.Id) != null)
                     ViewBag.Amizade = daoAmi.ExisteAmizade(ViewBag.User.Id, ViewBag.Usuario.Id);
                 else
+                {
+                    NotificacaoDAO daoN = new NotificacaoDAO();
+                    if (daoN.ExisteNot(ViewBag.User, ViewBag.Usuario))
+                        ViewBag.Aceitar = true;
+                    else
+                        ViewBag.Aceitar = false;
                     ViewBag.Amizade = null;
+                }
+                    
             }
+            else
+            {
+                NotificacaoDAO daoN = new NotificacaoDAO();
+                ViewBag.Notificacoes = daoN.PesquisaNotificacoes(ViewBag.Usuario.Id);
+
+            }
+
             Session["userOther"] = ViewBag.User;
             return View();
         }
@@ -93,7 +108,7 @@ namespace Arce_Chess.Controllers
                 return View();
             }
 
-            return RedirectToAction("Perfil", new { nome = Session["usu"] });
+            return RedirectToAction("Perfil", new { usuId = ((Usuario)Session["usu"]).Id });
         }
 
 
@@ -136,26 +151,66 @@ namespace Arce_Chess.Controllers
         public ActionResult MudarImg(string imagPerf)
         {
             UsuarioDAO dao = new UsuarioDAO();
-            Usuario usu = (Usuario)Session["usu"];
-            usu.ImgPerfil = imagPerf;
-            dao.Atualiza(usu);
-            Session["usu"] = dao.BuscaPorNome(usu.Nome);
-            return RedirectToAction("Perfil", new { nome = usu.Nome });
+            Usuario usuario = (Usuario)Session["usu"];
+            usuario.ImgPerfil = imagPerf;
+            dao.Atualiza(usuario);
+            Session["usu"] = dao.BuscaPorNome(usuario.Nome);
+            return RedirectToAction("Perfil", new { usuId = usuario.Id });
+        }
+
+        [AutorizacaoFilterAtribute]
+        [Route("enviarP")]
+        public ActionResult EnviarPedidoDeAmizade(int dest)
+        {
+            UsuarioDAO dao = new UsuarioDAO();
+            AmizadeDAO daoA = new AmizadeDAO();
+            NotificacaoDAO daoN = new NotificacaoDAO();
+            Usuario usu = dao.BuscaPorId(dest);
+            Usuario usuAt = (Usuario)Session["usu"];
+            if (daoA.ExisteAmizade(usu.Id, usuAt.Id) == null)
+            {
+                if(!daoN.ExisteNot(usuAt, usu))
+                {
+                    Notificacao not = new Notificacao();
+                    not.Destinatario = usu.Id;
+                    not.Remetente = usuAt.Id;
+                    not.Mensagem = "O usuário " + usuAt.Nome + " deseja se tornar seu amigo!";
+                    usu.Notificacoes++;
+                    dao.Atualiza(usu);
+                    daoN.Adiciona(not);
+                }
+               
+            }
+            
+            return RedirectToAction("Perfil", new { usuId = dao.BuscaPorId(dest).Id });
         }
 
 
-
+        [AutorizacaoFilterAtribute]
+        [Route("aceitarP")]
+        public ActionResult AceitarPedidoDeAmizade(int reme)
+        {
+            UsuarioDAO dao = new UsuarioDAO();
+            AmizadeDAO daoA = new AmizadeDAO();
+            NotificacaoDAO daoN = new NotificacaoDAO();
+            daoN.Remover(daoN.NotInTwo(dao.BuscaPorId(reme), (Usuario)Session["usu"]));
+            Amizade novosAmigos = new Amizade();
+            novosAmigos.IdUsu1 = reme;
+            novosAmigos.IdUsu2 = ((Usuario)Session["usu"]).Id;
+            daoA.Adiciona(novosAmigos);
+            return RedirectToAction("Perfil", new { usuId = dao.BuscaPorId(reme).Id });
+        }
 
         [AutorizacaoFilterAtribute]
         [Route("mwalp")]
         public ActionResult MudarWalp(string imagWalp)
         {
             UsuarioDAO dao = new UsuarioDAO();
-            Usuario usu = (Usuario)Session["usu"];
-            usu.Wallpaper = imagWalp;
-            dao.Atualiza(usu);
-            Session["usu"] = dao.BuscaPorNome(usu.Nome);
-            return RedirectToAction("Perfil", new { nome = usu.Nome });
+            Usuario usuario = (Usuario)Session["usu"];
+            usuario.Wallpaper = imagWalp;
+            dao.Atualiza(usuario);
+            Session["usu"] = dao.BuscaPorNome(usuario.Nome);
+            return RedirectToAction("Perfil", new { usuId = usuario.Id });
         }
 
         [AutorizacaoFilterAtribute]

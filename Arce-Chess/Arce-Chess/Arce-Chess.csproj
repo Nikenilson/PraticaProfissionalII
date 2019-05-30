@@ -236,6 +236,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="ChatHub.cs" />
     <Compile Include="DAO\AmizadeDAO.cs" />
+    <Compile Include="DAO\NotificacaoDAO.cs" />
     <Compile Include="DAO\UsuarioDAO.cs" />
     <Compile Include="Filtros\AutorizacaoFilterAtribute.cs" />
     <Compile Include="Models\Coordenada.cs" />
@@ -243,6 +244,7 @@
     <Compile Include="Models\Piece.cs" />
     <Compile Include="Models\Partida.cs" />
     <Compile Include="Models\Amizade.cs" />
+    <Compile Include="Models\Notificacao.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DAO\ChessContext.cs" />

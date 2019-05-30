@@ -7,7 +7,7 @@
 <link rel="stylesheet" type="text/css" href="~/Content/CSS/perfil.css">
 @if (ViewBag.User.Wallpaper != null)
 {
-    <div class="fundo" style="background:url('@ViewBag.User.Wallpaper');"></div>
+    <div class="fundo" style="background:url('@ViewBag.User.Wallpaper'); background-size: 100%;"></div>
 }
 else
 {
@@ -33,7 +33,7 @@ else
 <div class="data">
 
 
-    @if (ViewBag.Usuario.Nome == ViewBag.User.Nome)
+    @if (ViewBag.Usuario.Id == ViewBag.User.Id)
     {
 
         <div class="nameImg" onclick="mudarImg()">
@@ -62,36 +62,63 @@ else
 
 
 
-            @if (ViewBag.Usuario.Nome == ViewBag.User.Nome)
-            {
-                <a href="/login" class="btns">Sair</a>
-            }
+    @if (ViewBag.Usuario.Id == ViewBag.User.Id)
+    {
+        <a href="/login" class="btns">Sair</a>
+    }
 
-            <div class="information">
-                <span>E-mail:  @ViewBag.User.Email</span><br>
-                <span>Amigos: @ViewBag.User.NDeAmigos</span><br>
-                <span>Partidas: @ViewBag.User.Partidas</span><br>
-                <span>Vitórias: @ViewBag.User.Vitorias</span>
-            </div>
-            <br><br>
-
-
-            @if (ViewBag.Usuario.Nome != ViewBag.User.Nome)
-            {
-
-                if (ViewBag.Amizade != null)
-                {
-                    <a class="friends ef" id="friends"><i class="fas fa-user-friends"></i></a> <br><br>
-
-                }
-                else
-                {
-                    <a class="friends" id="friends"><i class="fas fa-user-friends"></i> <br>Enviar Pedido de Amizade</a> <br><br>
-                }
-
-            }
-
+    <div class="information">
+        <span>E-mail:  @ViewBag.User.Email</span><br>
+        <span>Amigos: @ViewBag.User.NDeAmigos</span><br>
+        <span>Partidas: @ViewBag.User.Partidas</span><br>
+        <span>Vitórias: @ViewBag.User.Vitorias</span>
     </div>
+    <br><br>
+
+
+    @if (ViewBag.Usuario.Id != ViewBag.User.Id)
+    {
+
+        if (ViewBag.Amizade != null)
+        {
+            <a class="friends ef" id="friends"><i class="fas fa-user-friends"></i></a> <br><br>
+
+        }
+        else
+        {
+            if (ViewBag.Aceitar)
+            {
+                <a class="friends" id="friends" href="/aceitarP?reme=@ViewBag.User.Id"><i class="fas fa-user-friends"></i> <br>Aceitar Pedido de Amizade</a> <br><br>
+            }
+            else
+            {
+                <a class="friends" id="friends" href="/enviarP?dest=@ViewBag.User.Id"><i class="fas fa-user-friends"></i> <br>Enviar Pedido de Amizade</a> <br><br>
+            }
+        }
+
+    }
+    else
+    {
+        if (ViewBag.Notificacoes != null)
+        { 
+            <div class="notfic">
+            <h1 >Notificações:</h1>
+            @foreach (var result in ViewBag.Notificacoes)
+            {
+                if (result != null)
+                {
+                    <div class="notific">
+                        <a href="/perfil?usuId=@result.Remetente">@result.Mensagem</a>
+                    </div>
+
+                }
+
+            }
+            </div>
+        }
+    }
+
+</div>
 
 <div class="topo" onclick="topo()"><i class="fas fa-arrow-circle-up"></i></div>
 
