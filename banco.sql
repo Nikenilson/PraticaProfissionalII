@@ -26,7 +26,7 @@ imgPerfil ntext,
 nDeAmigos int not null
 )
 
-select * from AC_Usuario
+select * from Usuario
 
 Create table Partida(
 CodPartida int primary key not null,
@@ -54,6 +54,7 @@ constraint fkAmizadeAmigo1 foreign key (idUsu1) references Usuario(Id),
 constraint fkAmizadeAmigo2 foreign key (idUsu2) references Usuario(Id),
 )
 
+select * from Amizade
 
 
 create table Conversa(
