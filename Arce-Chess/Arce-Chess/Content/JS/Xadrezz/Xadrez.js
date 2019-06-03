@@ -91,7 +91,7 @@ Xadrez.prototype.comer = function (x, y) {
 
     if (!this.isCheck((this.vez == "brancas") ? ("pretas") : ("brancas"))) {
         this.pieceSelecionada = null;
-        if (this.isCheck(this.turn))
+        if (this.isCheck(this.vez))
             alert("Check");
         this.vez = (this.vez == "brancas") ? "pretas" : "brancas";
         this.atualizarTela();
@@ -111,7 +111,7 @@ Xadrez.prototype.andar = function (x, y) {
 
     if (!this.isCheck((this.vez == "brancas") ? ("pretas") : ("brancas"))) {
         this.pieceSelecionada = null;
-        if (this.isCheck(this.turn))
+        if (this.isCheck(this.vez))
             alert("Check");
         this.vez = (this.vez == "brancas") ? ("pretas") : ("brancas");
         this.atualizarTela();
