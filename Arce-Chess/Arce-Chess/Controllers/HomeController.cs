@@ -310,9 +310,9 @@ namespace Arce_Chess.Controllers
                     ViewBag.User = eles[1];
                 else
                     ViewBag.User = eles[0];
-
+                
                 ViewBag.AmizadeId = daoAmi.ExisteAmizade(amizadeId).Id;
-                ViewBag.JogoAual.ConversaAtual = ViewBag.ChatId = daoAmi.ExisteAmizade(amizadeId).Id;
+                ViewBag.JogoAtual = ViewBag.ChatId = daoAmi.ExisteAmizade(amizadeId).Id;
 
                 Session["usu"] = ViewBag.Usuario;
                 UsuarioDAO daoUsu = new UsuarioDAO();
