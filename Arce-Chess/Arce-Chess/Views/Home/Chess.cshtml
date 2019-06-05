@@ -77,50 +77,32 @@
             // Reference the auto-generated proxy for the hub.
             var chess = $.connection.chessHub;
             // Create a function that the hub can call back to display messages.
-            chess.client.moverPiece = function (xInicial, yInicial, xFinal, yFinal, idAmizade) {
+            chess.client.moverPiece = function (x, y, idAmizade) {
 
-            if (idAmizade == "@ViewBag.AmizadeId") {
-                var event = $.Event('click');
-                event.clientX = xInicial;
-                event.clientY = yInicial;
-                $('game').trigger(event);
-
-                var event2 = $.Event('click');
-                event.clientX = xFinal;
-                event.clientY = yFinal;
-                $('game').trigger(event2);
-
-            }
+                if (idAmizade == "@ViewBag.AmizadeId") {
+                    var event = $.Event('click');
+                    event.clientX = x;
+                    event.clientY = y;
+                    $('game').trigger(event);
+                }
+            };
 
             /*this.canvas.
                 addEventListener('click', function (event) {
                     var x = event.pageX - elemLeft,
                         y = event.pageY - elemTop;*/
 
-            $("game").click(function (e) {
-                var xInicial = e.pageX,
-                    yInicial = e.pageY;
-            });
-
-            $("game").click(function (e) {
-                var xFinal = e.pageX,
-                    yFinal = e.pageY;
-            });
-
             // Start the connection.
             $.connection.hub.start().done(function () {
-                $('#sendmessage').click(function () {
-                    // Call the moverPiece method on the hub.
-                    chess.server.moverPiece(xInicial, yInicial, xFinal, xInicial, "@ViewBag.AmizadeId");
+                $("game").click(function (e) {
+                    var xInicial = e.pageX,
+                        yInicial = e.pageY;
+                    chess.server.moverPiece(xInicial, yInicial, "@ViewBag.AmizadeId");
                 });
-                $(document).on('keypress', function (e) {
-                    if (e.which == 13) {
-                        // Call the Send method on the hub.
-                    chat.server.send($('#displayname').val(), $('#message').val(), "@ViewBag.ChatId");
-                    // Clear text box and reset focus for next comment.
-                        $('#message').val('').focus();
-
-                    }
+                $("game").click(function (e) {
+                    var xFinal = e.pageX,
+                        yFinal = e.pageY;
+                   chess.server.moverPiece(xFinal, yFinal, "@ViewBag.AmizadeId");
                 });
             });
 
