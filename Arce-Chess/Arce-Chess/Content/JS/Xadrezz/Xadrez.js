@@ -2,6 +2,8 @@
     this.tamanho = tamanho;
     this.setPieces(pieces);
 
+    alert("deus");
+
     this.pieceSelecionada = null;
     this.vez = "brancas";
 
@@ -89,11 +91,11 @@ Xadrez.prototype.comer = function (x, y) {
         }
     this.pieceSelecionada.setXY(Math.floor(x / ((this.tamanho == 8) ? 90 : 80)), Math.floor(y / ((this.tamanho == 8) ? 90 : 80)));
 
-    if (!this.isCheck((this.vez == "brancas") ? ("pretas") : ("brancas"))) {
+    if (!this.isCheck((this.vez == "brancas") ? ("negras") : ("brancas"))) {
         this.pieceSelecionada = null;
         if (this.isCheck(this.vez))
             alert("Check");
-        this.vez = (this.vez == "brancas") ? "pretas" : "brancas";
+        this.vez = (this.vez == "brancas") ? "negras" : "brancas";
         this.atualizarTela();
         return true;
     }
@@ -109,11 +111,11 @@ Xadrez.prototype.andar = function (x, y) {
     var sPY = this.pieceSelecionada.getY();
     this.pieceSelecionada.setXY(Math.floor(x / ((this.tamanho == 8) ? 90 : 80)), Math.floor(y / ((this.tamanho == 8) ? 90 : 80)));
 
-    if (!this.isCheck((this.vez == "brancas") ? ("pretas") : ("brancas"))) {
+    if (!this.isCheck((this.vez == "brancas") ? ("negras") : ("brancas"))) {
         this.pieceSelecionada = null;
         if (this.isCheck(this.vez))
             alert("Check");
-        this.vez = (this.vez == "brancas") ? ("pretas") : ("brancas");
+        this.vez = (this.vez == "brancas") ? ("negras") : ("brancas");
         this.atualizarTela();
         return true;
     }
