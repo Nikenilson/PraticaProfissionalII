@@ -48,6 +48,12 @@
             <div class="perfil">
                 <img src="@ViewBag.Usuario.ImgPerfil" alt="">
             </div>
+            @if(ViewBag.Usuario.Notificacoes != 0)
+            {
+                <div class="notification">
+                    @ViewBag.Usuario.Notificacoes
+                </div>
+            }
         </a>
         </a>
     </div>

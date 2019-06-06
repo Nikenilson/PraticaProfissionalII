@@ -19,9 +19,9 @@
                 }
     </div>
     <div class="chat-box">
-        <div class="userImage">
+        <a class="userImage" href="/perfil?usuarioId=@ViewBag.User.Id">
             <img src="@ViewBag.User.ImgPerfil">
-        </div>
+        </a>
         @if (ViewBag.Usuario.Wallpaper != null)
         {
             <ul id="discussion" class="discussion" style="background:url('@ViewBag.Usuario.Wallpaper'); background-size: 100%;"></ul>
@@ -33,6 +33,9 @@
 
 
         <div class="container">
+            <a class="envite">
+                Iniciar nova partida!
+            </a>
             <div class="send">
                 <input type="text" id="message" placeholder="Digite uma mensagem" />
                 <i class="fas fa-paper-plane" id="sendmessage"></i>

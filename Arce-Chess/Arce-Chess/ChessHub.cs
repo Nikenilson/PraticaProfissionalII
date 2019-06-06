@@ -9,9 +9,9 @@ namespace Arce_Chess
 {
     public class ChessHub : Hub
     {
-        public void MovePiece(string xInicial, string yInical, string xFinal, string yFinal, int idAmizade)
+        public void MovePiece(string xInicial, string yInical, int idAmizade, char color)
         {
-            Clients.All.moverPiece(xInicial, yInical, xFinal, yFinal, idAmizade);
+            Clients.All.moverPiece(xInicial, yInical, idAmizade, color);
         }
     }
 }

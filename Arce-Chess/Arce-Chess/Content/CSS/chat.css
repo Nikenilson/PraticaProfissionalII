@@ -970,11 +970,44 @@ html .testTit, html #menuToggle span, html .navbar span {
     }
 
 
+.envite {
+    font-family: "Raleway", cursive;
+    font-weight: 600;
+    color: white;
+    background: #1cbe88;
+    padding: 5pt;
+    border-radius: 100pt;
+    font-size: 15pt;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-right: 2em;
+    cursor: pointer;
+}
+
+
+    .envite:hover {
+        animation-name: btnAnimation;
+        animation-duration: 1.2s;
+        animation-iteration-count: infinite;
+    }
 
 
 
+@keyframes btnAnimation {
+    0% {
+        background: #19a073;
+    }
 
+    50% {
+        background: #00e08a;
+    }
 
+    100% {
+        background: #19a073;
+    }
+}
 
 
 
