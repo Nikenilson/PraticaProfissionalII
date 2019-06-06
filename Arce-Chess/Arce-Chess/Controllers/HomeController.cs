@@ -298,12 +298,51 @@ namespace Arce_Chess.Controllers
         [AutorizacaoFilterAtribute]
         [Route("chess")]
 
-        public ActionResult Chess()
+        public ActionResult Chess(int amizadeId)
         {
             ViewBag.Usuario = Session["usu"];
-            return View();
+
+            AmizadeDAO daoAmi = new AmizadeDAO();
+            if (daoAmi.ExisteAmizade(amizadeId) != null)
+            {
+                Usuario[] eles = daoAmi.Amigos(amizadeId);
+                if (ViewBag.Usuario.Id == eles[0].Id)
+                    ViewBag.User = eles[1];
+                else
+                    ViewBag.User = eles[0];
+                
+                ViewBag.AmizadeId = daoAmi.ExisteAmizade(amizadeId).Id;
+                ViewBag.JogoAtual = ViewBag.ChatId = daoAmi.ExisteAmizade(amizadeId).Id;
+
+                Session["usu"] = ViewBag.Usuario;
+                UsuarioDAO daoUsu = new UsuarioDAO();
+                daoUsu.Atualiza(ViewBag.Usuario);
+
+                return View();
+            }
+
+            return RedirectToAction("Perfil", new { usuId = ((Usuario)Session["usu"]).Id });
         }
 
+        /*ViewBag.Usuario = Session["usu"];
+            AmizadeDAO daoAmi = new AmizadeDAO();
+            if(daoAmi.ExisteAmizade(amizadeId) != null)
+            {
+                Usuario[] eles = daoAmi.Amigos(amizadeId);
+                if (ViewBag.Usuario.Id == eles[0].Id)
+                    ViewBag.User = eles[1];
+                else
+                    ViewBag.User = eles[0];
+                ViewBag.ChatId = daoAmi.ExisteAmizade(amizadeId).Id;
+                ViewBag.Usuario.ConversaAtual = ViewBag.ChatId = daoAmi.ExisteAmizade(amizadeId).Id;
+                Session["usu"] = ViewBag.Usuario;
+                UsuarioDAO daoUsu = new UsuarioDAO();
+                daoUsu.Atualiza(ViewBag.Usuario);
+                ViewBag.ListaAmigos = daoAmi.PesquisaAmigos(ViewBag.Usuario.Id);
+                return View();
+            }
+
+            return RedirectToAction("Perfil", new { usuId = ((Usuario)Session["usu"]).Id });*/
 
 
 
