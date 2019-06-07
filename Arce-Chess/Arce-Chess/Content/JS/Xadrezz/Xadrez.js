@@ -2,8 +2,6 @@
     this.tamanho = tamanho;
     this.setPieces(pieces);
 
-    alert("deus");
-
     this.pieceSelecionada = null;
     this.vez = "brancas";
 
@@ -26,41 +24,40 @@
     var funcAux = this;
 
     //onClick do canvas
-    this.canvas.
-        addEventListener('click', function (event) {
-            var x = event.pageX - elemLeft,
-                y = event.pageY - elemTop;
-            var pieceSelecionada = null;
+    this.canvas.addEventListener('click', function (event) {
+        var x = event.pageX - elemLeft,
+            y = event.pageY - elemTop;
+        var pieceSelecionada = null;
 
-            pieces.forEach(function (piece) {
-                if (piece.getTX(tamanho) < x && piece.getTX(tamanho) + 80 > x)
-                    if (piece.getTY(tamanho) < y && piece.getTY(tamanho) + 80 > y)
-                        pieceSelecionada = piece;
-            });
+        pieces.forEach(function (piece) {
+            if (piece.getTX(tamanho) < x && piece.getTX(tamanho) + 80 > x)
+                if (piece.getTY(tamanho) < y && piece.getTY(tamanho) + 80 > y)
+                    pieceSelecionada = piece;
+        });
 
-            funcAux.montarMatriz();
+        funcAux.montarMatriz();
 
-            if (pieceSelecionada != null) {
-                if (pieceSelecionada.cor != funcAux.vez) {
-                    if (funcAux.pieceSelecionada != null) {
-                        funcAux.pieceSelecionada.paraOndePodeAndar(funcAux.matriz, funcAux.tamanho).forEach(
-                            function (coordenada) {
-                                if (coordenada.x == Math.floor(x / ((funcAux.tamanho == 8) ? 90 : 80)) && coordenada.y == Math.floor(y / ((funcAux.tamanho == 8) ? 90 : 80))) {
-                                    funcAux.comer(x, y);
-                                }
-                            });
-                    }
-
-                    return;
+        if (pieceSelecionada != null) {
+            if (pieceSelecionada.cor != funcAux.vez) {
+                if (funcAux.pieceSelecionada != null) {
+                    funcAux.pieceSelecionada.paraOndePodeAndar(funcAux.matriz, funcAux.tamanho).forEach(
+                        function (coordenada) {
+                            if (coordenada.x == Math.floor(x / ((funcAux.tamanho == 8) ? 90 : 80)) && coordenada.y == Math.floor(y / ((funcAux.tamanho == 8) ? 90 : 80))) {
+                                funcAux.comer(x, y);
+                            }
+                        });
                 }
 
-                if (pieceSelecionada == funcAux.pieceSelecionada) {
-                    funcAux.atualizarTela();
-                    funcAux.pieceSelecionada = null;
-                }
-                else {
-                    funcAux.putGreenBalls(pieceSelecionada.paraOndePodeAndar(funcAux.matriz, funcAux.tamanho), pieceSelecionada);
-                    funcAux.pieceSelecionada = pieceSelecionada;
+                return;
+            }
+
+            if (pieceSelecionada == funcAux.pieceSelecionada) {
+                funcAux.atualizarTela();
+                funcAux.pieceSelecionada = null;
+            }
+            else {
+                funcAux.putGreenBalls(pieceSelecionada.paraOndePodeAndar(funcAux.matriz, funcAux.tamanho), pieceSelecionada);
+                funcAux.pieceSelecionada = pieceSelecionada;
                 }
 
             }
