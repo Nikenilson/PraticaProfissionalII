@@ -807,6 +807,9 @@ html .testTit, html #menuToggle span, html .navbar span {
     background: whitesmoke;
     margin-top: 2%;
     margin-bottom: 10em;
+    border-radius: 40pt;
+    border-top-right-radius: 40pt;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
     .chat-box input[type=text] {
@@ -827,16 +830,22 @@ html .testTit, html #menuToggle span, html .navbar span {
         flex-direction: row;
         align-content: center;
         justify-content: center;
+        border-radius: 40pt;
     }
         .chat-box .container i {
-            font-size: 20pt;
+            font-size: 25pt;
             color: rgb(148, 154, 156);
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            padding: 12.5pt;
+            border-radius: 100pt;
+            margin-left: 0.5em;
         }
 
         .chat-box .container input[type = text] {
             font-size: 20pt;
             width: 30em;
             background: rgb(255, 255, 255);
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         }
 
     .chat-box .discussion {
@@ -846,7 +855,7 @@ html .testTit, html #menuToggle span, html .navbar span {
         width: 90%;
         overflow-y: scroll;
         vertical-align: baseline;
-
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
 
     .mensagem{
@@ -856,16 +865,16 @@ html .testTit, html #menuToggle span, html .navbar span {
         align-items: flex-start;
     }
 
-        .chat-box .discussion li {
-            background: whitesmoke;
-            padding: 0.5em;
-            border-radius: 10pt;
-            margin: 1em;
-            font-family: "Raleway";
-            max-width: 20em;
-            word-wrap: break-word;
-            
-        }
+.chat-box .discussion li {
+    background: whitesmoke;
+    padding: 0.5em;
+    border-radius: 10pt;
+    margin: 1em;
+    font-family: "Raleway";
+    max-width: 20em;
+    word-wrap: break-word;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 
         .chat-box .discussion li span {
             border-bottom: none;
@@ -896,6 +905,7 @@ html .testTit, html #menuToggle span, html .navbar span {
     border-radius: 100pt;
     overflow: hidden;
     margin: 0.5em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 
@@ -911,9 +921,11 @@ html .testTit, html #menuToggle span, html .navbar span {
     border-radius: 100pt;
     overflow: hidden;
     border: 0.5em solid whitesmoke;
+    margin-top: 1em;
     z-index: 2;
     height: 10em;
-    width: 8em;
+    width: 7.5em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
     .userImage img {
@@ -924,11 +936,15 @@ html .testTit, html #menuToggle span, html .navbar span {
     margin-top: -7.60em;
     display: flex;
     flex-direction: column;
-
     align-items: flex-start;
-    background: whitesmoke; 
-    min-height: 50em;
-
+    background: whitesmoke;
+    height: 40em;
+    padding: 10pt;
+    margin-right: 2em;
+    border-top-left-radius: 20pt;
+    border-bottom-left-radius: 20pt;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    overflow-y: scroll;
 }
 .contact {
     width: 100%;
@@ -943,8 +959,11 @@ html .testTit, html #menuToggle span, html .navbar span {
     border-radius: 10pt;
     margin: 1em;
     font-family: "Raleway";
+    font-size: 17.5pt;
+    font-weight: 600;
     max-width: 20em;
     word-wrap: break-word;
+    margin-bottom: 3em;
 }
 
     .chatal .contact li span {
