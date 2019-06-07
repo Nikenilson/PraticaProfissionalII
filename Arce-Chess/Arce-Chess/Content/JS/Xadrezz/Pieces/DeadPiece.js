@@ -5,7 +5,7 @@
     this.pretasIMG = new pClass(5, 5, "negras").getImage();
     this.cor = cor;
 
-    this.valor = new pClass(5, 5, color).valor;
+    this.valor = new pClass(5, 5, cor).valor;
 
     this.pClass = pClass;
 
