@@ -16,7 +16,7 @@ Piece.prototype.getNomePiece = function () {
     return this.nomePiece;
 }
 
-Piece.prototype.getColor = function () {
+Piece.prototype.getCor = function () {
     return this.cor;
 }
 
