@@ -286,6 +286,13 @@
     <Content Include="Content\CSS\regras.css" />
     <Content Include="Content\CSS\sobreNos.css" />
     <Content Include="Content\CSS\xadrez.css" />
+    <Content Include="Content\IMG\sobreNos1.jpeg" />
+    <Content Include="Content\IMG\sobreNos2.jpeg" />
+    <Content Include="Content\IMG\sobreNos3.jpeg" />
+    <Content Include="Content\IMG\sobreNos4.jpeg" />
+    <Content Include="Content\IMG\sobreNos5.jpeg" />
+    <Content Include="Content\IMG\sobreNos6.jpeg" />
+    <Content Include="Content\IMG\sobreNos7.jpeg" />
     <Content Include="Content\JS\Chart.js" />
     <Content Include="Content\JS\Xadrezz\Coordenada.js" />
     <Content Include="Content\JS\Xadrezz\Pieces\Bispo.js" />
