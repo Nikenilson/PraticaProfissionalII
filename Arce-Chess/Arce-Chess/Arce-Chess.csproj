@@ -287,6 +287,9 @@
     <Content Include="Content\CSS\sobreNos.css" />
     <Content Include="Content\CSS\xadrez.css" />
     <Content Include="Content\JS\Chart.js" />
+    <Content Include="Content\JS\editt.js" />
+    <Content Include="Content\JS\menu.js" />
+    <Content Include="Content\JS\xadrez.js" />
     <Content Include="Content\JS\Xadrezz\Coordenada.js" />
     <Content Include="Content\JS\Xadrezz\Pieces\Bispo.js" />
     <Content Include="Content\JS\Xadrezz\Pieces\Cavalo.js" />
@@ -305,6 +308,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\editt.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
@@ -316,8 +320,10 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\menu.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="batat.txt" />
+    <Content Include="Scripts\xadrez.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

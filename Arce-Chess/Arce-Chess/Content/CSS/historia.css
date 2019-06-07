@@ -693,3 +693,9 @@ html .conteudo .back p {
   color: white; }
 
 /*# sourceMappingURL=historia.css.map */
+
+
+.conteudo img{
+    max-height: 20em;
+    max-width: 30em;
+}
